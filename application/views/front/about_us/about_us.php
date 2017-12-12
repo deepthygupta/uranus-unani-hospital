@@ -167,22 +167,22 @@
                         <ul class="row">
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.4s">
                                 <div class="icon"><img src="../../images/icons/cod.png" /></div>
-                                <h6>Cash on delivery</h6>
+                                <h6>SERVICE 1</h6>
                                 <hr>
                             </li>
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.6s">
                                 <div class="icon"><img src="../../images/icons/cc.png" /></div>
-                                <h6>CCAvenue Payment</h6>
+                                <h6>SERVICE 2</h6>
                                 <hr>
                             </li>
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.4s">
                                 <div class="icon"><img src="../../images/icons/100.png" /></div>
-                                <h6>100% genuine</h6>
+                                <h6>SERVICE 3</h6>
                                 <hr>
                             </li>
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.6s">
                                 <div class="icon"><img src="../../images/icons/best.png" /></div>
-                                <h6>best support</h6>
+                                <h6>SERVICE 4</h6>
                                 <hr>
                             </li>
                         </ul>
@@ -191,7 +191,7 @@
             </div>
             <footer>
                 <div class="container">
-                    <div class="text-center"> <a href="#."><img src="images/sitelogo.jpg" alt=""></a><br>
+                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt=""></a><br>
                         <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
                     </div>
 
