@@ -1,8 +1,8 @@
-a:2:{s:6:"expire";i:1513151674;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 200 OK";i:1;b:1;}i:1;a:2:{i:0;s:15:"HTTP/1.1 200 OK";i:1;b:1;}i:2;a:2:{i:0;s:44:"Last-Modified: Tue, 12 Dec 2017 07:54:34 GMT";i:1;b:1;}i:3;a:2:{i:0;s:50:"Cache-Control: no-store, no-cache, must-revalidate";i:1;b:1;}i:4;a:2:{i:0;s:40:"Cache-Control: post-check=0, pre-check=0";i:1;b:1;}i:5;a:2:{i:0;s:16:"Pragma: no-cache";i:1;b:1;}}}ENDCI---><!DOCTYPE html>
+a:2:{s:6:"expire";i:1513160248;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 200 OK";i:1;b:1;}i:1;a:2:{i:0;s:15:"HTTP/1.1 200 OK";i:1;b:1;}i:2;a:2:{i:0;s:44:"Last-Modified: Tue, 12 Dec 2017 10:17:28 GMT";i:1;b:1;}i:3;a:2:{i:0;s:50:"Cache-Control: no-store, no-cache, must-revalidate";i:1;b:1;}i:4;a:2:{i:0;s:40:"Cache-Control: post-check=0, pre-check=0";i:1;b:1;}i:5;a:2:{i:0;s:16:"Pragma: no-cache";i:1;b:1;}}}ENDCI---><!DOCTYPE html>
 <html lang="en">
     <head>
-    	    	<title>Home || Raw Squeezed</title>
-    	<div class="modal fade popup-cart" id="popup-cart" tabindex="-1" role="dialog" aria-hidden="true">
+                <title>Uranus Unani Hospital || Home</title>
+        <div class="modal fade popup-cart" id="popup-cart" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="container">
             <div class="cart-items">
@@ -32,15 +32,10 @@ a:2:{s:6:"expire";i:1513151674;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 20
         </div>
     </div>
 </div>    </head>
-    <body id="home" class="wide">
-        <!-- PRELOADER -->
-    	        <!-- /PRELOADER -->
-
-        <!-- WRAPPER -->
-        <div class="wrapper">
-
-            <!-- Popup: Shopping cart items -->
-			<div class="modal fade popup-cart" id="popup-cart" tabindex="-1" role="dialog" aria-hidden="true">
+    <body id="home" class="wide">      
+                <!-- WRAPPER -->
+        <div class="wrapper">           
+            <div class="modal fade popup-cart" id="popup-cart" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="container">
             <div class="cart-items">
@@ -69,817 +64,574 @@ a:2:{s:6:"expire";i:1513151674;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 20
             </div>
         </div>
     </div>
-</div>            
-            <!-- /Popup: Shopping cart items -->
-
-            <!-- HEADER -->
-			      
-            <!-- /HEADER -->
-
-            <!-- CONTENT AREA -->
+</div>        
             <div class="content-area">
-				<!DOCTYPE html>
+                <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home || Raw Squeezed </title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Uranus Unani Hospital || Home </title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- FONTS ONLINE -->
+        <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <!--MAIN STYLE-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="css/animate.css" rel="stylesheet" type="text/css">
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">   
+        <link href="css/custom.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+        <!-- JavaScripts -->
+        <script src="js/modernizr.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    </head>
+    <body>
+        <!--  <div id="loader">
+              <div class="loader">
+                  <div class="position-center-center"> <img src="images/preloader.gif">
+  
+                  </div>
+              </div>
+          </div>-->
 
-    <!-- FONTS ONLINE -->
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-    <!--MAIN STYLE-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
-    <link href="css/animate.css" rel="stylesheet" type="text/css">
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
-    <link href="css/custom.css" rel="stylesheet" type="text/css">
-
-    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
-
-    <!-- JavaScripts -->
-    <script src="js/modernizr.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<body>
-<!-- LOADER ===========================================-->
-<div id="loader">
-    <div class="loader">
-        <div class="position-center-center"> <img src="images/preloader.gif">
-
-        </div>
-    </div>
-</div>
-
-<!-- Page Wrap -->
-<div id="wrap">
-
-    <!-- Header -->
-    <header class="header">
-        <!-- Top Bar -->
+        <div id="wrap">
+            <header class="header">   
                 <div class="top-bar">
-            <div class="container">
-                <!-- Language -->
-                <div class="language">  <a href="#.">We deliver across Kochi city</a></div>
-                <div class="top-links">
-                    <ul>
-                                                    <li><a href="http://localhost/uranus-unani-hospital/index.php/home/login2">LOGIN</a></li>
-                            <li><a href="http://localhost/uranus-unani-hospital/index.php/home/login2">REGISTER</a></li>
-                            <li><a href="http://localhost/uranus-unani-hospital/index.php/home/cart_checkout">MY CART</a></li>
-                                                <!--
-                          <li><a href="#.">MY ACCOUNT</a></li>
-                          <li><a href="#.">MY WISHLIST</a></li>
-                        -->
-                    </ul>
-                    <!-- Social Icons -->
-                    <ul class="social_icons">
-                        <li class="facebook"><a href="https://www.facebook.com/rawsqueezed"><i class="fa fa-facebook"></i> </a></li>
-                        <li class="instagram"><a href=" https://www.instagram.com/rawsqueezed/"><i class="fa fa-instagram"></i> </a></li>
+                    <div class="container">
+                        <div class="top-links">
+                            <ul>
+                                                                    <li><a href="http://localhost/uranus-unani-hospital/index.php/home/login2">LOGIN</a></li>
+                                    <li><a href="http://localhost/uranus-unani-hospital/index.php/home/login2">REGISTER</a></li>
+                                    <li><a href="http://localhost/uranus-unani-hospital/index.php/home/cart_checkout">MY CART</a></li>
+                                                            </ul>
+                            <ul class="social_icons">
+                                <li class="facebook"><a href="https://www.facebook.com/#"><i class="fa fa-facebook"></i> </a></li>
+                                <li class="instagram"><a href=" https://www.instagram.com/#/"><i class="fa fa-instagram"></i> </a></li>
 
-                    </ul>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Logo -->
+                <div class="sticky">
+                    <div class="container">
+                        <nav class="webimenu">
+                            <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
+                            <ul class="ownmenu">
+                                <li class="logo1"><a href="http://localhost/uranus-unani-hospital/"><img src="images/" alt="logo"></a></li>
+                                <li><a href="#">HOME</a></li>
+                                <li>
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/about_us">
+                                        ABOUT US                                    </a>
+                                </li>
+                                <li >
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/shop">
+                                        SERVICES                                    </a>
+                                </li>
+                                <li >
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/our_team">
+                                        Our Team                                    </a>
+                                </li>
+                                <li >
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/blog">
+                                        Blog & News                                    </a>
+                                </li>
+                                <li >
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/gallery">
+                                        GALLERY                                    </a>
+                                </li>
+                                <li >
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/event">
+                                        EVENTS                                    </a>
+                                </li>
+                                </li>
+                                <li >
+                                    <a href="http://localhost/uranus-unani-hospital/index.php/home/contact1">
+                                        Contact                                    </a>
+                                </li>
 
-        <div class="sticky">
-            <div class="container">
+                                <li class="shop-cart" ><a href="http://localhost/uranus-unani-hospital/index.php/home/cart_checkout"><i class="fa fa-shopping-cart"></i></a> <span class="numb">0</span>
 
-                <!-- Nav -->
+                                </li>
+                                <li class="search-nav"><a href="#."><i class="fa fa-search"></i></a>
+                                    <ul class="dropdown">
+                                        <li class="row">
+                                            <form action="http://localhost/uranus-unani-hospital/index.php/home/search_cate" class="form-horizontal" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+<input type="hidden" name="csrf_test_name" value="314dc7f5d2c540850974699e3f7292f7" style="display:none;" />
+                                            <div class="col-sm-4 no-padding">
+                                                <select class="selectpicker">
+                                                    <option>CLEAN</option>
+                                                    <option>GLOW</option>
+                                                    <option>ENERGY</option>
+                                                    <option>HEAL YOUR GUT</option>
 
-
-                <nav class="webimenu">
-                    <!-- MENU BUTTON RESPONSIVE -->
-                    <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
-                    <ul class="ownmenu">
-
-                        <li class="logo1"><a href="http://localhost/uranus-unani-hospital/index.php/home/home"><img src="images/logo.png" alt="logo"></a></li>
-                        <li><a href="#">HOME</a></li>
-
-                        <li>
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/about_us">
-                                ABOUT US                            </a>
-                        </li>
-                        <li >
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/shop">
-                                Drinks                            </a>
-                        </li>
-                        <li >
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/faq1">
-                                Faq                            </a>
-                        </li>
-                        <li >
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/blog">
-                                Blog & News                            </a>
-                        </li>
-                        <li >
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/gallery">
-                                GALLERY                            </a>
-                        </li>
-                        <li >
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/event">
-                                EVENTS                            </a>
-                        </li>
-                            <!--======= MEGA MENU =========-->
-
-                        </li>
-                        <li >
-                            <a href="http://localhost/uranus-unani-hospital/index.php/home/contact1">
-                                Contact                            </a>
-                        </li>
-
-                        <!--======= Shopping Cart =========-->
-                        <li class="shop-cart" ><a href="http://localhost/uranus-unani-hospital/index.php/home/cart_checkout"><i class="fa fa-shopping-cart"></i></a> <span class="numb">0</span>
-
-                        </li>
-                        <!--======= SEARCH ICON =========-->
-                        <li class="search-nav"><a href="#."><i class="fa fa-search"></i></a>
-                            <ul class="dropdown">
-                                <li class="row">
-                                    <form action="http://localhost/uranus-unani-hospital/index.php/home/search_cate" class="form-horizontal" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-<input type="hidden" name="csrf_test_name" value="e3abbc7fde56e133dbae446bb94381cb" style="display:none;" />
-                                    <div class="col-sm-4 no-padding">
-                                        <select class="selectpicker">
-                                            <option>CLEAN</option>
-                                            <option>GLOW</option>
-                                            <option>ENERGY</option>
-                                            <option>HEAL YOUR GUT</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-8 no-padding">
-                                        <input type="search" name="search" class="form-control" placeholder="Search Here">
-<!--                                        <input type="submit" class="fa fa-search">-->
-                                        <button type="submit"> <i class="fa fa-search"></i> </button>
-
-                                    </div>
-        </form>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-8 no-padding">
+                                                <input type="search" name="search" class="form-control" placeholder="Search Here">
+                                                <button type="submit"> <i class="fa fa-search"></i> </button>
+                                            </div>
+                                            </form>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-
-                </nav>
-
-            </div>
-            <div class="container-fluid">
-                <div class="top-bar2">
-
+                        </nav>
+                    </div>
                 </div>
+                <div class="container-fluid">
+                    <div class="top-bar2">
+
+                    </div>
+                </div>
+
+            </header>
+            <!-- Header End -->
+            <div class="ertyuiop"
+                 messenger_app_id="321487368309978"
+                 page_id="122420508297898"
+                 color="blue"
+                 style="position: fixed; bottom: -10px; z-index: 10000; right: -4px;"
+                 size="large">
+                <a target="_blank" href="https://m.me/122420508297898" >  <img src="http://localhost/uranus-unani-hospital/images/fb.png"> </a>
             </div>
+            <!--======= HOME MAIN SLIDER =========-->
+            <section class="home-slider">
+                <div class="tp-banner-container">
+                    <div class="tp-banner" >
+                        <ul>
 
-    </header>
-    <!-- Header End -->
-    <div class="ertyuiop"
-         messenger_app_id="321487368309978"
-         page_id="122420508297898"
-         color="blue"
-         style="position: fixed; bottom: -10px; z-index: 10000; right: -4px;"
-         size="large">
-        <a target="_blank" href="https://m.me/122420508297898" >  <img src="http://localhost/uranus-unani-hospital/images/fb.png"> </a>
-    </div>
-    <!--======= HOME MAIN SLIDER =========-->
-    <section class="home-slider">
-        <div class="tp-banner-container">
-            <div class="tp-banner" >
-                <ul>
+                            <!-- Slider 1 -->
+                            <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-1.jpg" data-bgposition="center top img-responsive" alt="" />
+                                <div class="overlay"></div>
+                                <!-- Layer -->
 
-                    <!-- Slider 1 -->
-                    <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-4.jpg" data-bgposition="center top img-responsive" alt="" />
-                        <div class="overlay"></div>
-                        <!-- Layer -->
+                                <!-- Layer -->
+                                <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="300"
+                                     data-speed="700"
+                                     data-start="2700"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 36px; text-transform: uppercase;"> </div>
 
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="300"
-                             data-speed="700"
-                             data-start="2700"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 36px; text-transform: uppercase;"> </div>
+                                <!-- Layer -->
+                                <div class="tp-caption sft font-montserrat  tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="270"
+                                     data-speed="720"
+                                     data-start="3200"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 50px; text-transform: uppercase; font-weight: bold;">ADVANCED UNANI CARE TREATMENTS
+                                </div>
 
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat  tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="270"
-                             data-speed="720"
-                             data-start="3200"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 70px; text-transform: uppercase; font-weight: bold;">100% Fresh &amp; Natural </div>
+                                <!-- Layer -->
+                                <div class="tp-caption sft tp-resizeme font-montserrat rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="380"
+                                     data-speed="1500"
+                                     data-start="3200"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-easing="Back.easeOut"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;">BEST ISO-CERTIFIED UNANI HOSPITAL</div>
 
+                                <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="680"
+                                     data-speed="1500"
+                                     data-start="3200"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;"></div>
 
+                                <!-- Layer -->
+                                <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="440"
+                                     data-speed="700"
+                                     data-start="4000"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"> </div>
+                            </li>
 
+                            <!-- Slider 2 -->
+                            <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-2.jpg" data-bgposition="center top img-responsive" alt="" />
+                                <div class="overlay"></div>
+                                <!-- Layer -->
 
-                        <!-- Layer -->
-                        <div class="tp-caption sft tp-resizeme font-montserrat rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="380"
-                             data-speed="1500"
-                             data-start="3200"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-easing="Back.easeOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;">cold press juices</div>
+                                <!-- Layer -->
+                                <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="450"
+                                     data-speed="700"
+                                     data-start="2700"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 36px; text-transform: uppercase;">  </div>
 
-                        <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="680"
-                             data-speed="1500"
-                             data-start="3200"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;"></div>
+                                <!-- Layer -->
+                                <div class="tp-caption sft font-montserrat  tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="270"
+                                     data-speed="720"
+                                     data-start="3200"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 50px; text-transform: uppercase; font-weight: bold;"> THE BEST UNANI TREATMENT HUB IN KERALA
+                                </div>
 
-                        <!-- Layer -->
-                        <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="440"
-                             data-speed="700"
-                             data-start="4000"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"> <a href="http://localhost/uranus-unani-hospital/index.php/home/shop" class="btn">Shop Now</a> </div>
-                    </li>
+                                <!-- Layer -->
+                                <div class="tp-caption sft tp-resizeme font-montserrat rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="380"
+                                     data-speed="1500"
+                                     data-start="3200"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-easing="Back.easeOut"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;">FIRST FULL-FLEDGED UNANI HOSPITAL</div>
 
-                    <!-- Slider 2 -->
-                    <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-5.jpg" data-bgposition="center top img-responsive" alt="" />
-                        <div class="overlay"></div>
-                        <!-- Layer -->
+                                <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="680"
+                                     data-speed="1500"
+                                     data-start="3200"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"
+                                     style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;"></div>
 
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="450"
-                             data-speed="700"
-                             data-start="2700"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 36px; text-transform: uppercase;">  </div>
+                                <!-- Layer -->
+                                <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
+                                     data-x="center"
+                                     data-y="440"
+                                     data-speed="700"
+                                     data-start="4000"
+                                     data-easing="easeOutBack"
+                                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                     data-splitin="none"
+                                     data-splitout="none"
+                                     data-elementdelay="0.1"
+                                     data-endelementdelay="0.1"
+                                     data-endspeed="300"
+                                     data-captionhidden="on"> </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-                        <!-- Layer -->
-                        <div class="tp-caption sft font-montserrat  tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="270"
-                             data-speed="720"
-                             data-start="3200"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 70px; text-transform: uppercase; font-weight: bold;"> Fill Your Cravings   </div>
+            <div class="content">
+                <section class="section-p-30px add_block_2">
+                    <div class="container-fluid">
+                        <ul class="row">
+                                                            <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
+                                    <a href="http://www.rawsqueezed.com/index.php/home/image_details/32/1">
+                                        <img src="uploads/discount_image/discount_9.jpg" alt=""/>
+                                    </a> 
+                                </li>            
+                                                            <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
+                                    <a href="http://www.rawsqueezed.com/index.php/home/offer">
+                                        <img src="uploads/discount_image/discount_6.jpg" alt=""/>
+                                    </a> 
+                                </li>            
+                                                            <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
+                                    <a href="http://www.rawsqueezed.com/index.php/home/offer">
+                                        <img src="uploads/discount_image/discount_4.jpg" alt=""/>
+                                    </a> 
+                                </li>            
+                                                    </ul>
+                    </div>
+                </section>
 
+                <section class="section-p-30px popurlar_product">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12  animate fadeInUp" data-wow-delay="0.4s">                               
+                                <div class="tittle">
+                                    <h5>SERVICES</h5>
+                                    <p>Our Special</p>
+                                </div>
+                            </div>
 
-
-
-                        <!-- Layer -->
-                        <div class="tp-caption sft tp-resizeme font-montserrat rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="380"
-                             data-speed="1500"
-                             data-start="3200"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-easing="Back.easeOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;">With Health Raw Juices</div>
-
-                        <div class="tp-caption sfb  font-playfair text-center tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="680"
-                             data-speed="1500"
-                             data-start="3200"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"
-                             style="color: #fff; font-size: 18px; text-transform: uppercase; font-weight: bold;  letter-spacing:3px;"></div>
-
-                        <!-- Layer -->
-                        <div class="tp-caption sfb tp-resizeme rs-parallaxlevel-4"
-                             data-x="center"
-                             data-y="440"
-                             data-speed="700"
-                             data-start="4000"
-                             data-easing="easeOutBack"
-                             data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.1"
-                             data-endelementdelay="0.1"
-                             data-endspeed="300"
-                             data-captionhidden="on"> <a href="http://localhost/uranus-unani-hospital/index.php/home/shop" class="btn">Shop Now</a> </div>
-                    </li>
-
-                    <!-- Slider 3 -->
-
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTENT START -->
-    <div class="content">
-
-        <!--======= Add Blocks =========-->
-        <section class="section-p-30px add_block_2">
-
-            <div class="container-fluid">
-
-                <ul class="row">
-                                        <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
-                        <a href="http://www.rawsqueezed.com/index.php/home/image_details/32/1">
-                            <img src="uploads/discount_image/discount_9.jpg" alt=""/>
-                        </a> </li>
-<!--                    <li class="col-sm-4 animate fadeInRight" data-wow-delay="0.4s"> <a href="#."><img src="images/add_block_2.jpg" alt=""></a> </li>-->
-<!--                    <li class="col-sm-4 animate fadeInRight" data-wow-delay="0.4s"> <a href="#."><img src="images/add_block_2.jpg" alt=""></a> </li>-->
-                                        <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
-                        <a href="http://www.rawsqueezed.com/index.php/home/offer">
-                            <img src="uploads/discount_image/discount_6.jpg" alt=""/>
-                        </a> </li>
-<!--                    <li class="col-sm-4 animate fadeInRight" data-wow-delay="0.4s"> <a href="#."><img src="images/add_block_2.jpg" alt=""></a> </li>-->
-<!--                    <li class="col-sm-4 animate fadeInRight" data-wow-delay="0.4s"> <a href="#."><img src="images/add_block_2.jpg" alt=""></a> </li>-->
-                                        <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
-                        <a href="http://www.rawsqueezed.com/index.php/home/offer">
-                            <img src="uploads/discount_image/discount_4.jpg" alt=""/>
-                        </a> </li>
-<!--                    <li class="col-sm-4 animate fadeInRight" data-wow-delay="0.4s"> <a href="#."><img src="images/add_block_2.jpg" alt=""></a> </li>-->
-<!--                    <li class="col-sm-4 animate fadeInRight" data-wow-delay="0.4s"> <a href="#."><img src="images/add_block_2.jpg" alt=""></a> </li>-->
-                                    </ul>
-
-            </div>
-
-        </section>
-
-
-
-        <!--======= Popurlar Product =========-->
-        <section class="section-p-30px popurlar_product">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Popurlar Product 1 -->
-                    <div class="col-md-12  animate fadeInUp" data-wow-delay="0.4s">
-                        <!-- Popurlar Tittke -->
-                        <div class="tittle">
-                            <h5>NEW ARRIVALS</h5>
-                            <p>Latest Products</p>
+                                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >                                   
+                                    <div class="items-in">                                      
+                                        <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/47/8">
+                                            <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >                                   
+                                    <div class="items-in">                                      
+                                        <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/46/8">
+                                            <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >                                   
+                                    <div class="items-in">                                      
+                                        <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/45/8">
+                                            <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >                                   
+                                    <div class="items-in">                                      
+                                        <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/44/8">
+                                            <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
+                                        </a>
+                                    </div>
+                                </div>
+                              
                         </div>
                     </div>
+                </section>
+                <!--======= COLLECTION =========-->
+                <section class="section-p-30px collection-adds">
+                    <div class="container">
+                        <ul class="row">
 
+                            <!-- Collection Add -->
+                            <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.4s">
+                                <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate "> <img class="img-responsive" src="images/collection-img-1.jpg" alt=""> <span>CLEAN</span> </a> </div>
+                            </li>
 
-                    <!-- Popurlar Slider -->
-                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >
-                            <!-- col-2 -->
-                            <div class="items-in">
-                                <!-- Image -->
-                                <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/47/8">
-                                    <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
-                                </a>
-                                <div class="hot-tag"> NEW </div>
-                                <!-- Hover Details -->
+                            <!-- Collection Add -->
+                            <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.6s">
+                                <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate"> <img class="img-responsive" src="images/collection-img-2.jpg" alt=""> <span>GLOW</span> </a> </div>
+                            </li>
 
+                            <!-- Collection Add -->
+                            <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.4s">
+                                <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate"> <img class="img-responsive" src="images/collection-img-3.jpg" alt=""> <span>ENERGY</span> </a> </div>
+                            </li>
 
+                            <!-- Collection Add -->
+                            <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.6s">
+                                <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate"> <img class="img-responsive" src="images/collection-img-4.jpg" alt=""> <span>HEAL YOUR GUT</span> </a> </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
 
-                                <a class="over-item" href="http://localhost/uranus-unani-hospital/index.php/home/image_details/47/8"></a>
-
-
-
-                                <!-- Item Name -->
-                                <div class="details-sec"> <a href="#.">Root Green</a> <span class="font-montserrat"> <i class="fa fa-inr" aria-hidden="true"></i> 220.00</span> </div>
-
-                            </div>
+                <!--======= video =========-->
+                <section class="video-part animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.7">
+                    <div class="overlay">
+                        <h4>Watch Our Video</h4>
+                        <a href="#" class="video-btn popup-vedio"><i class="ion-android-arrow-dropright-circle"></i></a>
+                        <a href="#" class="link popup-vedio video-btn"></a>     
+                    </div>
+                </section>
+                <section class="section-p-30px ">
+                    <div class="container text-center">
+                        <div class="row">                            
                         </div>
-                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >
-                            <!-- col-2 -->
-                            <div class="items-in">
-                                <!-- Image -->
-                                <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/46/8">
-                                    <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
-                                </a>
-                                <div class="hot-tag"> NEW </div>
-                                <!-- Hover Details -->
+                    </div>
+                </section>
 
-
-
-                                <a class="over-item" href="http://localhost/uranus-unani-hospital/index.php/home/image_details/46/8"></a>
-
-
-
-                                <!-- Item Name -->
-                                <div class="details-sec"> <a href="#.">Aloe Green</a> <span class="font-montserrat"> <i class="fa fa-inr" aria-hidden="true"></i> 210.00</span> </div>
-
+                <!--======= Testimonial  =========-->
+                <section class="about-sebian bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
+                    <div class="section-p-60px overlay ">
+                        <div class="container">
+                            <div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
+                                <h5>Testimonial</h5>
+                                <p>What Customer Say?</p>
                             </div>
-                        </div>
-                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >
-                            <!-- col-2 -->
-                            <div class="items-in">
-                                <!-- Image -->
-                                <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/45/8">
-                                    <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
-                                </a>
-                                <div class="hot-tag"> NEW </div>
-                                <!-- Hover Details -->
-
-
-
-                                <a class="over-item" href="http://localhost/uranus-unani-hospital/index.php/home/image_details/45/8"></a>
-
-
-
-                                <!-- Item Name -->
-                                <div class="details-sec"> <a href="#.">Tender Green</a> <span class="font-montserrat"> <i class="fa fa-inr" aria-hidden="true"></i> 220.00</span> </div>
-
-                            </div>
-                        </div>
-                                            <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >
-                            <!-- col-2 -->
-                            <div class="items-in">
-                                <!-- Image -->
-                                <a href="http://localhost/uranus-unani-hospital/index.php/home/image_details/44/8">
-                                    <img  src="http://localhost/uranus-unani-hospital/uploads/product_image/default.jpg" alt=""/>
-                                </a>
-                                <div class="hot-tag"> NEW </div>
-                                <!-- Hover Details -->
-
-
-
-                                <a class="over-item" href="http://localhost/uranus-unani-hospital/index.php/home/image_details/44/8"></a>
-
-
-
-                                <!-- Item Name -->
-                                <div class="details-sec"> <a href="#.">Clean Green</a> <span class="font-montserrat"> <i class="fa fa-inr" aria-hidden="true"></i> 220.00</span> </div>
-
-                            </div>
-                        </div>
-                    
-                    <!-- col-2 -->
-
-
-                    <!-- col-3 -->
-
-                    <!-- col-4 -->
-
-                </div>
-
-
-            </div>
-        </section>
-    <!--======= COLLECRION =========-->
-    <section class="section-p-30px collection-adds">
-        <div class="container">
-            <ul class="row">
-
-                <!-- Collection Add -->
-                <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.4s">
-                    <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate "> <img class="img-responsive" src="images/collection-img-1.jpg" alt=""> <span>CLEAN</span> </a> </div>
-                </li>
-
-                <!-- Collection Add -->
-                <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.6s">
-                    <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate"> <img class="img-responsive" src="images/collection-img-2.jpg" alt=""> <span>GLOW</span> </a> </div>
-                </li>
-
-                <!-- Collection Add -->
-                <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.4s">
-                    <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate"> <img class="img-responsive" src="images/collection-img-3.jpg" alt=""> <span>ENERGY</span> </a> </div>
-                </li>
-
-                <!-- Collection Add -->
-                <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.6s">
-                    <div class="inn-sec"> <a href="http://localhost/uranus-unani-hospital/index.php/home/cate"> <img class="img-responsive" src="images/collection-img-4.jpg" alt=""> <span>HEAL YOUR GUT</span> </a> </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!--======= video =========-->
-    <section class="video-part animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.7">
-        <div class="overlay">
-            <h4>Watch Our Video</h4>
-            <a href="#" class="video-btn popup-vedio"><i class="ion-android-arrow-dropright-circle"></i></a>
-
-            <!--  Video Section -->
-            <a href="#" class="link popup-vedio video-btn"></a>
-
-            <!--======= POPUP VIDEO START =========-->
-<!--            <div id="pop-open" class="zoom-anim-dialog mfp-hide pop-open-style">-->
-<!--                <div class="pop_up">-->
-<!--                    <div class="video">-->
-<!--                        <!--  Video Link -->-->
-<!--                        <iframe src="https://player.vimeo.com/video/7449107"></iframe>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-            <!--======= POPUP VIDEO END =========-->
-
-        </div>
-    </section>
-    <section class="section-p-30px ">
-        <div class="container text-center">
-            <div class="row">
-                <div class="tittle">
-                    <h5>WHY COLD PRESS?</h5>
-
-                </div>
-                <div class="col-sm-12 animate fadeInLeft" data-wow-delay="0.4s">
-                    <div class="logo1 "> <img class="img-responsive"src="images/arow.jpg" alt=""> </div>
-                </div>
-                <div class="col-sm-12 animate fadeInRight" data-wow-delay="0.4s">
-                    <div ><img class="img-responsive" src="images/why.jpg" alt=""> </div>
-                </div>
-                <div class="col-sm-12 animate fadeInLeft text-center" data-wow-delay="0.4s">
-                    <p>Your daily target of  vegetables and fruits is 6-8 servings per day.But most of us are malnourished because With cold pressed juices which are made-to-order by using machines
-                    </p>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <!--======= Testimonial  =========-->
-    <section class="about-sebian bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
-        <div class="section-p-60px overlay ">
-            <div class="container">
-
-                <!--  Tittle -->
-                <!--  Tittle -->
-                <div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
-                    <h5>Testimonial</h5>
-                    <p>What Customer Say?</p>
-                </div>
-
-                <!--  Intro Text  -->
-
-                <div class="clients-about-in">
-
-                    <li>
-                    <!--  What People Says -->
-                    <div class="clients-about-slider animate fadeInUp" data-wow-delay="0.4s">
-                                                <!--  Slide 1 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Avatar -->
-                                <div class="avatar">
-                                    <img class="media-object" src="http://localhost/uranus-unani-hospital/uploads/testimonial_image/default.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <!--  Text -->
-                            <div class="media-body">
-                                <p>"Excellent ... Nothing more nothing less. Cold pressing is relatively new concept .These guys have taken a bold step by making it available in a tier 3 city like Cochin . Please do encourage them"</p>
-                                <hr>
-                                <h6>Vimal Joy</h6>
-                                <span>Asst. Manager at Federal Bank</span> </div>
-                        </div>
-                                                <!--  Slide 1 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Avatar -->
-                                <div class="avatar">
-                                    <img class="media-object" src="http://localhost/uranus-unani-hospital/uploads/testimonial_image/default.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <!--  Text -->
-                            <div class="media-body">
-                                <p>I actually experienced a remarkable improvement in my complexion and reduction in my hair fall! I am thoroughly impressed with the product as well as the fantastic team behind it!"</p>
-                                <hr>
-                                <h6>Teenu Terrence</h6>
-                                <span>Food Blogger</span> </div>
-                        </div>
-                                                <!--  Slide 1 -->
-                        <div class="media">
-                            <div class="media-left">
-                                <!--  Avatar -->
-                                <div class="avatar">
-                                    <img class="media-object" src="http://localhost/uranus-unani-hospital/uploads/testimonial_image/default.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <!--  Text -->
-                            <div class="media-body">
-                                <p>"RawSqueezed .. It has a range of delicious juices crafted from both fruits and vegetables that are crowd fruits..it's hard to pick just one!!"</p>
-                                <hr>
-                                <h6>Stephy Xavior</h6>
-                                <span>Costume Designer</span> </div>
-                        </div>
+                            <div class="clients-about-in">
+                                <li>
+                                    <div class="clients-about-slider animate fadeInUp" data-wow-delay="0.4s">
+                                                                                    <!--  Slide 1 -->
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <!--  Avatar -->
+                                                    <div class="avatar">
+                                                        <img class="media-object" src="http://localhost/uranus-unani-hospital/uploads/testimonial_image/default.jpg" alt=""/>
+                                                    </div>
+                                                </div>
+                                                <!--  Text -->
+                                                <div class="media-body">
+                                                    <p>"Excellent ... Nothing more nothing less. Cold pressing is relatively new concept .These guys have taken a bold step by making it available in a tier 3 city like Cochin . Please do encourage them"</p>
+                                                    <hr>
+                                                    <h6>Vimal Joy</h6>
+                                                    <span>Asst. Manager at Federal Bank</span> </div>
                                             </div>
+                                                                                    <!--  Slide 1 -->
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <!--  Avatar -->
+                                                    <div class="avatar">
+                                                        <img class="media-object" src="http://localhost/uranus-unani-hospital/uploads/testimonial_image/default.jpg" alt=""/>
+                                                    </div>
+                                                </div>
+                                                <!--  Text -->
+                                                <div class="media-body">
+                                                    <p>I actually experienced a remarkable improvement in my complexion and reduction in my hair fall! I am thoroughly impressed with the product as well as the fantastic team behind it!"</p>
+                                                    <hr>
+                                                    <h6>Teenu Terrence</h6>
+                                                    <span>Food Blogger</span> </div>
+                                            </div>
+                                                                                    <!--  Slide 1 -->
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <!--  Avatar -->
+                                                    <div class="avatar">
+                                                        <img class="media-object" src="http://localhost/uranus-unani-hospital/uploads/testimonial_image/default.jpg" alt=""/>
+                                                    </div>
+                                                </div>
+                                                <!--  Text -->
+                                                <div class="media-body">
+                                                    <p>"RawSqueezed .. It has a range of delicious juices crafted from both fruits and vegetables that are crowd fruits..it's hard to pick just one!!"</p>
+                                                    <hr>
+                                                    <h6>Stephy Xavior</h6>
+                                                    <span>Costume Designer</span> </div>
+                                            </div>
+                                                                            </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--======= end =========-->
-
-    
-    <!--======= Subcribe =========-->
-        <section class="subcribe animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.8">
-            <div class="overlay">
-                <div class="container">
-                    <h4>subscribe</h4>
-                    <!--  Subsribe Form -->
-                    <div class="col-md-7 no-padding pull-right">
-                        <div class="sub-mail">
-                            <form action="http://localhost/uranus-unani-hospital/index.php/home/subs/" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-<input type="hidden" name="csrf_test_name" value="e3abbc7fde56e133dbae446bb94381cb" style="display:none;" />
-                                <input type="email" name="subscribe" placeholder="YOUR EMAIL ADDRESS.." required>
-                                <!--  Button -->
-<!--                            <input type="submit" value="submit">-->
-                                <button type="submit">SUBSCRIBE</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
+                <!--======= end =========-->
 
-
-    <!--======= Popurlar Product =========-->
-
-
-    <!--======= Video Part =========-->
-
-    <!--======= Core Feature =========-->
-
-
-    <!--======= Core Feature =========-->
-
-
-
-</div>
-
-<!--======= Footer =========-->
-    <footer>
-        <div class="container">
-            <div class="text-center"> <a href="#."><img src="images/logo.png" alt=""></a><br>
-                <p class="intro-small margin-t-40">Are you looking for healthy fruit juices that are filled with the wholesome goodness of fresh fruits? Choose from a wide range of fruit juices at Rawsqueezed. Quench your thirst with the most nutritious and refreshing juices.</p>
+                <!--======= Subscribe =========-->
+                <section class="subcribe animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.8">
+                    <div class="overlay">
+                        <div class="container">
+                            <h4>subscribe</h4>
+                            <div class="col-md-7 no-padding pull-right">
+                                <div class="sub-mail">
+                                    <form action="http://localhost/uranus-unani-hospital/index.php/home/subs/" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+<input type="hidden" name="csrf_test_name" value="314dc7f5d2c540850974699e3f7292f7" style="display:none;" />
+                                    <input type="email" name="subscribe" placeholder="YOUR EMAIL ADDRESS.." required>                                   
+                                    <button type="submit">SUBSCRIBE</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>     
             </div>
 
-            <!--  Footer Links -->
-            <div class="footer-link row">
-                <div class="col-md-6">
-                    <ul>
+            <footer>
+                <div class="container">
+                    <div class="text-center"> <a href="#."><img src="images/sitelogo.jpg" alt=""></a><br>
+                        <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
+                    </div>
 
-                        <!--  INFOMATION -->
-                        <li class="col-sm-6">
-                            <h5>INFORMATION</h5>
-                            <ul class="f-links">
-                                <li><a href=""> HOME</a></li>
-                                <li><a href="http://localhost/uranus-unani-hospital/index.php/home/about_us"> ABOUT US</a></li>
-                                <li><a href="http://localhost/uranus-unani-hospital/index.php/home/faq1"> FAQ</a></li>
-                                <li><a href="#."> PRIVACY & POLICY</a></li>
-                                <li><a href="#"> TERMS & CONDITIONS</a></li>
-
+                    <div class="footer-link row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li class="col-sm-4">
+                                    <h5>INFORMATION</h5>
+                                    <ul class="f-links">
+                                        <li><a href=""> HOME</a></li>
+                                        <li><a href="http://localhost/uranus-unani-hospital/index.php/home/about_us"> ABOUT US</a></li>
+                                        <li><a href="http://localhost/uranus-unani-hospital/index.php/home/faq1"> FAQ</a></li>
+                                        <li><a href="#."> PRIVACY & POLICY</a></li>
+                                        <li><a href="#"> TERMS & CONDITIONS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-4">
+                                    <h5>MY ACCOUNT</h5>
+                                    <ul class="f-links">
+                                        <li><a href="http://localhost/uranus-unani-hospital/index.php/home/my_account">MY ACCOUNT</a></li>
+                                        <li><a href="http://localhost/uranus-unani-hospital/index.php/home/login2"> LOGIN</a></li>
+                                        <li><a href="http://localhost/uranus-unani-hospital/index.php/home/cart_checkout"> MY CART</a></li>  
+                                    </ul>
+                                </li>
+                                <li class="col-sm-4">
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
                             </ul>
-                        </li>
+                        </div>
 
-                        <!-- MY ACCOUNT -->
-                        <li class="col-sm-6">
-                            <h5>MY ACCOUNT</h5>
-                            <ul class="f-links">
-                                <li><a href="#.">MY ACCOUNT</a></li>
-                                <li><a href="#."> LOGIN</a></li>
-                                <li><a href="http://localhost/uranus-unani-hospital/index.php/home/cart_checkout"> MY CART</a></li>
-<!--                                <li><a href="#."> WISHLIST</a></li>-->
-<!--                                <li><a href="#."> CHECKOUT</a></li>-->
-                            </ul>
-                        </li>
-                    </ul>
+
+                    </div>
+
+                    <div class="rights">
+                        <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                    </div>
                 </div>
-
-                <!-- Second Row -->
-                <div class="col-md-6">
-                    <ul class="row">
-
-                        <!-- TWITTER -->
-                        <li class="col-sm-6">
-                            <h5>CONTACT US</h5>
-
-                            <p><i class="fa fa-home" aria-hidden="true"></i> Sraddha speciality products, Thykoodam, Vyttila – 682019</p>
-                            <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@rawsqueezed.com</p>
-                            <p><i class="fa fa-phone" aria-hidden="true"></i> +91 7510 150 150</p>
-                        </li>
-
-                        <!-- FLICKR PHOTO -->
-                        <li class="col-sm-6">
-                            <h5>INSTAGRAM PHOTOS</h5>
-                            <ul class="flicker">
-                                <li><a href="https://www.instagram.com/p/BTWZ14KDomT/?taken-by=rawsqueezed"><img src="images/instagram/inst1.jpg" alt=""></a></li>
-                                <li><a href="https://www.instagram.com/p/BTiJf-sjcZ9/?taken-by=rawsqueezed"><img src="images/instagram/inst2.jpg" alt=""></a></li>
-                                <li><a href="https://www.instagram.com/p/BTsnvCEDuLR/?taken-by=rawsqueezed"><img src="images/instagram/inst3.jpg" alt=""></a></li>
-                                <li><a href="https://www.instagram.com/p/BUjYnaJj2wF/?taken-by=rawsqueezed"><img src="images/instagram/inst4.jpg" alt=""></a></li>
-                                <li><a href="https://www.instagram.com/p/BUmAgFEjZXA/?taken-by=rawsqueezed"><img src="images/instagram/inst5.jpg" alt=""></a></li>
-                                <li><a href="https://www.instagram.com/rawsqueezed/"><img src="images/instagram/inst6.jpg" alt=""></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Rights -->
-            <div class="rights">
-                <p>© 2017 Squeezed. All Rights Reserved. Powered By <a href="https://www.FB.com/designershubs"target="blank">D.HUB</a></p>
-            </div>
+            </footer>            
         </div>
-    </footer>
-<!-- GO TO TOP -->
-<!--<a href="#" class="cd-top"><i class="fa fa-angle-up"></i></a>-->
-<!-- GO TO TOP End -->
-</div>
-<!-- Wrap End -->
-<script src="js/jquery-1.11.3.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/own-menu.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.isotope.min.js"></script>
 
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="js/main.js"></script>
-</body>
+        <script src="js/jquery-1.11.3.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/own-menu.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.flexslider-min.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>                
             </div>
-            <!-- /CONTENT AREA -->
-
-            <!-- FOOTER -->
-		
-            <!-- /FOOTER -->
-
-           <!-- <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>-->
-
         </div>
         <!-- /WRAPPER -->
         <script>
@@ -2373,32 +2125,22 @@ a:2:{s:6:"expire";i:1513151674;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 20
 
 
 
-</script>    	        <script>
-            var base_url = "http://localhost/uranus-unani-hospital/";
-        </script>
+</script>
+        <script> var base_url = "http://localhost/uranus-unani-hospital/";</script>
         <script src="http://localhost/uranus-unani-hospital/template/front/js/ajax_method.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/js/bootstrap-notify.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/jquery-ui/jquery-ui.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
-        <!-- JS Global -->
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/superfish/js/superfish.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/jquery.sticky.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/jquery.easing.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/jquery.smoothscroll.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/smooth-scrollbar.min.js"></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/jquery.cookie.js"></script>
-
         <script src="http://localhost/uranus-unani-hospital/template/front/plugins/modernizr.custom.js"></script>
-<!--        <script src="--><!--template/front/modal/js/jquery.active-modals.js"></script>-->
         <script src="http://localhost/uranus-unani-hospital/template/front/js/theme.js"></script>
-
-
-
-
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&key="></script>
         <script src="http://localhost/uranus-unani-hospital/template/front/js/cart.js"></script>
-
-
     </body>
 </html>
