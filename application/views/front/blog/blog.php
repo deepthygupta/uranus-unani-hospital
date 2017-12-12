@@ -73,7 +73,7 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="<?php echo base_url(); ?>index.php/home/blog">
+                                    <a href="#">
                                         <?php echo translate('BLOG & NEWS'); ?>
                                     </a>
                                 </li>
