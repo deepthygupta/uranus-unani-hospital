@@ -656,7 +656,7 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
 
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/admin/event">
-                                <i class="fa fa-tag"></i>
+                                <i class="fa fa-forward"></i>
                                 <span class="menu-title">
                                     Events
                                 </span>
@@ -664,9 +664,17 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
                         </li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/admin/gallery">
-                                <i class="fa fa-tag"></i>
+                                <i class="fa fa-image"></i>
                                 <span class="menu-title">
                                     Gallery
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/admin/team_members">
+                                <i class="fa fa-users"></i>
+                                <span class="menu-title">
+                                    Team Members
                                 </span>
                             </a>
                         </li>
