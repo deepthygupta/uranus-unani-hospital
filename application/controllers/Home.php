@@ -4,18 +4,15 @@ if (!defined('BASEPATH'))
 
 class Home extends CI_Controller
 {
-
-
     function __construct()
     {
         parent::__construct();
-        //$this->output->enable_profiler(TRUE);
         $this->load->database();
         $this->load->library('paypal');
         $this->load->library('twoCheckout_Lib');
         $this->load->library('vouguepay');
         /*cache control*/
-        //ini_set("user_agent","My-Great-Marketplace-App");
+        
         $cache_time = $this->db->get_where('general_settings', array('type' => 'cache_time'))->row()->value;
         if (!$this->input->is_ajax_request()) {
             $this->output->set_header('HTTP/1.0 200 OK');
@@ -50,12 +47,8 @@ class Home extends CI_Controller
 
     /* FUNCTION: Loads Homepage*/
     public function index()
-    {
-        //$this->output->enable_profiler(TRUE);
-        //$page_data['min'] = $this->get_range_lvl('product_id !=', '', "min");
-        //$page_data['max'] = $this->get_range_lvl('product_id !=', '', "max");
-        //$home_style = $this->db->get_where('ui_settings', array('type' => 'home_page_style'))->row()->value;
-        //$page_data['page_name'] = "home/home" . $home_style;
+    {       
+        
         $page_data['asset_page'] = "home";
         $page_data['page_name'] = "home";
         $page_data['is_loggedin'] = $this->session->userdata('user_login');
@@ -3366,7 +3359,7 @@ class Home extends CI_Controller
         $this->session->unset_userdata('refresh_hash');
         $carted = $this->cart->contents();
         if (count($carted) <= 0) {
-            redirect(base_url() . 'index.php/home/home', 'refresh');
+            redirect(base_url() . 'index.php', 'refresh');
         }
 
         if ($para1 == "orders") {

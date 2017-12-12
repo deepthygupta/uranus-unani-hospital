@@ -3,42 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Raw Squeezed || Login </title>
+    <title>Uranus Unani Hospital || Login </title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- FONTS ONLINE -->
+    <meta name="author" content="">    
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-    <!--MAIN STYLE-->
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>css/main.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>css/responsive.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>css/animate.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
+    <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">  
     <link href="css/custom.css" rel="stylesheet" type="text/css">
-
-    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>rs-plugin/css/settings.css" media="screen" />
 
-    <!-- JavaScripts -->
     <script src="<?php echo base_url(); ?>js/modernizr.js"></script>
-
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>images/favicon.ico">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 <body>
-<!-- LOADER ===========================================-->
 <div id="loader">
     <div class="loader">
         <div class="position-center-center"> <img src="<?php echo base_url(); ?>images/preloader.gif" alt="">
@@ -46,16 +29,10 @@
     </div>
 </div>
 
-<!-- Page Wrap -->
 <div id="wrap">
-
-    <!-- Header -->
-    <header class="header-style-2">
-        <!-- Top Bar -->
+    <header class="header-style-2">        
         <div class="top-bar">
             <div class="container">
-                <!-- Language -->
-                <div class="language">  <a href="#.">We deliver across Kochi city</a></div>
                 <div class="top-links">
                     <ul>
                         <?php if ($this->session->userdata('user_login') != 'yes'){ ?>
@@ -67,36 +44,21 @@
                             <li><a href="<?php echo base_url(); ?>index.php/home/logout2">LOGOUT</a></li>
                             <li><a href="<?php echo base_url(); ?>index.php/home/cart_checkout">MY CART</a></li>
                         <?php } ?>
-                        <!--
-                          <li><a href="#.">MY ACCOUNT</a></li>
-                          <li><a href="#.">MY WISHLIST</a></li>
-                        -->
-
-
-                    </ul>
-                    <!-- Social Icons -->
+                    </ul>                    
                     <ul class="social_icons">
-                        <li class="facebook"><a href="https://www.facebook.com/rawsqueezed"><i class="fa fa-facebook"></i> </a></li>
-                        <li class="instagram"><a href=" https://www.instagram.com/rawsqueezed/"><i class="fa fa-instagram"></i> </a></li>
-
+                        <li class="facebook"><a href="https://www.facebook.com/#"><i class="fa fa-facebook"></i> </a></li>
+                        <li class="instagram"><a href=" https://www.instagram.com/#"><i class="fa fa-instagram"></i> </a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Logo -->
-
-
-        <!-- Nav -->
         <div class="sticky">
-            <div class="container">
-                <!-- Nav -->
-                <nav class="webimenu">
-                    <!-- MENU BUTTON RESPONSIVE -->
+            <div class="container">               
+                <nav class="webimenu">                    
                     <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
                     <ul class="ownmenu">
-
-                        <li class="logo1"><a href="<?php echo base_url(); ?>index.php/home/home"><img src="<?php echo base_url(); ?>images/logo-hdr.png" alt="logo"></a></li>
+                        <li class="logo1"><a href="<?php echo base_url(); ?>index.php/home/home"><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt="logo"></a></li>
                         <li>
                             <a href="<?php echo base_url(); ?>index.php/home/home">
                                 <?php echo translate('HOME');?>
