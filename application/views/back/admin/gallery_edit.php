@@ -35,7 +35,7 @@ foreach ($data as $row) {
                                     </span>
                                     <br><br>
                                     <span id="previewImg" >
-                                        <img class="img-responsive" width="100" src="<?php echo $this->crud_model->file_view('event', $row['event_id'], '', '', 'thumb', 'src', '', ''); ?>" >
+                                        <img class="img-responsive" width="100" src="<?php echo $this->crud_model->file_view('gallery', $row['id'], '', '', 'thumb', 'src', '', ''); ?>" >
                                     </span>
                                 </div>
                             </div>
