@@ -1,0 +1,1 @@
+<?php echo "your order has been placed"; ?>
