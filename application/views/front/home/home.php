@@ -62,7 +62,7 @@
                         <nav class="webimenu">
                             <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
                             <ul class="ownmenu">
-                                <li class="logo1"><a href="<?php echo base_url(); ?>index.php/home/home"><img src="images/" alt="logo"></a></li>
+                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/" alt="logo"></a></li>
                                 <li><a href="#">HOME</a></li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/home/about_us">
@@ -101,11 +101,9 @@
                                     </a>
                                 </li>
 
-                                <!--======= Shopping Cart =========-->
                                 <li class="shop-cart" ><a href="<?php echo base_url(); ?>index.php/home/cart_checkout"><i class="fa fa-shopping-cart"></i></a> <span class="numb"><?php echo count($this->cart->contents()); ?></span>
 
                                 </li>
-                                <!--======= SEARCH ICON =========-->
                                 <li class="search-nav"><a href="#."><i class="fa fa-search"></i></a>
                                     <ul class="dropdown">
                                         <li class="row">
@@ -136,11 +134,12 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="container-fluid">
-                        <div class="top-bar2">
+                </div>
+                <div class="container-fluid">
+                    <div class="top-bar2">
 
-                        </div>
                     </div>
+                </div>
 
             </header>
             <!-- Header End -->
@@ -351,7 +350,7 @@
                         </ul>
                     </div>
                 </section>
-            
+
                 <section class="section-p-30px popurlar_product">
                     <div class="container">
                         <div class="row">
