@@ -325,15 +325,15 @@ class Admin extends CI_Controller {
     }
 
     function event($para1 = '', $para2 = '') {
-        if (!$this->crud_model->admin_permission('event')) {           
+        if (!$this->crud_model->admin_permission('event')) {
             redirect(base_url() . 'index.php/admin');
         }
         if ($para1 == 'do_add') {
-            
+
             $data['title'] = $this->input->post('title');
-            $data['event_date'] = $this->input->post('date');    
+            $data['event_date'] = $this->input->post('date');
             $data['body'] = $this->input->post('event_details');
-            $this->db->insert('event', $data);           
+            $this->db->insert('event', $data);
             $id = $this->db->insert_id();
             $this->crud_model->file_up("img", "event", $id, '', '', '.jpg');
             recache();
@@ -342,19 +342,19 @@ class Admin extends CI_Controller {
                         'event_id' => $para2
                     ))->result_array();
             $this->load->view('back/admin/event_edit', $page_data);
-        } elseif ($para1 == "update") {           
+        } elseif ($para1 == "update") {
             $data['title'] = $this->input->post('title');
             $data['event_date'] = $this->input->post('date');
             $data['photo'] = $this->input->post('img');
             $data['body'] = $this->input->post('event_details');
             $this->db->where('event_id', $para2);
-            $this->db->update('event', $data);            
+            $this->db->update('event', $data);
             $this->crud_model->file_up("img", "event", $para2, '', '', '.jpg');
             recache();
-        } elseif ($para1 == 'delete') {            
+        } elseif ($para1 == 'delete') {
             $this->crud_model->file_dlt('event', $para2, '.jpg');
             $this->db->where('event_id', $para2);
-            $this->db->delete('event');            
+            $this->db->delete('event');
             recache();
         } elseif ($para1 == 'list') {
             $this->db->order_by('event_id', 'desc');
@@ -368,18 +368,18 @@ class Admin extends CI_Controller {
             $this->load->view('back/index', $page_data);
         }
     }
-    
-      function gallery($para1 = '', $para2 = '') {
-         
-        if (!$this->crud_model->admin_permission('gallery')) {           
+
+    function gallery($para1 = '', $para2 = '') {
+
+        if (!$this->crud_model->admin_permission('gallery')) {
             redirect(base_url() . 'index.php/admin');
-        } 
+        }
         if ($para1 == 'do_add') {
-            
+
             $data['title'] = $this->input->post('title');
-            $data['date'] = $this->input->post('date');    
+            $data['date'] = $this->input->post('date');
             //$data['image'] = $this->input->post('image');
-            $this->db->insert('gallery', $data);           
+            $this->db->insert('gallery', $data);
             $id = $this->db->insert_id();
             $this->crud_model->file_up("img", "gallery", $id, '', '', '.jpg');
             recache();
@@ -388,18 +388,18 @@ class Admin extends CI_Controller {
                         'id' => $para2
                     ))->result_array();
             $this->load->view('back/admin/gallery_edit', $page_data);
-        } elseif ($para1 == "update") {           
+        } elseif ($para1 == "update") {
             $data['title'] = $this->input->post('title');
             $data['date'] = $this->input->post('date');
             $data['image'] = $this->input->post('image');
             $this->db->where('id', $para2);
-            $this->db->update('gallery', $data);            
+            $this->db->update('gallery', $data);
             $this->crud_model->file_up("img", "gallery", $para2, '', '', '.jpg');
             recache();
-        } elseif ($para1 == 'delete') {            
+        } elseif ($para1 == 'delete') {
             $this->crud_model->file_dlt('gallery', $para2, '.jpg');
             $this->db->where('id', $para2);
-            $this->db->delete('gallery');            
+            $this->db->delete('gallery');
             recache();
         } elseif ($para1 == 'list') {
             $this->db->order_by('id', 'desc');
@@ -410,6 +410,50 @@ class Admin extends CI_Controller {
         } else {
             $page_data['page_name'] = "gallery";
             $page_data['data'] = $this->db->get('gallery')->result_array();
+            $this->load->view('back/index', $page_data);
+        }
+    }
+
+    function team_members($para1 = '', $para2 = '') {
+
+        if (!$this->crud_model->admin_permission('team_members')) {
+            redirect(base_url() . 'index.php/admin');
+        }
+        if ($para1 == 'do_add') {
+            $data['name'] = $this->input->post('name');
+            $data['specialization'] = $this->input->post('specialization');
+            $data['date_added'] = date("Y-m-d");
+            $this->db->insert('team_members', $data);
+            $id = $this->db->insert_id();
+            $this->crud_model->file_up("img", "team_members", $id, '', '', '.jpg');
+            recache();
+        } else if ($para1 == 'edit') {
+            $page_data['data'] = $this->db->get_where('team_members', array(
+                        'id' => $para2
+                    ))->result_array();
+            $this->load->view('back/admin/team_edit', $page_data);
+        } elseif ($para1 == "update") {
+            $data['name'] = $this->input->post('name');
+            $data['specialization'] = $this->input->post('specialization');
+            $data['date_added'] = date("Y-m-d");
+            $this->db->where('id', $para2);
+            $this->db->update('team_members', $data);
+            $this->crud_model->file_up("img", "team_members", $para2, '', '', '.jpg');
+            recache();
+        } elseif ($para1 == 'delete') {
+            $this->crud_model->file_dlt('team_members', $para2, '.jpg');
+            $this->db->where('id', $para2);
+            $this->db->delete('team_members');
+            recache();
+        } elseif ($para1 == 'list') {
+            $this->db->order_by('id', 'desc');
+            $page_data['data'] = $this->db->get('team_members')->result_array();
+            $this->load->view('back/admin/team_list', $page_data);
+        } elseif ($para1 == 'add') {
+            $this->load->view('back/admin/team_add');
+        } else {
+            $page_data['page_name'] = "team_members";
+            $page_data['data'] = $this->db->get('team_members')->result_array();
             $this->load->view('back/index', $page_data);
         }
     }
