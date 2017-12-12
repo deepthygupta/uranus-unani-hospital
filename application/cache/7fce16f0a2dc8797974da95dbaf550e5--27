@@ -1,4 +1,4 @@
-a:2:{s:6:"expire";i:1513137584;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 200 OK";i:1;b:1;}i:1;a:2:{i:0;s:15:"HTTP/1.1 200 OK";i:1;b:1;}i:2;a:2:{i:0;s:44:"Last-Modified: Tue, 12 Dec 2017 03:59:43 GMT";i:1;b:1;}i:3;a:2:{i:0;s:50:"Cache-Control: no-store, no-cache, must-revalidate";i:1;b:1;}i:4;a:2:{i:0;s:40:"Cache-Control: post-check=0, pre-check=0";i:1;b:1;}i:5;a:2:{i:0;s:16:"Pragma: no-cache";i:1;b:1;}}}ENDCI---><!DOCTYPE html>
+a:2:{s:6:"expire";i:1513151674;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 200 OK";i:1;b:1;}i:1;a:2:{i:0;s:15:"HTTP/1.1 200 OK";i:1;b:1;}i:2;a:2:{i:0;s:44:"Last-Modified: Tue, 12 Dec 2017 07:54:34 GMT";i:1;b:1;}i:3;a:2:{i:0;s:50:"Cache-Control: no-store, no-cache, must-revalidate";i:1;b:1;}i:4;a:2:{i:0;s:40:"Cache-Control: post-check=0, pre-check=0";i:1;b:1;}i:5;a:2:{i:0;s:16:"Pragma: no-cache";i:1;b:1;}}}ENDCI---><!DOCTYPE html>
 <html lang="en">
     <head>
     	    	<title>Home || Raw Squeezed</title>
@@ -215,7 +215,7 @@ a:2:{s:6:"expire";i:1513137584;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 20
                             <ul class="dropdown">
                                 <li class="row">
                                     <form action="http://localhost/uranus-unani-hospital/index.php/home/search_cate" class="form-horizontal" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-<input type="hidden" name="csrf_test_name" value="314dc7f5d2c540850974699e3f7292f7" style="display:none;" />
+<input type="hidden" name="csrf_test_name" value="e3abbc7fde56e133dbae446bb94381cb" style="display:none;" />
                                     <div class="col-sm-4 no-padding">
                                         <select class="selectpicker">
                                             <option>CLEAN</option>
@@ -750,7 +750,7 @@ a:2:{s:6:"expire";i:1513137584;s:7:"headers";a:6:{i:0;a:2:{i:0;s:15:"HTTP/1.0 20
                     <div class="col-md-7 no-padding pull-right">
                         <div class="sub-mail">
                             <form action="http://localhost/uranus-unani-hospital/index.php/home/subs/" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-<input type="hidden" name="csrf_test_name" value="314dc7f5d2c540850974699e3f7292f7" style="display:none;" />
+<input type="hidden" name="csrf_test_name" value="e3abbc7fde56e133dbae446bb94381cb" style="display:none;" />
                                 <input type="email" name="subscribe" placeholder="YOUR EMAIL ADDRESS.." required>
                                 <!--  Button -->
 <!--                            <input type="submit" value="submit">-->
