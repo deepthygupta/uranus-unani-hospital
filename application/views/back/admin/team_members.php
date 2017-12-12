@@ -23,6 +23,8 @@
     </div>
 </div>
 <span id="prod"></span>
+
+<script src="jquery-3.2.1.min.js"></script>
 <script>
     var base_url = '<?php echo base_url(); ?>'
     var user_type = 'admin';
@@ -40,5 +42,4 @@
         }
     }
 </script>
-<script src="jquery-3.2.1.min.js"></script>
 

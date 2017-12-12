@@ -4238,6 +4238,12 @@ class Home extends CI_Controller
         $page_data['page_title'] = translate('events');
         $this->load->view('front/index', $page_data);
     }
+    function our_team()
+    {
+        $page_data['page_name'] = 'our_team';
+        $page_data['page_title'] = translate('Our Team');
+        $this->load->view('front/index', $page_data);
+    }
 
    
     function blog_by_cat($para1 = "")
