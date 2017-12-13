@@ -4,12 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Uranus || Home </title>
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <meta name="author" content="">
         <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -35,13 +31,13 @@
         <!--End of Tawk.to Script-->
     </head>
     <body>
-       <!-- <div id="loader">
-            <div class="loader">
-                <div class="position-center-center"> <img src="images/preloader.gif">
-
-                </div>
-            </div>
-        </div>-->
+        <!-- <div id="loader">
+             <div class="loader">
+                 <div class="position-center-center"> <img src="images/preloader.gif">
+ 
+                 </div>
+             </div>
+         </div>-->
 
         <div id="wrap">
             <header class="header">   
@@ -153,27 +149,13 @@
                 </div>
 
             </header>
-            <!-- Header End -->
-            <div class="ertyuiop"
-                 messenger_app_id="<?php echo $this->crud_model->fb_get_appid(); ?>"
-                 page_id="<?php echo $this->crud_model->fb_get_pageid(); ?>"
-                 color="blue"
-                 style="position: fixed; bottom: -10px; z-index: 10000; right: -4px;"
-                 size="large">
-                <a target="_blank" href="https://m.me/<?php echo $this->crud_model->fb_get_pageid(); ?>" >  <img src="<?php echo base_url() ?>images/fb.png"> </a>
-            </div>
-            <!--======= HOME MAIN SLIDER =========-->
+           
             <section class="home-slider">
                 <div class="tp-banner-container">
                     <div class="tp-banner" >
                         <ul>
-
-                            <!-- Slider 1 -->
                             <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-1.jpg" data-bgposition="center top img-responsive" alt="" />
-                                <div class="overlay"></div>
-                                <!-- Layer -->
-
-                                <!-- Layer -->
+                                <div class="overlay"></div>                               
                                 <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4"
                                      data-x="center"
                                      data-y="300"
@@ -389,27 +371,19 @@
                         </div>
                     </div>
                 </section>
-                <!--======= COLLECTION =========-->
+
                 <section class="section-p-30px collection-adds">
                     <div class="container">
                         <ul class="row">
-
-                            <!-- Collection Add -->
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.4s">
                                 <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate "> <img class="img-responsive" src="images/collection-img-1.jpg" alt=""> <span>CLEAN</span> </a> </div>
                             </li>
-
-                            <!-- Collection Add -->
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.6s">
                                 <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate"> <img class="img-responsive" src="images/collection-img-2.jpg" alt=""> <span>GLOW</span> </a> </div>
                             </li>
-
-                            <!-- Collection Add -->
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.4s">
                                 <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate"> <img class="img-responsive" src="images/collection-img-3.jpg" alt=""> <span>ENERGY</span> </a> </div>
                             </li>
-
-                            <!-- Collection Add -->
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.6s">
                                 <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate"> <img class="img-responsive" src="images/collection-img-4.jpg" alt=""> <span>HEAL YOUR GUT</span> </a> </div>
                             </li>
@@ -417,7 +391,6 @@
                     </div>
                 </section>
 
-                <!--======= video =========-->
                 <section class="video-part animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.7">
                     <div class="overlay">
                         <h4>Watch Our Video</h4>
@@ -432,7 +405,6 @@
                     </div>
                 </section>
 
-                <!--======= Testimonial  =========-->
                 <section class="about-sebian bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
                     <div class="section-p-60px overlay ">
                         <div class="container">
@@ -447,15 +419,12 @@
                                         $cate = $this->db->get('testimonial')->result_array();
                                         foreach (array_slice($cate, 0, 3) as $row):
                                             ?>
-                                            <!--  Slide 1 -->
                                             <div class="media">
                                                 <div class="media-left">
-                                                    <!--  Avatar -->
                                                     <div class="avatar">
                                                         <img class="media-object" src="<?php echo $this->crud_model->file_view('testimonial', $row['testimonial_id'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
                                                     </div>
                                                 </div>
-                                                <!--  Text -->
                                                 <div class="media-body">
                                                     <p><?php echo $row['description']; ?></p>
                                                     <hr>
@@ -469,9 +438,6 @@
                         </div>
                     </div>
                 </section>
-                <!--======= end =========-->
-
-                <!--======= Subscribe =========-->
                 <section class="subcribe animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.8">
                     <div class="overlay">
                         <div class="container">

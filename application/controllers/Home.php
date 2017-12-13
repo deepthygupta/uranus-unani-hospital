@@ -1,18 +1,18 @@
 <?php
+
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Home extends CI_Controller
-{
-    function __construct()
-    {
+class Home extends CI_Controller {
+
+    function __construct() {
         parent::__construct();
         $this->load->database();
         $this->load->library('paypal');
         $this->load->library('twoCheckout_Lib');
         $this->load->library('vouguepay');
-        /*cache control*/
-        
+        /* cache control */
+
         $cache_time = $this->db->get_where('general_settings', array('type' => 'cache_time'))->row()->value;
         if (!$this->input->is_ajax_request()) {
             $this->output->set_header('HTTP/1.0 200 OK');
@@ -22,15 +22,15 @@ class Home extends CI_Controller
             $this->output->set_header('Cache-Control: post-check=0, pre-check=0');
             $this->output->set_header('Pragma: no-cache');
             if ($this->router->fetch_method() == 'index' ||
-                $this->router->fetch_method() == 'featured_item' ||
-                $this->router->fetch_method() == 'others_product' ||
-                $this->router->fetch_method() == 'all_brands' ||
-                $this->router->fetch_method() == 'all_category' ||
-                $this->router->fetch_method() == 'all_vendor' ||
-                $this->router->fetch_method() == 'blog' ||
-                $this->router->fetch_method() == 'blog_view' ||
-                $this->router->fetch_method() == 'vendor' ||
-                $this->router->fetch_method() == 'category'
+                    $this->router->fetch_method() == 'featured_item' ||
+                    $this->router->fetch_method() == 'others_product' ||
+                    $this->router->fetch_method() == 'all_brands' ||
+                    $this->router->fetch_method() == 'all_category' ||
+                    $this->router->fetch_method() == 'all_vendor' ||
+                    $this->router->fetch_method() == 'blog' ||
+                    $this->router->fetch_method() == 'blog_view' ||
+                    $this->router->fetch_method() == 'vendor' ||
+                    $this->router->fetch_method() == 'category'
             ) {
                 $this->output->cache($cache_time);
             }
@@ -45,10 +45,10 @@ class Home extends CI_Controller
         //echo $_COOKIE['lang'];
     }
 
-    /* FUNCTION: Loads Homepage*/
-    public function index()
-    {       
-        
+    /* FUNCTION: Loads Homepage */
+
+    public function index() {
+
         $page_data['asset_page'] = "home";
         $page_data['page_name'] = "home";
         $page_data['is_loggedin'] = $this->session->userdata('user_login');
@@ -60,19 +60,16 @@ class Home extends CI_Controller
         // Some code happens here
 
         $this->benchmark->mark('code_end');
-
     }
 
-    function home()
-    {
+    function home() {
 
         $page_data['page_name'] = "home1";
         $page_data['page_title'] = "home";
         $this->load->view('front/index', $page_data);
     }
 
-    function add_count($slug)
-    {
+    function add_count($slug) {
         // load cookie helper
         $this->load->helper('cookie'); // this line will return the cookie which has slug name
         $check_visitor = $this->input->cookie(urldecode($slug), FALSE); // this line will return the visitor ip address
@@ -89,19 +86,16 @@ class Home extends CI_Controller
         }
     }
 
-    function top_bar_right()
-    {
+    function top_bar_right() {
         $this->load->view('front/components/top_bar_right.php');
     }
 
-    function load_portion($page = '')
-    {
+    function load_portion($page = '') {
         $page = str_replace('-', '/', $page);
         $this->load->view('front/' . $page);
     }
 
-    function vendor_profile($para1 = '', $para2 = '')
-    {
+    function vendor_profile($para1 = '', $para2 = '') {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url() . 'index.php/home');
         }
@@ -131,19 +125,19 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Loads Category filter page */
-    function vendor_category($vendor, $para1 = "", $para2 = "", $min = "", $max = "", $text = '')
-    {
+
+    function vendor_category($vendor, $para1 = "", $para2 = "", $min = "", $max = "", $text = '') {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url() . 'index.php/home');
         }
         if ($para2 == "") {
             $page_data['all_products'] = $this->db->get_where('product', array(
-                'category' => $para1
-            ))->result_array();
+                        'category' => $para1
+                    ))->result_array();
         } else if ($para2 != "") {
             $page_data['all_products'] = $this->db->get_where('product', array(
-                'sub_category' => $para2
-            ))->result_array();
+                        'sub_category' => $para2
+                    ))->result_array();
         }
 
         $brand_sub = explode('-', $para2);
@@ -171,13 +165,12 @@ class Home extends CI_Controller
         $page_data['vendor_id'] = $vendor;
         $page_data['text'] = $text;
         $page_data['category_data'] = $this->db->get_where('category', array(
-            'category_id' => $para1
-        ))->result_array();
+                    'category_id' => $para1
+                ))->result_array();
         $this->load->view('front/index', $page_data);
     }
 
-    function vendor_featured($para1 = '', $para2 = '')
-    {
+    function vendor_featured($para1 = '', $para2 = '') {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url() . 'index.php/home');
         }
@@ -249,8 +242,7 @@ class Home extends CI_Controller
         }
     }
 
-    function all_vendor()
-    {
+    function all_vendor() {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url() . 'index.php/home');
         }
@@ -260,23 +252,22 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function vendor($vendor_id)
-    {
+    function vendor($vendor_id) {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url() . 'index.php/home');
         }
         $vendor_system = $this->db->get_where('general_settings', array('type' => 'vendor_system'))->row()->value;
         if ($vendor_system == 'ok' &&
-            $this->db->get_where('vendor', array('vendor_id' => $vendor_id))->row()->status == 'approved'
+                $this->db->get_where('vendor', array('vendor_id' => $vendor_id))->row()->status == 'approved'
         ) {
             $min = $this->get_range_lvl('added_by', '{"type":"vendor","id":"' . $vendor_id . '"}', "min");
             $max = $this->get_range_lvl('added_by', '{"type":"vendor","id":"' . $vendor_id . '"}', "max");
             $this->db->order_by('product_id', 'desc');
             $page_data['featured_data'] = $this->db->get_where('product', array(
-                'featured' => "ok",
-                'status' => 'ok',
-                'added_by' => '{"type":"vendor","id":"' . $vendor_id . '"}'
-            ))->result_array();
+                        'featured' => "ok",
+                        'status' => 'ok',
+                        'added_by' => '{"type":"vendor","id":"' . $vendor_id . '"}'
+                    ))->result_array();
             $page_data['range'] = $min . ';' . $max;
             $page_data['all_category'] = $this->db->get('category')->result_array();
             $page_data['all_sub_category'] = $this->db->get('sub_category')->result_array();
@@ -289,16 +280,13 @@ class Home extends CI_Controller
         }
     }
 
-
-    function surfer_info()
-    {
+    function surfer_info() {
         $this->crud_model->ip_data();
     }
 
-
     /* FUNCTION: Loads Customer Profile Page */
-    function profile($para1 = "", $para2 = "")
-    {
+
+    function profile($para1 = "", $para2 = "") {
         if ($this->session->userdata('user_login') != "yes") {
             redirect(base_url(), 'refresh');
         }
@@ -323,8 +311,8 @@ class Home extends CI_Controller
         } elseif ($para1 == "message_view") {
             $page_data['ticket'] = $para2;
             $page_data['message_data'] = $this->db->get_where('ticket', array(
-                'ticket_id' => $para2
-            ))->result_array();
+                        'ticket_id' => $para2
+                    ))->result_array();
             $this->crud_model->ticket_message_viewed($para2, 'user');
             $this->load->view('front/user/message_view', $page_data);
         } else {
@@ -348,21 +336,20 @@ class Home extends CI_Controller
             $page_data['page_title'] = translate('my_profile');
             $this->load->view('front/index', $page_data);
         }
-        /*$page_data['all_products'] = $this->db->get_where('user', array(
-            'user_id' => $this->session->userdata('user_id')
-        ))->result_array();
-        $page_data['user_info']    = $this->db->get_where('user', array(
-            'user_id' => $this->session->userdata('user_id')
-        ))->result_array();*/
+        /* $page_data['all_products'] = $this->db->get_where('user', array(
+          'user_id' => $this->session->userdata('user_id')
+          ))->result_array();
+          $page_data['user_info']    = $this->db->get_where('user', array(
+          'user_id' => $this->session->userdata('user_id')
+          ))->result_array(); */
     }
 
-    function ticket_message($para1 = '')
-    {
+    function ticket_message($para1 = '') {
         $page_data['page_name'] = "ticket_message";
         $page_data['ticket'] = $para1;
         $page_data['message_data'] = $this->db->get_where('ticket', array(
-            'ticket_id' => $para1
-        ))->result_array();
+                    'ticket_id' => $para1
+                ))->result_array();
         $this->Crud_model->ticket_message_viewed($para1, 'user');
         $page_data['msgs'] = $this->db->get_where('ticket_message', array('ticket_id' => $para1))->result_array();
         $page_data['ticket_id'] = $para1;
@@ -371,8 +358,7 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function ticket_message_add()
-    {
+    function ticket_message_add() {
         $this->load->library('form_validation');
         $safe = 'yes';
         $char = '';
@@ -418,8 +404,7 @@ class Home extends CI_Controller
         }
     }
 
-    function ticket_reply($para1 = '')
-    {
+    function ticket_reply($para1 = '') {
         $this->load->library('form_validation');
         $safe = 'yes';
         $char = '';
@@ -456,8 +441,7 @@ class Home extends CI_Controller
         }
     }
 
-    function ticket_listed($para2 = '')
-    {
+    function ticket_listed($para2 = '') {
         $this->load->library('Ajax_pagination');
 
         $id = $this->session->userdata('user_id');
@@ -506,8 +490,7 @@ class Home extends CI_Controller
         $this->load->view('front/user/ticket_listed', $page_data);
     }
 
-    function order_listed($para2 = '')
-    {
+    function order_listed($para2 = '') {
         $this->load->library('Ajax_pagination');
 
         $id = $this->session->userdata('user_id');
@@ -554,15 +537,15 @@ class Home extends CI_Controller
         $this->load->view('front/user/order_listed', $page_data);
     }
 
-    function wish_listed($para2 = '')
-    {
+    function wish_listed($para2 = '') {
         $this->load->library('Ajax_pagination');
 
         $id = $this->session->userdata('user_id');
         $ids = json_decode($this->db->get_where('user', array('user_id' => $id))->row()->wishlist, true);
         $this->db->where_in('product_id', $ids);
 
-        $config['total_rows'] = $this->db->count_all_results('product');;
+        $config['total_rows'] = $this->db->count_all_results('product');
+        ;
         $config['base_url'] = base_url() . 'index.php/home/wish_listed/';
         $config['per_page'] = 5;
         $config['uri_segment'] = 5;
@@ -605,9 +588,7 @@ class Home extends CI_Controller
         $this->load->view('front/user/wish_listed', $page_data);
     }
 
-
-    function downloads_listed($para2 = '')
-    {
+    function downloads_listed($para2 = '') {
         $this->load->library('Ajax_pagination');
 
         $id = $this->session->userdata('user_id');
@@ -622,7 +603,8 @@ class Home extends CI_Controller
             $this->db->where('product_id', 0);
         }
 
-        $config['total_rows'] = $this->db->count_all_results('product');;
+        $config['total_rows'] = $this->db->count_all_results('product');
+        ;
         $config['base_url'] = base_url() . 'index.php/home/downloads_listed/';
         $config['per_page'] = 5;
         $config['uri_segment'] = 5;
@@ -669,8 +651,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Loads Customer Download */
-    function download($id)
-    {
+
+    function download($id) {
         if ($this->session->userdata('user_login') != "yes") {
             redirect(base_url(), 'refresh');
         }
@@ -678,8 +660,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Loads Customer Download Permission */
-    function can_download($id)
-    {
+
+    function can_download($id) {
         if ($this->session->userdata('user_login') != "yes") {
             redirect(base_url(), 'refresh');
         }
@@ -691,17 +673,17 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Loads Category filter page */
-    function category($para1 = "", $para2 = "", $min = "", $max = "", $text = '')
-    {
+
+    function category($para1 = "", $para2 = "", $min = "", $max = "", $text = '') {
 
         if ($para2 == "") {
             $page_data['all_products'] = $this->db->get_where('product', array(
-                'category' => $para1
-            ))->result_array();
+                        'category' => $para1
+                    ))->result_array();
         } else if ($para2 != "") {
             $page_data['all_products'] = $this->db->get_where('product', array(
-                'sub_category' => $para2
-            ))->result_array();
+                        'sub_category' => $para2
+                    ))->result_array();
         }
 
         if ($para1 == "" || $para1 == "0") {
@@ -738,45 +720,39 @@ class Home extends CI_Controller
         $page_data['cur_category'] = $para1;
         $page_data['text'] = $text;
         $page_data['category_data'] = $this->db->get_where('category', array(
-            'category_id' => $para1
-        ))->result_array();
+                    'category_id' => $para1
+                ))->result_array();
         $this->load->view('front/index', $page_data);
     }
 
-    function all_category()
-    {
+    function all_category() {
         $page_data['page_name'] = "others/all_category";
         $page_data['asset_page'] = "all_category";
         $page_data['page_title'] = translate('all_category');
         $this->load->view('front/index', $page_data);
     }
 
-
-    function about_us()
-    {
+    function about_us() {
         $page_data['page_name'] = "about_us";
         $page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('about');
         $this->load->view('front/index', $page_data);
     }
 
-
-    function shop()
-    {
+    function shop() {
         $page_data['page_name'] = "shop";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('shop');
         $this->load->view('front/index', $page_data);
     }
-    function gallery()
-    {
+
+    function gallery() {
         $page_data['page_name'] = "gallery";
         $page_data['page_title'] = translate('photo_gallery');
         $this->load->view('front/index', $page_data);
     }
 
-    function shop_details($param1 = '')
-    {
+    function shop_details($param1 = '') {
         //$this->db->get('category', $param1);
         $page_data['id'] = $param1;
         $page_data['name'] = $this->db->get_where('category', array('category_id' => $param1))->row()->category_name;
@@ -786,8 +762,7 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function image_details($param1 = '', $param2 = '')
-    {
+    function image_details($param1 = '', $param2 = '') {
         $product_data = $this->db->get_where('product', array('product_id' => $param1, 'status' => 'ok'));
 
         $pin = $this->input->post('pin');
@@ -817,88 +792,77 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function cate($param1 = "")
-    {
+    function cate($param1 = "") {
         $page_data['cate_id'] = $param1;
         $page_data['page_name'] = "shop_collection";
         //$page_data['asset_page'] = "about_us";
         $this->load->view('front/index', $page_data);
     }
 
-    function offer()
-    {
+    function offer() {
         $page_data['page_name'] = "offer";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('offer');
         $this->load->view('front/index', $page_data);
     }
 
-    function faq1()
-    {
+    function faq1() {
         $page_data['page_name'] = "faq";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('faq');
         $this->load->view('front/index', $page_data);
     }
 
-
-    function blog_details($param1 = "")
-    {
+    function blog_details($param1 = "") {
         $page_data['blog_id'] = $param1;
         $page_data['page_name'] = "blog_details";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('blog');
         $this->load->view('front/index', $page_data);
     }
-    function event_details($event_id = "")
-    {
+
+    function event_details($event_id = "") {
         $page_data['event_id'] = $event_id;
         $page_data['page_name'] = "event_details";
         $page_data['page_title'] = translate('Event');
         $this->load->view('front/index', $page_data);
     }
 
-
-    function contact1()
-    {
+    function contact1() {
         $page_data['page_name'] = "contact";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('contact');
         $this->load->view('front/index', $page_data);
     }
 
-    function send_message()
-    {
+    function send_message() {
         $page_data['page_name'] = "contact_us";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('contact');
         $this->load->view('front/index', $page_data);
     }
 
-    function view_cart()
-    {
+    function view_cart() {
         $page_data['page_name'] = "view_cart";
         //$page_data['asset_page'] = "about_us";
         $page_data['page_title'] = translate('cart');
         $this->load->view('front/index', $page_data);
     }
 
-    function my_cart()
-    {
+    function my_cart() {
         //$page_data['blog_id']=$param1;
         $page_data['page_name'] = "mycart";
         //$page_data['asset_page'] = "about_us";
         $this->load->view('front/index', $page_data);
     }
 
-    function login2($para1 = '', $para2 = '')
-    {
+    function login2($para1 = '', $para2 = '') {
         //$page_data['blog_id']=$param1;
         $page_data['page_name'] = "login";
         $page_data['uid'] = $para1;
         $page_data['code'] = $para2;
         $name = $this->db->get_where('user', array('user_id' => $para1,
-            'referral_token' => $para2))->row();
+                    'referral_token' => $para2))->row();
         $full_name = $name->username . ' ' . $name->surname;
         $this->session->set_flashdata('msg', $full_name);
         //$page_data['asset_page'] = "about_us";
@@ -907,13 +871,11 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function curl()
-    {
+    function curl() {
         echo function_exists('curl_version');
     }
 
-    function logout2()
-    {
+    function logout2() {
         $this->crud_model->logout();
         //$page_data['blog_id']=$param1;
         redirect(base_url() . 'index.php/home/home', 'refresh');
@@ -922,8 +884,7 @@ class Home extends CI_Controller
 //        $this->load->view('front/index', $page_data);
     }
 
-    function signup_separate()
-    {
+    function signup_separate() {
         $ref_code = $this->input->post('code');
         $user_id = $this->input->post('user_id');
         $data['username'] = $this->input->post('username');
@@ -962,28 +923,23 @@ class Home extends CI_Controller
             $data['res'] = "The password you re-entered is wrong";
             $data['page_name'] = "login";
             $this->load->view('front/index', $data);
-
         }
 
 
         //$page_data['asset_page'] = "about_us";
-
-
     }
 
-    function reset_password($param1 = '', $param2 = '')
-    {
+    function reset_password($param1 = '', $param2 = '') {
         $data['user_id'] = $param1;
         $data['code'] = $param2;
         $code = $this->db->get_where('user', array('user_id' => $param1))->row()->recover_code;
-        if ($param2 != $code || $param2 == 'recovered' )
+        if ($param2 != $code || $param2 == 'recovered')
             redirect(base_url(), 'refresh');
         $data['page_name'] = "recover_password";
         $this->load->view('front/index', $data);
     }
 
-    function renew_password()
-    {
+    function renew_password() {
         $password = $this->input->post('password');
         $re_password = $this->input->post('re_password');
         $user_id = $this->input->post('user_id');
@@ -993,18 +949,16 @@ class Home extends CI_Controller
         }
     }
 
-    function test($param1 = '', $param2 = '')
-    {
-        $this->sms_model->send_sms('9495401456','test message');
+    function test($param1 = '', $param2 = '') {
+        $this->sms_model->send_sms('9495401456', 'test message');
     }
 
-    function login_seperate()
-    {
+    function login_seperate() {
         $email = $this->input->post('email');
         $password = sha1($this->input->post('password'));
         $query = $this->db->get_where('user', array(
-                'email' => $email,
-                'password' => $password)
+            'email' => $email,
+            'password' => $password)
         );
         if ($query->num_rows() > 0) {
             $this->session->set_userdata('user_login', 'yes');
@@ -1023,8 +977,7 @@ class Home extends CI_Controller
         }
     }
 
-    function procced_checkout()
-    {
+    function procced_checkout() {
 
         //$page_data['blog_id']=$param1;
         //echo 'haaai';
@@ -1041,14 +994,14 @@ class Home extends CI_Controller
 //            redirect(base_url() . 'index.php/home/guest_login1/' , 'refresh');
         } else {
             /*            if ($this->session->userdata('user_login')== 'yes'){
-                            $page_data['msg'] = $this->session->userdata('delivery_note');
-                            $page_data['date'] = $this->session->userdata('delivery_date');
-                            $page_data['user_id']=$this->session->userdata('user_id');
-                            $page_data['page_name'] = "login_details";
-                            $this->load->view('front/index', $page_data);
-                        }*/
-            if ($this->session->userdata('user_login')== 'yes'){
-                redirect(base_url().'index.php/home/user_login','refresh');
+              $page_data['msg'] = $this->session->userdata('delivery_note');
+              $page_data['date'] = $this->session->userdata('delivery_date');
+              $page_data['user_id']=$this->session->userdata('user_id');
+              $page_data['page_name'] = "login_details";
+              $this->load->view('front/index', $page_data);
+              } */
+            if ($this->session->userdata('user_login') == 'yes') {
+                redirect(base_url() . 'index.php/home/user_login', 'refresh');
             }
             $data['msg'] = $this->session->userdata('delivery_note');
             $data['date'] = $this->session->userdata('delivery_date');
@@ -1059,11 +1012,9 @@ class Home extends CI_Controller
             $this->load->view('front/index', $page_data);
 //            redirect(base_url() . 'index.php/home/login1/' , 'refresh');
         }
-
     }
 
-    function guest_login1()
-    {
+    function guest_login1() {
         $data['username'] = $this->input->post('firstname');
         $data['surname'] = $this->input->post('surname');
         $data['address1'] = $this->input->post('address1');
@@ -1079,15 +1030,13 @@ class Home extends CI_Controller
         $this->load->view('front/index', $data);
     }
 
-    function login1()
-    {
+    function login1() {
         $page_data['page_name'] = "proceed_checkout";
         //$page_data['asset_page'] = "about_us";
         $this->load->view('front/index', $page_data);
     }
 
-    function user_login($param1 = '', $param2 = '')
-    {
+    function user_login($param1 = '', $param2 = '') {
         if ($param1 != '' && $param2 != '') {
             $verify = $this->crud_model->email_verification($param2, $param1);
             //echo $verify ;
@@ -1108,17 +1057,17 @@ class Home extends CI_Controller
         $email = $this->input->post('email');
         $password = sha1($this->input->post('password'));
         $query = $this->db->get_where('user', array(
-                'email' => $email,
-                'password' => $password)
+            'email' => $email,
+            'password' => $password)
         );
-        if ($this->session->userdata('user_login')== 'yes'){
+        if ($this->session->userdata('user_login') == 'yes') {
 
             $page_data['msg'] = $this->session->userdata('delivery_note');
             $page_data['date'] = $this->session->userdata('delivery_date');
             $page_data['user_id'] = $this->session->userdata('user_id');
             $page_data['page_name'] = "login_details";
             $this->load->view('front/index', $page_data);
-        }else{
+        } else {
             if ($query->num_rows() > 0) {
                 $page_data['msg'] = $this->input->post('msg');
                 $page_data['date'] = $this->input->post('date');
@@ -1134,23 +1083,21 @@ class Home extends CI_Controller
                 ));
                 $page_data['page_name'] = "login_details";
                 $this->load->view('front/index', $page_data);
-
             } else {
                 $page_data['res'] = "Login Failed";
                 $page_data['page_name'] = "proceed_checkout";
                 $this->load->view('front/index', $page_data);
-
             }
         }
 
         //$page_data['asset_page'] = "about_us";
     }
-    function place_order($param1 = '')
-    {
+
+    function place_order($param1 = '') {
         $rad = $this->input->post('pay');
         $refresh_hash = $this->input->post('refresh_hash');
-        if($this->session->userdata('refresh_hash') == $refresh_hash){
-            redirect(base_url(),'refresh');
+        if ($this->session->userdata('refresh_hash') == $refresh_hash) {
+            redirect(base_url(), 'refresh');
         }
         if ($rad == "cash on delivery") {
             $carted = $this->cart->contents();
@@ -1217,7 +1164,6 @@ class Home extends CI_Controller
 //            $data['delivery_status'] = json_encode($delivery_status);
 //        $data['payment_status'] = json_encode($payment_status);
 //            if($this->session->userdata('refresh') != 'yes'){
-
 //            }
             $data['delivery_status'] = json_encode($delivery_status);
             $data['payment_status'] = json_encode($payment_status);
@@ -1232,9 +1178,9 @@ class Home extends CI_Controller
             $this->email_temp($sale_code);
             //$page_data['asset_page'] = "about_us";
             $this->crud_model->sms_place_order_send($sale_code);
-            if($this->cart->get_coupon() != null)
-                $this->crud_model->coupon_limit_count($this->cart->get_coupon(),true);
-            $this->session->set_userdata('refresh_hash',$refresh_hash);
+            if ($this->cart->get_coupon() != null)
+                $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
+            $this->session->set_userdata('refresh_hash', $refresh_hash);
             $this->load->view('front/index', $page_data);
 
 //            redirect(base_url() . 'index.php/home/pay_now/', 'refresh');
@@ -1307,24 +1253,21 @@ class Home extends CI_Controller
             $page_data['sale_id'] = $sale_id;
             $page_data['user_id'] = $param1;
             //$this->email_temp($data['sale_code']);
-            if($this->cart->get_coupon() != null)
-                $this->crud_model->coupon_limit_count($this->cart->get_coupon(),true);
-            $this->session->set_userdata('refresh_hash',$refresh_hash);
+            if ($this->cart->get_coupon() != null)
+                $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
+            $this->session->set_userdata('refresh_hash', $refresh_hash);
             //$this->email_temp($sale_id,$email);
             redirect(base_url() . 'index.php/home/pay_now/' . $param1, 'refresh');
 //         $page_data['page_name'] = "place_order";
 //         //$page_data['asset_page'] = "about_us";
 //         $this->load->view('front/index', $page_data);
         }
-
-
     }
 
     /**
      * @param string $param1
      */
-    function pay_now($param1 = '')
-    {
+    function pay_now($param1 = '') {
 
 
         $carted = $this->cart->contents();
@@ -1354,14 +1297,10 @@ class Home extends CI_Controller
         $delivery_cust_tel = $this->db->get_where('user', array('user_id' => $param1))->row()->phone;
         $delivery_cust_notes = 'sgfhj';
         //$this->email_temp($sale_code,$this->session->userdata('email'),$this->session->userdata('username'),$this->session->userdata('phone'),$this->session->userdata('address1'));
-
 //        $working_key = '8E3352696228048C6C06F5B10BAB09AB';    //Put in the 32 bit alphanumeric key in the quotes provided here.
-
-
 //        $checksum = getchecksum($merchant_id, $amount, $order_id, $url, $working_key); // Method to generate checksum
 
-        $merchant_data = $this->payment_model->pay_data($amount, $billing_cust_name, $billing_cust_address, $billing_city,
-            $billing_cust_state, $delivery_zip, $delivery_cust_country, $delivery_cust_tel, $billing_cust_email);
+        $merchant_data = $this->payment_model->pay_data($amount, $billing_cust_name, $billing_cust_address, $billing_city, $billing_cust_state, $delivery_zip, $delivery_cust_country, $delivery_cust_tel, $billing_cust_email);
         //echo $merchant_data;
 //        $encrypted_data = encrypt($merchant_data, $working_key); // Method for encrypting the data.
         $page_data['page_name'] = 'ccavRequestHandler';
@@ -1369,16 +1308,14 @@ class Home extends CI_Controller
         //$access_code = 'AVKP69EC67BC03PKCB';
         //$page_data['access_code']=$access_code;
         $this->load->view('front/index', $page_data);
-
     }
 
-    function place_order_guest()
-    {
+    function place_order_guest() {
 
         $rad = $this->input->post('pay');
         $refresh_hash = $this->input->post('refresh_hash');
-        if($this->session->userdata('refresh_hash') == $refresh_hash){
-            redirect(base_url(),'refresh');
+        if ($this->session->userdata('refresh_hash') == $refresh_hash) {
+            redirect(base_url(), 'refresh');
         }
         if ($rad == "cash on delivery") {
             $carted = $this->cart->contents();
@@ -1457,19 +1394,16 @@ class Home extends CI_Controller
             $data['email'] = $email;
 
             // Storing datas to cookie
-
-
 //        $data['user_id'] = $param1;
             $data['page_name'] = "place_order_guest";
             $this->email_temp($sale_code);
             $this->crud_model->sms_place_order_send($sale_code);
 //            $this->cart->destroy();
 //            $this->crud_model->sms_place_order_send($sale_code);
-
             //$page_data['asset_page'] = "about_us";
-            if($this->cart->get_coupon() != null)
-                $this->crud_model->coupon_limit_count($this->cart->get_coupon(),true);
-            $this->session->set_userdata('refresh_hash',$refresh_hash);
+            if ($this->cart->get_coupon() != null)
+                $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
+            $this->session->set_userdata('refresh_hash', $refresh_hash);
             $this->load->view('front/index', $data);
         } else {
 
@@ -1528,7 +1462,6 @@ class Home extends CI_Controller
                 $delivery_status[] = array('admin' => '', 'status' => 'pending', 'delivery_time' => '');
                 $payment_status[] = array('admin' => '', 'status' => 'due');
                 $order_status[] = array('admin' => '', 'status' => 'not confirmed');
-
             }
             $data['sale_code'] = date('Ym', $data['sale_datetime']) . $sale_id;
 
@@ -1560,9 +1493,9 @@ class Home extends CI_Controller
             $this->session->set_userdata('phone', $phone);
             $this->session->set_userdata('email', $email);
             //$this->email_temp($data['sale_code'],$email,$username.' '.$surname,$phone,$add);
-            if($this->cart->get_coupon() != null)
-                $this->crud_model->coupon_limit_count($this->cart->get_coupon(),true);
-            $this->session->set_userdata('refresh_hash',$refresh_hash);
+            if ($this->cart->get_coupon() != null)
+                $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
+            $this->session->set_userdata('refresh_hash', $refresh_hash);
             redirect(base_url() . 'index.php/home/pay_now_guest/', 'refresh');
         }
     }
@@ -1578,8 +1511,7 @@ class Home extends CI_Controller
      * @param string $param7
      * @param string $param8
      */
-    function pay_now_guest()
-    {
+    function pay_now_guest() {
 
 
         $carted = $this->cart->contents();
@@ -1608,15 +1540,10 @@ class Home extends CI_Controller
         $delivery_zip = $this->session->userdata('zip');
         $delivery_cust_tel = $this->session->userdata('phone');
 //        $delivery_cust_notes = 'sgfhj';
-
-
 //        $working_key = '8E3352696228048C6C06F5B10BAB09AB';    //Put in the 32 bit alphanumeric key in the quotes provided here.
-
-
 //        $checksum = getchecksum($merchant_id, $amount, $order_id, $url, $working_key); // Method to generate checksum
 
-        $merchant_data = $this->payment_model->pay_data($amount, $billing_cust_name, $billing_cust_address, $billing_city,
-            $billing_cust_state, $delivery_zip, $delivery_cust_country, $delivery_cust_tel, $billing_cust_email);
+        $merchant_data = $this->payment_model->pay_data($amount, $billing_cust_name, $billing_cust_address, $billing_city, $billing_cust_state, $delivery_zip, $delivery_cust_country, $delivery_cust_tel, $billing_cust_email);
 //        $encrypted_data = encrypt($merchant_data, $working_key); // Method for encrypting the data.
         $page_data['page_name'] = 'ccavRequestHandler';
         $page_data['merchant_data'] = $merchant_data;
@@ -1624,14 +1551,12 @@ class Home extends CI_Controller
         //$access_code = 'AVKP69EC67BC03PKCB';
         //$page_data['access_code']=$access_code;
         $this->load->view('front/index', $page_data);
-
     }
 
-    function response_handler()
-    {
+    function response_handler() {
         //error_reporting(0);
-        if($this->session->userdata('refresh_hash') == 'yes'){
-            redirect(base_url(),'refresh');
+        if ($this->session->userdata('refresh_hash') == 'yes') {
+            redirect(base_url(), 'refresh');
         }
         $workingKey = $this->crud_model->getWorkingKey();        //Working Key should be provided here.
         $encResponse = $this->input->post('encResp');            //This is the response sent by the CCAvenue Server
@@ -1643,9 +1568,10 @@ class Home extends CI_Controller
         $sale_code = '';
         for ($i = 0; $i < $dataSize; $i++) {
             $information = explode('=', $decryptValues[$i]);
-            if ($i == 3) $order_status = $information[1];
-            if ($i == 0) $sale_code = $information[1];
-
+            if ($i == 3)
+                $order_status = $information[1];
+            if ($i == 0)
+                $sale_code = $information[1];
         }
 
         //echo $order_status;
@@ -1658,7 +1584,6 @@ class Home extends CI_Controller
             $this->db->where('sale_code', $sale_code);
             $this->db->update('sale', $status);
             $this->crud_model->sms_place_order_send($sale_code);
-
         }
         $page_data['page_name'] = 'ccavResponseHandler';
         $page_data['order_status'] = $order_status;
@@ -1666,12 +1591,11 @@ class Home extends CI_Controller
         $page_data['decryptValues'] = $decryptValues;
         $page_data['dataSize'] = $dataSize;
         $this->email_temp($sale_code, $order_status);
-        $this->session->set_userdata('refresh_hash','yes');
+        $this->session->set_userdata('refresh_hash', 'yes');
         $this->load->view('front/index', $page_data);
     }
 
-    function user_signup($para1 = '', $para2 = '')
-    {
+    function user_signup($para1 = '', $para2 = '') {
         $code = $this->input->post('code');
         $user_id = $this->input->post('user_id');
         $data['username'] = $this->input->post('firstname');
@@ -1711,14 +1635,11 @@ class Home extends CI_Controller
         }
 
 //        $page_data['page_name'] = "";
-
         //$page_data['asset_page'] = "about_us";
 //        $this->load->view('front/index', $page_data);
     }
 
-
-    function forgot_pswd()
-    {
+    function forgot_pswd() {
 
 
         $page_data['page_name'] = "forgot_password";
@@ -1726,8 +1647,7 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function recover_password()
-    {
+    function recover_password() {
         $email = $this->input->post('email');
         $id = $this->db->get_where('user', array('email' => $email))->row()->user_id;
         $username = $this->db->get_where('user', array('email' => $email))->row()->username;
@@ -1735,10 +1655,8 @@ class Home extends CI_Controller
         if ($query->num_rows() > 0) {
             $code = $this->crud_model->password_recovery($id);
             $link = 'reset_password/' . $id . '/' . $code;
-            $this->email_model->send_email($email, 'Reset yor Password',
-                $this->crud_model->email_template($username, $link, 'CHANGE YOUR PASSWORD'));
+            $this->email_model->send_email($email, 'Reset yor Password', $this->crud_model->email_template($username, $link, 'CHANGE YOUR PASSWORD'));
             echo "success";
-
         } else if ($email == '') {
             echo "email empty";
             //$page_data['asset_page'] = "about_us";
@@ -1771,14 +1689,12 @@ class Home extends CI_Controller
 //                echo 'email_nay';
 //            }
 //        }
-
 //        $page_data['page_name'] = "forgot_password";
         //$page_data['asset_page'] = "about_us";
 //        $this->load->view('front/index', $page_data);
     }
 
-    function my_account_edit()
-    {
+    function my_account_edit() {
         $page_data['username'] = $this->input->post('username');
         $page_data['surname'] = $this->input->post('surname');
         $page_data['email'] = $this->input->post('email');
@@ -1794,11 +1710,9 @@ class Home extends CI_Controller
 
         $page_data['page_name'] = "my_account";
         $this->load->view('front/index', $page_data);
-
     }
 
-    function change_password()
-    {
+    function change_password() {
         if ($this->session->userdata('user_login') != 'yes')
             redirect(base_url() . 'index.php/home');
         $page_data['page_name'] = "change_password";
@@ -1806,8 +1720,7 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function change_password1()
-    {
+    function change_password1() {
         if ($this->session->userdata('user_login') != 'yes')
             redirect(base_url() . 'index.php/home');
         $current_pwd = $this->input->post('current_password');
@@ -1833,11 +1746,9 @@ class Home extends CI_Controller
             $this->load->view('front/index', $page_data);
         }
         $this->db->update('user', $page_data);
-
     }
 
-    function order()
-    {
+    function order() {
         if ($this->session->userdata('user_login') != 'yes')
             redirect(base_url() . 'index.php/home');
         $page_data['page_name'] = "order";
@@ -1845,40 +1756,33 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function my_account()
-    {
-
-        if ($this->session->userdata('user_login') != 'yes')
-            redirect(base_url() . 'index.php/home');
+    function my_account() {
+        if ($this->session->userdata('user_login') != 'yes') {
+            redirect(base_url() . 'index.php');
+        }
         $page_data['page_name'] = "my_account";
-        //$page_data['asset_page'] = "about_us";
         $this->load->view('front/index', $page_data);
     }
 
-    function search_blog()
-    {
+    function search_blog() {
 
         $keyword = $this->input->post('serch');
         $page_data['results'] = $this->mymodel->search($keyword);
         //$this->twig->display('result_view.php',$data);
-
         //$page_data['cate_id'] = $param1;
         $page_data['page_name'] = "blog";
         //$page_data['asset_page'] = "about_us";
         $this->load->view('front/index', $page_data);
     }
 
-    function search_cate()
-    {
+    function search_cate() {
         $a = $this->input->post('search');
         $cate = $this->db->get_where('category', array('category_name' => $a))->row()->category_id;
         $page_data['page_name'] = "shop";
         $this->load->view('front/index', $page_data);
     }
 
-
-    function all_brands()
-    {
+    function all_brands() {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url());
         }
@@ -1888,8 +1792,7 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function faq()
-    {
+    function faq() {
         $page_data['page_name'] = "others/faq";
         $page_data['asset_page'] = "all_category";
         $page_data['page_title'] = translate('frequently_asked_questions');
@@ -1898,8 +1801,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Search Products */
-    function home_search($param = '')
-    {
+
+    function home_search($param = '') {
         $category = $this->input->post('category');
         $this->session->set_userdata('searched_cat', $category);
         if ($param !== 'top') {
@@ -1914,8 +1817,7 @@ class Home extends CI_Controller
         }
     }
 
-    function text_search()
-    {
+    function text_search() {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             $search = $this->input->post('query');
             $category = $this->input->post('category');
@@ -1933,8 +1835,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Check if user logged in */
-    function is_logged()
-    {
+
+    function is_logged() {
         if ($this->session->userdata('user_login') == 'yes') {
             echo 'yah!good';
         } else {
@@ -1942,8 +1844,7 @@ class Home extends CI_Controller
         }
     }
 
-    function ajax_others_product($para1 = "")
-    {
+    function ajax_others_product($para1 = "") {
         $physical_product_activation = $this->db->get_where('general_settings', array('type' => 'physical_product_activation'))->row()->value;
         $digital_product_activation = $this->db->get_where('general_settings', array('type' => 'digital_product_activation'))->row()->value;
         $vendor_system = $this->db->get_where('general_settings', array('type' => 'vendor_system'))->row()->value;
@@ -2037,8 +1938,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Loads Product List */
-    function listed($para1 = "", $para2 = "", $para3 = "")
-    {
+
+    function listed($para1 = "", $para2 = "", $para3 = "") {
         $this->load->library('Ajax_pagination');
         if ($para1 == "click") {
             $physical_product_activation = $this->db->get_where('general_settings', array('type' => 'physical_product_activation'))->row()->value;
@@ -2313,7 +2214,6 @@ class Home extends CI_Controller
             } else {
                 $name = 'All Products';
             }
-
         } elseif ($para1 == "load") {
             $page_data['all_products'] = $this->db->get('product')->result_array();
         }
@@ -2326,10 +2226,9 @@ class Home extends CI_Controller
         $this->load->view('front/product_list/other/listed', $page_data);
     }
 
-
     /* FUNCTION: Loads Custom Pages */
-    function store_locator($parmalink = '')
-    {
+
+    function store_locator($parmalink = '') {
         if ($this->crud_model->get_settings_value('general_settings', 'vendor_system') !== 'ok') {
             redirect(base_url() . 'index.php/home');
         }
@@ -2341,10 +2240,9 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-
     /* FUNCTION: Loads Custom Pages */
-    function page($parmalink = '')
-    {
+
+    function page($parmalink = '') {
         $pagef = $this->db->get_where('page', array(
             'parmalink' => $parmalink
         ));
@@ -2363,10 +2261,9 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-
     /* FUNCTION: Loads Product View Page */
-    function product_view($para1 = "", $para2 = "")
-    {
+
+    function product_view($para1 = "", $para2 = "") {
         $product_data = $this->db->get_where('product', array('product_id' => $para1, 'status' => 'ok'));
 
         $this->db->where('product_id', $para1);
@@ -2390,10 +2287,9 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-
     /* FUNCTION: Loads Product View Page */
-    function quick_view($para1 = "")
-    {
+
+    function quick_view($para1 = "") {
         $product_data = $this->db->get_where('product', array(
             'product_id' => $para1,
             'status' => 'ok'
@@ -2412,23 +2308,23 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Setting Frontend Language */
-    function set_language($lang)
-    {
+
+    function set_language($lang) {
         $this->session->set_userdata('language', $lang);
         $page_data['page_name'] = "home";
         recache();
     }
 
     /* FUNCTION: Setting Frontend Language */
-    function set_currency($currency)
-    {
+
+    function set_currency($currency) {
         $this->session->set_userdata('currency', $currency);
         recache();
     }
 
     /* FUNCTION: Loads Contact Page */
-    function contact($para1 = "")
-    {
+
+    function contact($para1 = "") {
         if ($this->crud_model->get_settings_value('general_settings', 'captcha_status', 'value') == 'ok') {
             $this->load->library('recaptcha');
         }
@@ -2493,8 +2389,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Concerning Login */
-    function vendor_logup($para1 = "", $para2 = "")
-    {
+
+    function vendor_logup($para1 = "", $para2 = "") {
         if ($this->crud_model->get_settings_value('general_settings', 'captcha_status', 'value') == 'ok') {
             $this->load->library('recaptcha');
         }
@@ -2610,11 +2506,9 @@ class Home extends CI_Controller
             $page_data['page_title'] = translate('registration');
             $this->load->view('front/index', $page_data);
         }
-
     }
 
-    function vendor_login_msg()
-    {
+    function vendor_login_msg() {
         $page_data['page_name'] = "vendor/register/login_msg";
         $page_data['asset_page'] = "register";
         $page_data['page_title'] = translate('registration');
@@ -2622,8 +2516,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Concerning Login */
-    function login($para1 = "", $para2 = "")
-    {
+
+    function login($para1 = "", $para2 = "") {
 
 
         $page_data['page_name'] = "login";
@@ -2686,8 +2580,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Setting login page with facebook and google */
-    function login_set($para1 = '', $para2 = '', $para3 = '')
-    {
+
+    function login_set($para1 = '', $para2 = '', $para3 = '') {
         if ($this->session->userdata('user_login') == "yes") {
             redirect(base_url() . 'index.php/home/profile', 'refresh');
         }
@@ -2700,11 +2594,11 @@ class Home extends CI_Controller
         $g_login_set = $this->crud_model->get_settings_value('general_settings', 'g_login_set');
         $page_data = array();
         $appid = $this->db->get_where('general_settings', array(
-            'type' => 'fb_appid'
-        ))->row()->value;
+                    'type' => 'fb_appid'
+                ))->row()->value;
         $secret = $this->db->get_where('general_settings', array(
-            'type' => 'fb_secret'
-        ))->row()->value;
+                    'type' => 'fb_secret'
+                ))->row()->value;
         $config = array(
             'appId' => $appid,
             'secret' => $secret
@@ -2735,7 +2629,7 @@ class Home extends CI_Controller
             if ($para1 == 'back') {
                 $user = $this->facebook->api('/me');
                 if ($user_id = $this->crud_model->exists_in_table('user', 'fb_id', $user['id'])) {
-
+                    
                 } else {
                     $data['username'] = $user['first_name'];
                     $data['surname'] = $user['last_name'];
@@ -2751,8 +2645,8 @@ class Home extends CI_Controller
                 $this->session->set_userdata('user_login', 'yes');
                 $this->session->set_userdata('user_id', $user_id);
                 $this->session->set_userdata('user_name', $this->db->get_where('user', array(
-                    'user_id' => $user_id
-                ))->row()->username);
+                            'user_id' => $user_id
+                        ))->row()->username);
                 $this->session->set_flashdata('alert', 'successful_signin');
 
                 $this->db->where('user_id', $user_id);
@@ -2776,7 +2670,7 @@ class Home extends CI_Controller
                 $_SESSION['token'] = $this->googleplus->client->getAccessToken();
                 $g_user = $this->googleplus->people->get('me');
                 if ($user_id = $this->crud_model->exists_in_table('user', 'g_id', $g_user['id'])) {
-
+                    
                 } else {
                     $data['username'] = $g_user['displayName'];
                     $data['email'] = 'required';
@@ -2792,8 +2686,8 @@ class Home extends CI_Controller
                 $this->session->set_userdata('user_login', 'yes');
                 $this->session->set_userdata('user_id', $user_id);
                 $this->session->set_userdata('user_name', $this->db->get_where('user', array(
-                    'user_id' => $user_id
-                ))->row()->username);
+                            'user_id' => $user_id
+                        ))->row()->username);
                 $this->session->set_flashdata('alert', 'successful_signin');
 
                 $this->db->where('user_id', $user_id);
@@ -2810,8 +2704,7 @@ class Home extends CI_Controller
             if (@$_SESSION['token']) {
                 $this->googleplus->client->setAccessToken($_SESSION['token']);
             }
-            if ($this->googleplus->client->getAccessToken()) //already_logged_in
-            {
+            if ($this->googleplus->client->getAccessToken()) { //already_logged_in
                 $page_data['g_user'] = $this->googleplus->people->get('me');
                 $page_data['g_url'] = $this->googleplus->client->createAuthUrl();
                 $_SESSION['token'] = $this->googleplus->client->getAccessToken();
@@ -2845,14 +2738,14 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Logout set */
-    function logout()
-    {
+
+    function logout() {
         $appid = $this->db->get_where('general_settings', array(
-            'type' => 'fb_appid'
-        ))->row()->value;
+                    'type' => 'fb_appid'
+                ))->row()->value;
         $secret = $this->db->get_where('general_settings', array(
-            'type' => 'fb_secret'
-        ))->row()->value;
+                    'type' => 'fb_secret'
+                ))->row()->value;
         $config = array(
             'appId' => $appid,
             'secret' => $secret
@@ -2865,15 +2758,15 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Logout */
-    function logged_out()
-    {
+
+    function logged_out() {
         $this->session->set_flashdata('alert', 'successful_signout');
         redirect(base_url() . 'index.php/home/', 'refresh');
     }
 
     /* FUNCTION: Check if Email user exists */
-    function exists()
-    {
+
+    function exists() {
         $email = $this->input->post('email');
         $user = $this->db->get('user')->result_array();
         $exists = 'no';
@@ -2886,8 +2779,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Newsletter Subscription */
-    function subscribe()
-    {
+
+    function subscribe() {
         $safe = 'yes';
         $char = '';
         foreach ($_POST as $row) {
@@ -2929,9 +2822,9 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: Customer Registration*/
-    function registration($para1 = "", $para2 = "")
-    {
+    /* FUNCTION: Customer Registration */
+
+    function registration($para1 = "", $para2 = "") {
         $safe = 'yes';
         $char = '';
         foreach ($_POST as $k => $row) {
@@ -3053,8 +2946,8 @@ class Home extends CI_Controller
         } else if ($para1 == "update_password") {
             $user_data['password'] = $this->input->post('password');
             $account_data = $this->db->get_where('user', array(
-                'user_id' => $this->session->userdata('user_id')
-            ))->result_array();
+                        'user_id' => $this->session->userdata('user_id')
+                    ))->result_array();
             foreach ($account_data as $row) {
                 if (sha1($user_data['password']) == $row['password']) {
                     if ($this->input->post('password1') == $this->input->post('password2')) {
@@ -3069,7 +2962,6 @@ class Home extends CI_Controller
                     echo translate('wrong_old_password!');
                 }
             }
-
         } else if ($para1 == "change_picture") {
             $id = $this->session->userdata('user_id');
             $this->crud_model->file_up('img', 'user', $id, '', '', '.jpg');
@@ -3079,15 +2971,13 @@ class Home extends CI_Controller
         }
     }
 
-    function error()
-    {
+    function error() {
         $this->load->view('front/others/404_error');
     }
 
+    /* FUNCTION: Product rating */
 
-    /* FUNCTION: Product rating*/
-    function rating($product_id, $rating)
-    {
+    function rating($product_id, $rating) {
         if ($this->session->userdata('user_login') != "yes") {
             redirect(base_url() . 'index.php/home/login/', 'refresh');
         }
@@ -3102,9 +2992,9 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: Concerning Compare*/
-    function compare($para1 = "", $para2 = "")
-    {
+    /* FUNCTION: Concerning Compare */
+
+    function compare($para1 = "", $para2 = "") {
         if ($para1 == 'add') {
             $this->crud_model->add_compare($para2);
         } else if ($para1 == 'remove') {
@@ -3136,20 +3026,18 @@ class Home extends CI_Controller
             $page_data['page_title'] = 'compare';
             $this->load->view('front/index', $page_data);
         }
-
     }
 
-    function cancel_order()
-    {
+    function cancel_order() {
         $this->session->set_userdata('sale_id', '');
         $this->session->set_userdata('couponer', '');
         $this->cart->destroy();
         redirect(base_url(), 'refresh');
     }
 
-    /* FUNCTION: Concering Add, Remove and Updating Cart Items*/
-    function cart($para1 = '', $para2 = '', $para3 = '', $para4 = '')
-    {
+    /* FUNCTION: Concering Add, Remove and Updating Cart Items */
+
+    function cart($para1 = '', $para2 = '', $para3 = '', $para4 = '') {
         $this->cart->product_name_rules = '[:print:]';
         if ($para1 == "add") {
 
@@ -3306,8 +3194,8 @@ class Home extends CI_Controller
                 $filter_val = explode('-', $ship_val); /// created by qpro
                 if ($total < $filter_val[1]) {
                     $shipping = $filter_val[0];
-                } else $shipping = 0;
-
+                } else
+                    $shipping = 0;
             }
             $tax = $this->crud_model->cart_total_it('tax');
 
@@ -3349,13 +3237,11 @@ class Home extends CI_Controller
                 echo json_encode($return);
             }
         }
-
     }
 
+    /* FUNCTION: Loads Cart Checkout Page */
 
-    /* FUNCTION: Loads Cart Checkout Page*/
-    function cart_checkout($para1 = "", $para2 = "")
-    {
+    function cart_checkout($para1 = "", $para2 = "") {
         $this->session->unset_userdata('refresh_hash');
         $carted = $this->cart->contents();
         if (count($carted) <= 0) {
@@ -3384,13 +3270,11 @@ class Home extends CI_Controller
             $page_data['carted'] = $this->cart->contents();
             $this->load->view('front/index', $page_data);
         }
-
     }
 
+    /* FUNCTION: Loads Cart Checkout Page */
 
-    /* FUNCTION: Loads Cart Checkout Page*/
-    function coupon_check()
-    {
+    function coupon_check() {
         $para1 = $this->input->post('code');
         $carted = $this->cart->contents();
         if ($this->crud_model->check_coupon_status($para1) == 'ok' && $this->crud_model->coupon_limit_count($para1) != 0) {
@@ -3474,13 +3358,13 @@ class Home extends CI_Controller
                     echo 'Too many coupon request!';
                 }
             }
-        }else echo 'unavailable';
+        } else
+            echo 'unavailable';
     }
 
+    /* FUNCTION: Finalising Purchase */
 
-    /* FUNCTION: Finalising Purchase*/
-    function cart_finish($para1 = "", $para2 = "")
-    {
+    function cart_finish($para1 = "", $para2 = "") {
         $carted = $this->cart->contents();
         if (count($carted) <= 0) {
             redirect(base_url() . 'index.php/home/', 'refresh');
@@ -3543,7 +3427,7 @@ class Home extends CI_Controller
 
                     $this->session->set_userdata('sale_id', $sale_id);
 
-                    /****TRANSFERRING USER TO PAYPAL TERMINAL****/
+                    /*                     * **TRANSFERRING USER TO PAYPAL TERMINAL*** */
                     $this->paypal->add_field('rm', 2);
                     $this->paypal->add_field('no_note', 0);
                     $this->paypal->add_field('cmd', '_cart');
@@ -3575,7 +3459,6 @@ class Home extends CI_Controller
                     $this->paypal->submit_paypal_post();
                     // submit the fields to paypal
                 }
-
             } else if ($this->input->post('payment_type') == 'c2') {
                 if ($para1 == 'go') {
 
@@ -3629,7 +3512,6 @@ class Home extends CI_Controller
                     $this->twocheckout_lib->submit_form();
                     // submit the fields to paypal
                 }
-
             } else if ($this->input->post('payment_type') == 'vp') {
                 if ($para1 == 'go') {
                     if ($this->session->userdata('user_login') != 'yes') {
@@ -3658,7 +3540,8 @@ class Home extends CI_Controller
                     $payment_status = array();
 
                     $system_title = $this->crud_model->get_settings_value('general_settings', 'system_title', 'value');
-                    $vouguepay_id = $this->crud_model->get_settings_value('business_settings', 'vp_merchant_id', 'value');;
+                    $vouguepay_id = $this->crud_model->get_settings_value('business_settings', 'vp_merchant_id', 'value');
+                    ;
                     $merchant_ref = $sale_id;
 
 
@@ -3679,29 +3562,29 @@ class Home extends CI_Controller
                     $this->session->set_userdata('sale_id', $sale_id);
 
                     /*
-                    <input type='hidden' name='v_merchant_id' value='qa331322179752' />
-                    <input type='hidden' name='merchant_ref' value='234-567-890' />
-                    <input type='hidden' name='memo' value='Bulk order from McAckney Web Shop' />
+                      <input type='hidden' name='v_merchant_id' value='qa331322179752' />
+                      <input type='hidden' name='merchant_ref' value='234-567-890' />
+                      <input type='hidden' name='memo' value='Bulk order from McAckney Web Shop' />
 
-                    <input type='hidden' name='notify_url' value='http://www.mydomain.com/notification.php' />
-                    <input type='hidden' name='success_url' value='http://www.mydomain.com/thank_you.html' />
-                    <input type='hidden' name='fail_url' value='http://www.mydomain.com/failed.html' />
+                      <input type='hidden' name='notify_url' value='http://www.mydomain.com/notification.php' />
+                      <input type='hidden' name='success_url' value='http://www.mydomain.com/thank_you.html' />
+                      <input type='hidden' name='fail_url' value='http://www.mydomain.com/failed.html' />
 
-                    <input type='hidden' name='item_1' value='Face Cap' />
-                    <input type='hidden' name='description_1' value='Blue Zizi facecap' />
-                    <input type='hidden' name='price_1' value='2000' />
+                      <input type='hidden' name='item_1' value='Face Cap' />
+                      <input type='hidden' name='description_1' value='Blue Zizi facecap' />
+                      <input type='hidden' name='price_1' value='2000' />
 
-                    <input type='hidden' name='developer_code' value='pq7778ehh9YbZ' />
-                    <input type='hidden' name='store_id' value='25' />
+                      <input type='hidden' name='developer_code' value='pq7778ehh9YbZ' />
+                      <input type='hidden' name='store_id' value='25' />
 
-                    <input type='hidden' name='total' value='13000' />
+                      <input type='hidden' name='total' value='13000' />
 
-                    <input type='image' src='http://voguepay.com/images/buttons/buynow_blue.png' alt='Submit' />
+                      <input type='image' src='http://voguepay.com/images/buttons/buynow_blue.png' alt='Submit' />
 
-                    </form>
-                    */
+                      </form>
+                     */
 
-                    /****TRANSFERRING USER TO vouguepay TERMINAL****/
+                    /*                     * **TRANSFERRING USER TO vouguepay TERMINAL*** */
                     $this->vouguepay->add_field('v_merchant_id', $vouguepay_id);
                     $this->vouguepay->add_field('merchant_ref', $merchant_ref);
                     $this->vouguepay->add_field('memo', 'Order from ' . $system_title);
@@ -3713,34 +3596,34 @@ class Home extends CI_Controller
                     $shipping = 0;
                     $total = 0;
 
-                    /*foreach ($carted as $val) {
-                        $this->vouguepay->add_field('item_' . $i, $val['name']);
-                        $this->vouguepay->add_field('description_' . $i, ' X '.$val['qty']);
-                        $total += $this->cart->format_number($val['price'] * $val['qty']);
-                        $this->vouguepay->add_field('price_' . $i, $this->cart->format_number(($val['price'] * $val['qty']/$exchange)));
-                        if ($this->crud_model->get_type_name_by_id('business_settings', '3', 'value') == 'product_wise') {
-                            $shipping += $this->cart->format_number((($val['shipping']) * $val['qty']/$exchange));
-                        }
-                        $tax += $this->cart->format_number(($val['tax']/$exchange));
-                        $i++;
-                    }
-                    $this->vouguepay->add_field('item_'.($i+1), 'Shipping');
+                    /* foreach ($carted as $val) {
+                      $this->vouguepay->add_field('item_' . $i, $val['name']);
+                      $this->vouguepay->add_field('description_' . $i, ' X '.$val['qty']);
+                      $total += $this->cart->format_number($val['price'] * $val['qty']);
+                      $this->vouguepay->add_field('price_' . $i, $this->cart->format_number(($val['price'] * $val['qty']/$exchange)));
+                      if ($this->crud_model->get_type_name_by_id('business_settings', '3', 'value') == 'product_wise') {
+                      $shipping += $this->cart->format_number((($val['shipping']) * $val['qty']/$exchange));
+                      }
+                      $tax += $this->cart->format_number(($val['tax']/$exchange));
+                      $i++;
+                      }
+                      $this->vouguepay->add_field('item_'.($i+1), 'Shipping');
 
-                    if ($this->crud_model->get_type_name_by_id('business_settings', '3', 'value') == 'fixed') {
-                        if($this->session->userdata('loc_cost') == ''){
-                            $this->vouguepay->add_field('price_'.($i+1), $this->cart->format_number(($this->crud_model->get_type_name_by_id('business_settings', '2', 'value') / $exchange)));
-                        } else {
-                            $this->vouguepay->add_field('price_'.($i+1), $this->cart->format_number(($this->session->userdata('loc_cost') / $exchange)));
-                        }
-                    } else {
-                        $this->vouguepay->add_field('price_'.($i+1), $shipping/$exchange);
-                    }
+                      if ($this->crud_model->get_type_name_by_id('business_settings', '3', 'value') == 'fixed') {
+                      if($this->session->userdata('loc_cost') == ''){
+                      $this->vouguepay->add_field('price_'.($i+1), $this->cart->format_number(($this->crud_model->get_type_name_by_id('business_settings', '2', 'value') / $exchange)));
+                      } else {
+                      $this->vouguepay->add_field('price_'.($i+1), $this->cart->format_number(($this->session->userdata('loc_cost') / $exchange)));
+                      }
+                      } else {
+                      $this->vouguepay->add_field('price_'.($i+1), $shipping/$exchange);
+                      }
 
-                    $this->vouguepay->add_field('item_'.($i+2), 'Tax');
-                    $this->vouguepay->add_field('price_'.($i+2), $tax);
+                      $this->vouguepay->add_field('item_'.($i+2), 'Tax');
+                      $this->vouguepay->add_field('price_'.($i+2), $tax);
 
-                    $total = $shipping+$tax+$total;
-                    */
+                      $total = $shipping+$tax+$total;
+                     */
                     $this->vouguepay->add_field('total', ($grand_total / $exchange));
 
                     //$this->vouguepay->add_field('amount', $grand_total);
@@ -3754,7 +3637,6 @@ class Home extends CI_Controller
                     $this->vouguepay->submit_vouguepay_post();
                     // submit the fields to vouguepay
                 }
-
             } else if ($this->input->post('payment_type') == 'cash_on_delivery') {
                 if ($para1 == 'go') {
                     $data['buyer'] = $this->session->userdata('user_id');
@@ -3794,11 +3676,11 @@ class Home extends CI_Controller
                         $this->crud_model->decrease_quantity($value['id'], $value['qty']);
                         $data1['type'] = 'destroy';
                         $data1['category'] = $this->db->get_where('product', array(
-                            'product_id' => $value['id']
-                        ))->row()->category;
+                                    'product_id' => $value['id']
+                                ))->row()->category;
                         $data1['sub_category'] = $this->db->get_where('product', array(
-                            'product_id' => $value['id']
-                        ))->row()->sub_category;
+                                    'product_id' => $value['id']
+                                ))->row()->sub_category;
                         $data1['product'] = $value['id'];
                         $data1['quantity'] = $value['qty'];
                         $data1['total'] = 0;
@@ -3842,19 +3724,19 @@ class Home extends CI_Controller
                         $customer_email = $this->db->get_where('user', array('user_id' => $this->session->userdata('user_id')))->row()->email;
 
                         $customer = \Stripe\Customer::create(array(
-                            'email' => $customer_email, // customer email id
-                            'card' => $_POST['stripeToken']
+                                    'email' => $customer_email, // customer email id
+                                    'card' => $_POST['stripeToken']
                         ));
 
                         $charge = \Stripe\Charge::create(array(
-                            'customer' => $customer->id,
-                            'amount' => ceil($grand_total * 100 / $exchange),
-                            'currency' => 'USD'
+                                    'customer' => $customer->id,
+                                    'amount' => ceil($grand_total * 100 / $exchange),
+                                    'currency' => 'USD'
                         ));
 
                         if ($charge->paid == true) {
-                            $customer = (array)$customer;
-                            $charge = (array)$charge;
+                            $customer = (array) $customer;
+                            $charge = (array) $charge;
 
                             $data['buyer'] = $this->session->userdata('user_id');
                             $data['product_details'] = $product_details;
@@ -3893,11 +3775,11 @@ class Home extends CI_Controller
                                 $this->crud_model->decrease_quantity($value['id'], $value['qty']);
                                 $data1['type'] = 'destroy';
                                 $data1['category'] = $this->db->get_where('product', array(
-                                    'product_id' => $value['id']
-                                ))->row()->category;
+                                            'product_id' => $value['id']
+                                        ))->row()->category;
                                 $data1['sub_category'] = $this->db->get_where('product', array(
-                                    'product_id' => $value['id']
-                                ))->row()->sub_category;
+                                            'product_id' => $value['id']
+                                        ))->row()->sub_category;
                                 $data1['product'] = $value['id'];
                                 $data1['quantity'] = $value['qty'];
                                 $data1['total'] = 0;
@@ -3915,7 +3797,6 @@ class Home extends CI_Controller
                             $this->session->set_flashdata('alert', 'unsuccessful_stripe');
                             redirect(base_url() . 'index.php/home/cart_checkout/', 'refresh');
                         }
-
                     } else {
                         $this->session->set_flashdata('alert', 'unsuccessful_stripe');
                         redirect(base_url() . 'index.php/home/cart_checkout/', 'refresh');
@@ -3969,27 +3850,22 @@ class Home extends CI_Controller
                     $this->skrill->pay();
                 }
             }
-
         } else {
             //echo 'nope';
             redirect(base_url() . 'index.php/home/cart_checkout/need_login', 'refresh');
         }
-
     }
 
-    function availability_check()
-    {
+    function availability_check() {
         $pin_code = $this->input->post('pin_code');
         if ($this->db->where('pin_code', $pin_code) != NULL) {
             echo "available";
         } else {
             echo "unavailable";
         }
-
     }
 
-    function get_zip()
-    {
+    function get_zip() {
         $latitude = $_POST['latitude'];
         $longitude = $_POST['longitude'];
         $url = 'http://api.geonames.org/findNearbyPostalCodesJSON?lat=' . $latitude . '&lng=' . $longitude . '&username=kiran123';
@@ -4005,9 +3881,9 @@ class Home extends CI_Controller
         echo $qwe['postalCode'];
     }
 
-    /* FUNCTION: Verify paypal payment by IPN*/
-    function paypal_ipn()
-    {
+    /* FUNCTION: Verify paypal payment by IPN */
+
+    function paypal_ipn() {
         if ($this->paypal->validate_ipn() == true) {
 
             $data['payment_details'] = json_encode($_POST);
@@ -4028,9 +3904,9 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: Loads after cancelling paypal*/
-    function paypal_cancel()
-    {
+    /* FUNCTION: Loads after cancelling paypal */
+
+    function paypal_cancel() {
         $sale_id = $this->session->userdata('sale_id');
         $this->db->where('sale_id', $sale_id);
         $this->db->delete('sale');
@@ -4039,20 +3915,20 @@ class Home extends CI_Controller
         redirect(base_url() . 'index.php/home/cart_checkout/', 'refresh');
     }
 
-    /* FUNCTION: Loads after successful paypal payment*/
-    function paypal_success()
-    {
+    /* FUNCTION: Loads after successful paypal payment */
+
+    function paypal_success() {
         $carted = $this->cart->contents();
         $sale_id = $this->session->userdata('sale_id');
         foreach ($carted as $value) {
             $this->crud_model->decrease_quantity($value['id'], $value['qty']);
             $data1['type'] = 'destroy';
             $data1['category'] = $this->db->get_where('product', array(
-                'product_id' => $value['id']
-            ))->row()->category;
+                        'product_id' => $value['id']
+                    ))->row()->category;
             $data1['sub_category'] = $this->db->get_where('product', array(
-                'product_id' => $value['id']
-            ))->row()->sub_category;
+                        'product_id' => $value['id']
+                    ))->row()->sub_category;
             $data1['product'] = $value['id'];
             $data1['quantity'] = $value['qty'];
             $data1['total'] = 0;
@@ -4069,8 +3945,7 @@ class Home extends CI_Controller
         redirect(base_url() . 'index.php/home/invoice/' . $sale_id, 'refresh');
     }
 
-    function twocheckout_success()
-    {
+    function twocheckout_success() {
         //$this->twocheckout_lib->set_acct_info('532001', 'tango', 'Y');
         $c2_user = $this->db->get_where('business_settings', array('type' => 'c2_user'))->row()->value;
         $c2_secret = $this->db->get_where('business_settings', array('type' => 'c2_secret'))->row()->value;
@@ -4102,11 +3977,11 @@ class Home extends CI_Controller
                 $this->crud_model->decrease_quantity($value['id'], $value['qty']);
                 $data1['type'] = 'destroy';
                 $data1['category'] = $this->db->get_where('product', array(
-                    'product_id' => $value['id']
-                ))->row()->category;
+                            'product_id' => $value['id']
+                        ))->row()->category;
                 $data1['sub_category'] = $this->db->get_where('product', array(
-                    'product_id' => $value['id']
-                ))->row()->sub_category;
+                            'product_id' => $value['id']
+                        ))->row()->sub_category;
                 $data1['product'] = $value['id'];
                 $data1['quantity'] = $value['qty'];
                 $data1['total'] = 0;
@@ -4121,7 +3996,6 @@ class Home extends CI_Controller
             $this->crud_model->email_invoice($sale_id);
             $this->session->set_userdata('sale_id', '');
             redirect(base_url() . 'index.php/home/invoice/' . $sale_id, 'refresh');
-
         } else {
             //var_dump($data2['response']);
             $sale_id = $this->session->userdata('sale_id');
@@ -4133,9 +4007,9 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: Verify vouguepay payment by IPN*/
-    function vouguepay_ipn()
-    {
+    /* FUNCTION: Verify vouguepay payment by IPN */
+
+    function vouguepay_ipn() {
         $res = $this->vouguepay->validate_ipn();
         $sale_id = $res['merchant_ref'];
         $merchant_id = 'demo';
@@ -4155,13 +4029,12 @@ class Home extends CI_Controller
             $data['payment_status'] = json_encode($payment_status);
             $this->db->where('sale_id', $sale_id);
             $this->db->update('sale', $data);
-
         }
     }
 
-    /* FUNCTION: Loads after cancelling vouguepay*/
-    function vouguepay_cancel()
-    {
+    /* FUNCTION: Loads after cancelling vouguepay */
+
+    function vouguepay_cancel() {
         $sale_id = $this->session->userdata('sale_id');
         $this->db->where('sale_id', $sale_id);
         $this->db->delete('sale');
@@ -4170,9 +4043,9 @@ class Home extends CI_Controller
         redirect(base_url() . 'index.php/home/cart_checkout/', 'refresh');
     }
 
-    /* FUNCTION: Loads after successful vouguepay payment*/
-    function vouguepay_success()
-    {
+    /* FUNCTION: Loads after successful vouguepay payment */
+
+    function vouguepay_success() {
         $carted = $this->cart->contents();
         $sale_id = $this->session->userdata('sale_id');
         foreach ($carted as $value) {
@@ -4180,11 +4053,11 @@ class Home extends CI_Controller
             $this->crud_model->decrease_quantity($value['id'], $value['qty'], $size);
             $data1['type'] = 'destroy';
             $data1['category'] = $this->db->get_where('product', array(
-                'product_id' => $value['id']
-            ))->row()->category;
+                        'product_id' => $value['id']
+                    ))->row()->category;
             $data1['sub_category'] = $this->db->get_where('product', array(
-                'product_id' => $value['id']
-            ))->row()->sub_category;
+                        'product_id' => $value['id']
+                    ))->row()->sub_category;
             $data1['product'] = $value['id'];
             $data1['quantity'] = $value['qty'];
             $data1['total'] = 0;
@@ -4202,9 +4075,9 @@ class Home extends CI_Controller
         redirect(base_url() . 'index.php/home/invoice/' . $sale_id, 'refresh');
     }
 
-    /* FUNCTION: Concerning wishlist*/
-    function wishlist($para1 = "", $para2 = "")
-    {
+    /* FUNCTION: Concerning wishlist */
+
+    function wishlist($para1 = "", $para2 = "") {
         if ($para1 == 'add') {
             $this->crud_model->add_wish($para2);
         } else if ($para1 == 'remove') {
@@ -4212,11 +4085,9 @@ class Home extends CI_Controller
         } else if ($para1 == 'num') {
             echo $this->crud_model->wished_num();
         }
-
     }
-   
-    function blog()
-    {
+
+    function blog() {
         //$page_data['category'] = $para1;
         $page_data['page_name'] = 'blog';
         // $page_data['asset_page'] = 'blog';
@@ -4224,29 +4095,26 @@ class Home extends CI_Controller
         $page_data['page_title'] = translate('blog');
         $this->load->view('front/index', $page_data);
     }
-    function event()
-    {
+
+    function event() {
         $page_data['page_name'] = 'event';
         //$page_data['asset_page'] = "shopping_cart";
         $page_data['page_title'] = translate('events');
         $this->load->view('front/index', $page_data);
     }
-    function our_team()
-    {
+
+    function our_team() {
         $page_data['page_name'] = 'our_team';
         $page_data['page_title'] = translate('Our Team');
         $this->load->view('front/index', $page_data);
     }
 
-   
-    function blog_by_cat($para1 = "")
-    {
+    function blog_by_cat($para1 = "") {
         $page_data['category'] = $para1;
         $this->load->view('front/blog/blog_list', $page_data);
     }
 
-    function ajax_blog_list($para1 = "")
-    {
+    function ajax_blog_list($para1 = "") {
         $this->load->library('Ajax_pagination');
 
         $category_id = $this->input->post('blog_category');
@@ -4311,8 +4179,8 @@ class Home extends CI_Controller
     }
 
     /* FUNCTION: Loads Contact Page */
-    function blog_view($para1 = "")
-    {
+
+    function blog_view($para1 = "") {
         $page_data['blog'] = $this->db->get_where('blog', array('blog_id' => $para1))->result_array();
         $page_data['categories'] = $this->db->get('blog_category')->result_array();
 
@@ -4326,8 +4194,7 @@ class Home extends CI_Controller
         $this->load->view('front/index.php', $page_data);
     }
 
-    function others_product($para1 = "")
-    {
+    function others_product($para1 = "") {
         $page_data['product_type'] = $para1;
         $page_data['page_name'] = 'others_list';
         $page_data['asset_page'] = 'product_list_other';
@@ -4335,21 +4202,20 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
-    function product_by_type($para1 = "")
-    {
+    function product_by_type($para1 = "") {
         $page_data['product_type'] = $para1;
         $this->load->view('front/others_list/view', $page_data);
     }
 
-    /* FUNCTION: Concerning wishlist*/
-    function chat($para1 = "", $para2 = "")
-    {
+    /* FUNCTION: Concerning wishlist */
 
+    function chat($para1 = "", $para2 = "") {
+        
     }
 
-    /* FUNCTION: Check if Customer is logged in*/
-    function check_login($para1 = "")
-    {
+    /* FUNCTION: Check if Customer is logged in */
+
+    function check_login($para1 = "") {
         if ($para1 == 'state') {
             if ($this->session->userdata('user_login') == 'yes') {
                 echo 'hypass';
@@ -4364,11 +4230,10 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: Invoice showing*/
-    function invoice($para1 = "", $para2 = "")
-    {
-        if ($this->session->userdata('user_login') != "yes"
-            || $this->crud_model->get_type_name_by_id('sale', $para1, 'buyer') !== $this->session->userdata('user_id')
+    /* FUNCTION: Invoice showing */
+
+    function invoice($para1 = "", $para2 = "") {
+        if ($this->session->userdata('user_login') != "yes" || $this->crud_model->get_type_name_by_id('sale', $para1, 'buyer') !== $this->session->userdata('user_id')
         ) {
             redirect(base_url(), 'refresh');
         }
@@ -4384,9 +4249,9 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: Legal pages load - terms & conditions / privacy policy*/
-    function legal($type = "")
-    {
+    /* FUNCTION: Legal pages load - terms & conditions / privacy policy */
+
+    function legal($type = "") {
         $page_data['type'] = $type;
         $page_data['page_name'] = "others/legal";
         $page_data['asset_page'] = "legal";
@@ -4394,10 +4259,9 @@ class Home extends CI_Controller
         $this->load->view('front/index', $page_data);
     }
 
+    /* FUNCTION: Price Range Load by AJAX */
 
-    /* FUNCTION: Price Range Load by AJAX*/
-    function get_ranger($by = "", $id = "", $start = '', $end = '')
-    {
+    function get_ranger($by = "", $id = "", $start = '', $end = '') {
         $min = $this->get_range_lvl($by, $id, "min");
         $max = $this->get_range_lvl($by, $id, "max");
         if ($start == '') {
@@ -4411,9 +4275,9 @@ class Home extends CI_Controller
         return $return;
     }
 
-    /* FUNCTION: Price Range Load by AJAX*/
-    function get_range_lvl($by = "", $id = "", $type = "")
-    {
+    /* FUNCTION: Price Range Load by AJAX */
+
+    function get_range_lvl($by = "", $id = "", $type = "") {
         if ($type == "min") {
             $set = 'asc';
         } elseif ($type == "max") {
@@ -4422,8 +4286,8 @@ class Home extends CI_Controller
         $this->db->limit(1);
         $this->db->order_by('sale_price', $set);
         if (count($a = $this->db->get_where('product', array(
-                $by => $id
-            ))->result_array()) > 0
+                            $by => $id
+                        ))->result_array()) > 0
         ) {
             foreach ($a as $r) {
                 return $r['sale_price'];
@@ -4433,14 +4297,14 @@ class Home extends CI_Controller
         }
     }
 
-    /* FUNCTION: AJAX loadable scripts*/
-    function others($para1 = "", $para2 = "", $para3 = "", $para4 = "")
-    {
+    /* FUNCTION: AJAX loadable scripts */
+
+    function others($para1 = "", $para2 = "", $para3 = "", $para4 = "") {
         if ($para1 == "get_sub_by_cat") {
             $return = '';
             $subs = $this->db->get_where('sub_category', array(
-                'category' => $para2
-            ))->result_array();
+                        'category' => $para2
+                    ))->result_array();
             foreach ($subs as $row) {
                 $return .= '<option  value="' . $row['sub_category_id'] . '">' . ucfirst($row['sub_category_name']) . '</option>' . "\n\r";
             }
@@ -4467,8 +4331,7 @@ class Home extends CI_Controller
     }
 
     //SITEMAP
-    function sitemap()
-    {
+    function sitemap() {
         header("Content-type: text/xml");
         $otherurls = array(
             base_url() . 'index.php/home/contact/',
@@ -4491,8 +4354,7 @@ class Home extends CI_Controller
         $this->load->view('front/others/sitemap', $page_data);
     }
 
-    function sendmsg()
-    {
+    function sendmsg() {
         // Authorisation details.
 //        $username = "rawsqueezed@gmail.com";
 //        $hash = "9ec013d03166ab4baa2b1719107add1cdfc51370c82f50c6dec8759228dd6613";
@@ -4521,53 +4383,45 @@ class Home extends CI_Controller
 //        }
 //        curl_close($ch);
         //print_r($res);
-        /*$apiKey = urlencode('tUhL7rCMd3Q-PNDC0m00uVT5kak3WkUvw8tCXLFI2R');
+        /* $apiKey = urlencode('tUhL7rCMd3Q-PNDC0m00uVT5kak3WkUvw8tCXLFI2R');
 
-        // Message details
-        $numbers = urlencode('919495401456,918893763078');
-        $sender = urlencode('Jims Autos');
-        $message = rawurlencode('This is your message');
+          // Message details
+          $numbers = urlencode('919495401456,918893763078');
+          $sender = urlencode('Jims Autos');
+          $message = rawurlencode('This is your message');
 
-        // Prepare data for POST request
-        $data = 'apikey=' . $apiKey . '&numbers=' . $numbers . "&sender=" . $sender . "&message=" . $message;
+          // Prepare data for POST request
+          $data = 'apikey=' . $apiKey . '&numbers=' . $numbers . "&sender=" . $sender . "&message=" . $message;
 
-        // Send the GET request with cURL
-        $ch = curl_init('https://api.txtlocal.in/send/?' . $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
+          // Send the GET request with cURL
+          $ch = curl_init('https://api.txtlocal.in/send/?' . $data);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+          $response = curl_exec($ch);
+          curl_close($ch);
 
-        // Process your response here
-        echo $response;*/
-
-
+          // Process your response here
+          echo $response; */
     }
 
-
-    function email_verify($user_id, $code)
-    {
+    function email_verify($user_id, $code) {
         echo $this->crud_model->email_verification($code, $user_id);
     }
 
-    function refer($user_id, $do, $aid)
-    {
+    function refer($user_id, $do, $aid) {
         echo $this->crud_model->referral($do, $user_id, $aid);
     }
 
-    function email($sub = '', $msg = '')
-    {
+    function email($sub = '', $msg = '') {
         $to = 'rawsqueezed@gmail.com';
         $this->email_model->send_email($to, $sub, $msg);
     }
 
-    function send_sms()
-    {
+    function send_sms() {
         $numb = array(9495401456, 9895891943);
         $this->sms_model->send_sms($numb, 'success');
     }
 
-    function email_temp($sale_code, $order_status = '')
-    {
+    function email_temp($sale_code, $order_status = '') {
         $sale = $this->db->get_where('sale', array('sale_code' => $sale_code))->row();
         $shipping_address = json_decode($sale->shipping_address, true);
         //$product
@@ -4593,11 +4447,11 @@ class Home extends CI_Controller
         $payment = $shipping_address['payment_type'];
         //$sale_code=$row['sale_code'];
         //$total += $row['subtotal'];
-        /*$dat .= '<tr>
-                <td>' . $row['name'] . '</td>
-                <td>' . $row['qty'] . '</td>
-                <td>' . $row['subtotal'] . '</td>
-                ';*/
+        /* $dat .= '<tr>
+          <td>' . $row['name'] . '</td>
+          <td>' . $row['qty'] . '</td>
+          <td>' . $row['subtotal'] . '</td>
+          '; */
 
         //echo $name;
         $product = json_decode($sale->product_details, true);
@@ -4620,6 +4474,7 @@ class Home extends CI_Controller
 
         //echo $shipping_address['firstname']."gaaa";
     }
+
 }
 
 /* End of file home.php */

@@ -161,7 +161,7 @@
                         <div class="row">     
                             <div class="col-sm-12 animate fadeInRight" data-wow-delay="0.4s"> 
                                 <?php
-                                $this->db->limit(5);
+                               
                                 $this->db->order_by("event_id", "desc");
                                 $events = $this->db->get('event')->result_array();
                                 foreach ($events as $row) {
