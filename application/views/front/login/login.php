@@ -22,13 +22,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>images/favicon.ico">
 </head>
 <body>
-<div id="loader">
+<!--<div id="loader">
     <div class="loader">
         <div class="position-center-center"> <img src="<?php echo base_url(); ?>images/preloader.gif" alt="">
         </div>
     </div>
 </div>
-
+-->
 <div id="wrap">
     <header class="header-style-2">        
         <div class="top-bar">
