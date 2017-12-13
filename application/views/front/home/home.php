@@ -3,14 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Uranus Unani Hospital || Home </title>
+        <title>Uranus || Home </title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
-        <!-- FONTS ONLINE -->
         <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <!--MAIN STYLE-->
+        
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -19,18 +18,17 @@
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">   
         <link href="css/custom.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
-        <!-- JavaScripts -->
         <script src="js/modernizr.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     </head>
     <body>
-        <!--  <div id="loader">
-              <div class="loader">
-                  <div class="position-center-center"> <img src="images/preloader.gif">
-  
-                  </div>
-              </div>
-          </div>-->
+        <div id="loader">
+            <div class="loader">
+                <div class="position-center-center"> <img src="images/preloader.gif">
+
+                </div>
+            </div>
+        </div>
 
         <div id="wrap">
             <header class="header">   
