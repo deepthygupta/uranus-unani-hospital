@@ -363,7 +363,7 @@ class Home extends CI_Controller {
         $safe = 'yes';
         $char = '';
         foreach ($_POST as $row) {
-            if (preg_match('/[\^}{#~|+¬]/', $row, $match)) {
+            if (preg_match('/[\^}{#~|+Â¬]/', $row, $match)) {
                 $safe = 'no';
                 $char = $match[0];
             }
@@ -409,7 +409,7 @@ class Home extends CI_Controller {
         $safe = 'yes';
         $char = '';
         foreach ($_POST as $row) {
-            if (preg_match('/[\^}{#~|+¬]/', $row, $match)) {
+            if (preg_match('/[\^}{#~|+Â¬]/', $row, $match)) {
                 $safe = 'no';
                 $char = $match[0];
             }
@@ -1704,10 +1704,8 @@ class Home extends CI_Controller {
         $page_data['zip'] = $this->input->post('zip');
         $page_data['country'] = "India";
         $page_data['state'] = $this->input->post('state');
-//        $cate = $this->db->get_where('category', array('category_name' => $this->session->userdata('user_id')))->row()->category_id;
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $this->db->update('user', $page_data);
-
         $page_data['page_name'] = "my_account";
         $this->load->view('front/index', $page_data);
     }
@@ -2333,7 +2331,7 @@ class Home extends CI_Controller {
             $safe = 'yes';
             $char = '';
             foreach ($_POST as $row) {
-                if (preg_match('/[\'^":()}{#~><>|=+¬]/', $row, $match)) {
+                if (preg_match('/[\'^":()}{#~><>|=+Â¬]/', $row, $match)) {
                     $safe = 'no';
                     $char = $match[0];
                 }
@@ -2401,7 +2399,7 @@ class Home extends CI_Controller {
             $safe = 'yes';
             $char = '';
             foreach ($_POST as $k => $row) {
-                if (preg_match('/[\'^":()}{#~><>|=¬]/', $row, $match)) {
+                if (preg_match('/[\'^":()}{#~><>|=Â¬]/', $row, $match)) {
                     if ($k !== 'password1' && $k !== 'password2') {
                         $safe = 'no';
                         $char = $match[0];
@@ -2784,7 +2782,7 @@ class Home extends CI_Controller {
         $safe = 'yes';
         $char = '';
         foreach ($_POST as $row) {
-            if (preg_match('/[\'^":()}{#~><>|=+¬]/', $row, $match)) {
+            if (preg_match('/[\'^":()}{#~><>|=+Â¬]/', $row, $match)) {
                 $safe = 'no';
                 $char = $match[0];
             }
@@ -2828,7 +2826,7 @@ class Home extends CI_Controller {
         $safe = 'yes';
         $char = '';
         foreach ($_POST as $k => $row) {
-            if (preg_match('/[\'^":()}{#~><>|=¬]/', $row, $match)) {
+            if (preg_match('/[\'^":()}{#~><>|=Â¬]/', $row, $match)) {
                 if ($k !== 'password1' && $k !== 'password2') {
                     $safe = 'no';
                     $char = $match[0];

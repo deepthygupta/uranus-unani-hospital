@@ -43,6 +43,7 @@
             <header class="header">   
                 <div class="top-bar">
                     <div class="container">
+                        <div class="language">  <a href="#."><?php echo translate('Our Care, Your Cure'); ?></a></div>
                         <div class="top-links">
                             <ul>
                                 <?php if ($this->session->userdata('user_login') != 'yes') { ?>
@@ -462,7 +463,7 @@
 
             <footer>
                 <div class="container">
-                    <div class="text-center"> <a href="#."><img src="images/sitelogo.jpg" alt=""></a><br>
+                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt=""></a><br>
                         <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
                     </div>
 
