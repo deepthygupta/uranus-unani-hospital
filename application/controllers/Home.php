@@ -1707,6 +1707,7 @@ class Home extends CI_Controller {
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $this->db->update('user', $page_data);
         $page_data['page_name'] = "my_account";
+        $page_data['page_title'] = translate('My_Account');
         $this->load->view('front/index', $page_data);
     }
 
@@ -3237,15 +3238,12 @@ class Home extends CI_Controller {
         }
     }
 
-    /* FUNCTION: Loads Cart Checkout Page */
-
     function cart_checkout($para1 = "", $para2 = "") {
         $this->session->unset_userdata('refresh_hash');
         $carted = $this->cart->contents();
         if (count($carted) <= 0) {
             redirect(base_url() . 'index.php', 'refresh');
         }
-
         if ($para1 == "orders") {
             $this->load->view('front/shopping_cart/order_set');
         } elseif ($para1 == "delivery_address") {
@@ -3254,8 +3252,6 @@ class Home extends CI_Controller {
             $this->load->view('front/shopping_cart/payments_options');
         }
         if ($para1 == 'delete') {
-
-
             $this->db->get_where($this->cart->contents()->row_id(), $para2);
             $this->db->delete($this->cart->contents());
             $this->session->set_flashdata('flash_message', get_phrase('data_deleted'));
