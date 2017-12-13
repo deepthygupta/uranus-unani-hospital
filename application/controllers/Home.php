@@ -763,10 +763,9 @@ class Home extends CI_Controller {
     }
 
     function image_details($param1 = '', $param2 = '') {
+        
         $product_data = $this->db->get_where('product', array('product_id' => $param1, 'status' => 'ok'));
-
         $pin = $this->input->post('pin');
-
         $query = $this->db->get_where('pincode', array('pincode' => $pin));
         if ($query->num_rows() > 0) {
             $exist = 1;
@@ -782,13 +781,10 @@ class Home extends CI_Controller {
             'number_of_view' => $product_data->row()->number_of_view + 1,
             'last_viewed' => time()
         ));
-        //$this->db->get('category', $param1);
         $page_data['product_id'] = $param1;
         $page_data['category'] = $param2;
-        //$page_data['details']=$this->db->get_where('category', array('category_id' => $param1))->row()->result_array();
-        //$page_data['id']=$this->db->get_where('category', array('blog_id' => $param1))->row()->category_id;
         $page_data['page_name'] = "image_details";
-        $page_data['page_title'] = "shop";
+        $page_data['page_title'] = "Image Details";
         $this->load->view('front/index', $page_data);
     }
 
