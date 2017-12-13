@@ -6,7 +6,6 @@
         <title>Uranus || Our Team</title>
         <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
         <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="../../css/main.css" rel="stylesheet" type="text/css">
         <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -17,6 +16,20 @@
         <link rel="stylesheet" type="text/css" href="../../rs-plugin/css/settings.css" media="screen" />
         <script src="../../js/modernizr.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5936437bb3d02e11ecc68647/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
     </head>
     <body>
         <div id="loader">
@@ -131,14 +144,14 @@
                 </div>
             </header>
 
-            <div class="ertyuiop"
+            <!--<div class="ertyuiop"
                  messenger_app_id="<?php echo $this->crud_model->fb_get_appid(); ?>"
                  page_id="<?php echo $this->crud_model->fb_get_pageid(); ?>"
                  color="blue"
                  style="position: fixed; bottom: -10px; z-index: 10000; right: -4px;"
                  size="large">
                 <a target="_blank" href="https://m.me/<?php echo $this->crud_model->fb_get_pageid(); ?>" >  <img src="<?php echo base_url() ?>images/fb.png"> </a>
-            </div>
+            </div>-->
 
             <div class="content">
                 <section class="sub-banner">
@@ -157,7 +170,6 @@
                         <div class="row">      
                             <div class="col-sm-12 animate fadeInRight" data-wow-delay="0.4s"> 
                                 <?php
-                                $this->db->limit(6);
                                 $this->db->order_by("id", "desc");
                                 $members = $this->db->get('team_members')->result_array();
                                 foreach ($members as $row) {
@@ -209,7 +221,7 @@
                                 </li>
                                 <li class="col-sm-4">
                                     <h5>CONTACT US</h5>
-                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala â€“ 676122</p>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
                                     <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
                                     <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
                                 </li>
@@ -220,7 +232,7 @@
                     </div>
 
                     <div class="rights">
-                        <p>Â© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
                     </div>
                 </div>
             </footer>   
