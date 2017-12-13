@@ -1128,43 +1128,29 @@ class Home extends CI_Controller {
             $data['shipping_address'] = json_encode($shipping_address);
             $data['payment_type'] = $payment;
             $data['payment_status'] = '[]';
-//            $data['payment_status'] = array('admin' => '', 'status' => 'due');
-//        $data['grand_total'] = $grand_total;
             $data['delivery_note'] = $this->session->userdata('delivery_note');
             $data['delivery_date'] = $this->session->userdata('delivery_date');
-            //$this->session->set_userdata('delivery_note',$data['delivery_note']);
-            //$this->session->set_userdata('delivery_date',$data['delivery_date']);
-//        $data['delivery_date'] = '';
             if ($this->crud_model->get_total() < 300) {
                 $data['grand_total'] = $this->crud_model->shipping_total();
             } else {
                 $data['grand_total'] = $this->crud_model->get_total();
             }
-
             if ($this->crud_model->get_total() < 300) {
                 $data['shipping'] = 20;
             } else {
                 $data['shipping'] = "FREE";
             }
-//        $data['shipping'] = $shipping;
-
             $data['sale_datetime'] = time();
 
             $this->db->insert('sale', $data);
             $sale_id = $this->db->insert_id();
-//            $delivery_status[] = $payment_status[] = array();
-
             $data['sale_code'] = $sale_code = date('Ym', $data['sale_datetime']) . $sale_id;
             if ($this->crud_model->is_admin_in_sale($sale_id)) {
                 $delivery_status[] = array('admin' => '', 'status' => 'pending', 'delivery_time' => '');
                 $payment_status[] = array('admin' => '', 'status' => 'due');
                 $order_status[] = array('admin' => '', 'status' => 'not confirmed');
             }
-            //echo 'sale_codessss:'.$sale_code;
-//            $data['delivery_status'] = json_encode($delivery_status);
-//        $data['payment_status'] = json_encode($payment_status);
-//            if($this->session->userdata('refresh') != 'yes'){
-//            }
+            
             $data['delivery_status'] = json_encode($delivery_status);
             $data['payment_status'] = json_encode($payment_status);
             $data['order_status'] = json_encode($order_status);
@@ -1175,24 +1161,20 @@ class Home extends CI_Controller {
             $page_data['sale_id'] = $sale_id;
             $page_data['user_id'] = $param1;
             $page_data['page_name'] = "place_order";
+            $page_data['title'] = "Place Order";
             $this->email_temp($sale_code);
-            //$page_data['asset_page'] = "about_us";
             $this->crud_model->sms_place_order_send($sale_code);
             if ($this->cart->get_coupon() != null)
                 $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
             $this->session->set_userdata('refresh_hash', $refresh_hash);
             $this->load->view('front/index', $page_data);
-
-//            redirect(base_url() . 'index.php/home/pay_now/', 'refresh');
         } else {
 
             $carted = $this->cart->contents();
             $product_details = json_encode($carted);
-
             $data['buyer'] = $this->session->userdata('user_id');
             $data['product_details'] = $product_details;
             $name = $this->db->get_where('user', array('user_id' => $param1))->row()->username;
-
             $add = $this->db->get_where('user', array('user_id' => $param1))->row()->address1;
             $city = $this->db->get_where('user', array('user_id' => $param1))->row()->city;
             $state = $this->db->get_where('user', array('user_id' => $param1))->row()->state;
@@ -1201,7 +1183,6 @@ class Home extends CI_Controller {
             $payment = $this->input->post('pay');
             $data['payment_type'] = $payment;
             $data['payment_status'] = '[]';
-//        $data['grand_total'] = $grand_total;
             $data['delivery_note'] = $this->session->userdata('delivery_note');
             $data['delivery_date'] = $this->session->userdata('delivery_date');
             $shipping_address = array();
@@ -1211,27 +1192,22 @@ class Home extends CI_Controller {
             $shipping_address['phone'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->phone;
             $shipping_address['address1'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->address1;
             $shipping_address['address2'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->address2;
-
             $shipping_address['city'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->city;
             $shipping_address['state'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->state;
             $shipping_address['zip'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->zip;
             $payment = $this->input->post('pay');
             $shipping_address['payment_type'] = $payment;
             $data['shipping_address'] = json_encode($shipping_address);
-//        $data['delivery_date'] = '';
             if ($this->crud_model->get_total() < 300) {
                 $data['grand_total'] = $this->crud_model->shipping_total();
             } else {
                 $data['grand_total'] = $this->crud_model->get_total();
             }
-
             if ($this->crud_model->get_total() < 300) {
                 $data['shipping'] = 20;
             } else {
                 $data['shipping'] = "FREE";
             }
-//        $data['shipping'] = $shipping;
-
             $data['sale_datetime'] = time();
             $this->db->insert('sale', $data);
             $sale_id = $this->db->insert_id();
@@ -1252,15 +1228,10 @@ class Home extends CI_Controller {
 
             $page_data['sale_id'] = $sale_id;
             $page_data['user_id'] = $param1;
-            //$this->email_temp($data['sale_code']);
             if ($this->cart->get_coupon() != null)
                 $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
             $this->session->set_userdata('refresh_hash', $refresh_hash);
-            //$this->email_temp($sale_id,$email);
             redirect(base_url() . 'index.php/home/pay_now/' . $param1, 'refresh');
-//         $page_data['page_name'] = "place_order";
-//         //$page_data['asset_page'] = "about_us";
-//         $this->load->view('front/index', $page_data);
         }
     }
 
