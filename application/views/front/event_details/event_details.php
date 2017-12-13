@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Uranus Unani Hospital || Event Details </title>
+        <title>Uranus || Event Details </title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -19,6 +19,19 @@
         <link rel="stylesheet" type="text/css" href="../../../rs-plugin/css/settings.css" media="screen" />
         <script src="../../../js/modernizr.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5936437bb3d02e11ecc68647/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
     </head>
     <body>
         <div id="wrap">

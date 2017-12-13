@@ -15,16 +15,29 @@
         <link href="../../css/custom.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="../../rs-plugin/css/settings.css" media="screen" />
         <script src="../../js/modernizr.js"></script>
-        <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">  
+        <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico"> 
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5936437bb3d02e11ecc68647/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
     </head>
     <body>
-        <div id="loader">
+       <!-- <div id="loader">
             <div class="loader">
                 <div class="position-center-center"> <img src="../../images/preloader.gif">
 
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div id="wrap">
             <header class="header-style-2">
@@ -166,7 +179,7 @@
                                             </div>
                                             <div id="collapseTwo" class="panel-collapse collapse">
                                                 <div class="panel-body">Of the three methods of juicing cold pressing is the better method of extracting the most nutrient dense and enzyme intact juice as the process handles the produce gently and with no heat generation.
-                                                    It allows the “living” elements of nature to stay in tact even after juicing. </div>
+                                                    It allows the “living�? elements of nature to stay in tact even after juicing. </div>
                                             </div>
                                         </div>
 
