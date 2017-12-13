@@ -29,23 +29,30 @@
     <script src="../../js/modernizr.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+   <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5936437bb3d02e11ecc68647/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
 
 </head>
 <body>
 <!-- LOADER ===========================================-->
-<div id="loader">
+<!--<div id="loader">
     <div class="loader">
         <div class="position-center-center"> <img src="../../images/preloader.gif">
 
         </div>
     </div>
-</div>
+</div>-->
 
 <!-- Page Wrap -->
 <div id="wrap">
