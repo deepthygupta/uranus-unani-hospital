@@ -1150,7 +1150,7 @@ class Home extends CI_Controller {
                 $payment_status[] = array('admin' => '', 'status' => 'due');
                 $order_status[] = array('admin' => '', 'status' => 'not confirmed');
             }
-            
+
             $data['delivery_status'] = json_encode($delivery_status);
             $data['payment_status'] = json_encode($payment_status);
             $data['order_status'] = json_encode($order_status);
@@ -1686,7 +1686,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('user_login') != 'yes')
             redirect(base_url() . 'index.php/home');
         $page_data['page_name'] = "change_password";
-        //$page_data['asset_page'] = "about_us";
+        $page_data['page_title'] = "change_password";
         $this->load->view('front/index', $page_data);
     }
 
@@ -1699,30 +1699,27 @@ class Home extends CI_Controller {
         $pass = $this->db->get_where('user', array('user_id' => $this->session->userdata('user_id')))->row()->password;
         $current_pass = sha1($current_pwd);
         if ($new_pwd == $re_pwd && $current_pass == $pass) {
-//            $this->db->where('user_id', $this->session->userdata('user_id'));
-
             $data['password'] = sha1($new_pwd);
             $this->db->where('user_id', $this->session->userdata('user_id'));
             $this->db->update('user', $data);
-
-
             $page_data['page_name'] = "change_password";
-            //$page_data['asset_page'] = "about_us";
+            $page_data['page_title'] = "change_password";
             $this->load->view('front/index', $page_data);
         } else {
             $page_data['txt'] = "Error:Your password and confirmation password do not match";
             $page_data['page_name'] = "change_password";
-            //$page_data['asset_page'] = "about_us";
+            $page_data['page_title'] = "change_password";
             $this->load->view('front/index', $page_data);
         }
         $this->db->update('user', $page_data);
     }
 
     function order() {
-        if ($this->session->userdata('user_login') != 'yes')
+        if ($this->session->userdata('user_login') != 'yes') {
             redirect(base_url() . 'index.php/home');
+        }
         $page_data['page_name'] = "order";
-        //$page_data['asset_page'] = "about_us";
+        $page_data['page_title'] = "order";
         $this->load->view('front/index', $page_data);
     }
 
