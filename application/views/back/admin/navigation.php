@@ -678,6 +678,14 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
                                 </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/admin/faq">
+                                <i class="fa fa-question"></i>
+                                <span class="menu-title">
+                                    FAQ
+                                </span>
+                            </a>
+                        </li>
 
                         <?php
                         if ($this->crud_model->admin_permission('blog')) {

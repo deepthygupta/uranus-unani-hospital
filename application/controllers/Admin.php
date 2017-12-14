@@ -458,7 +458,44 @@ class Admin extends CI_Controller {
         }
     }
 
-    /* Product Sub-category add, edit, view, delete */
+    function faq($para1 = '', $para2 = '') {
+        if (!$this->crud_model->admin_permission('faq')) {
+            redirect(base_url() . 'index.php/admin');
+        }
+        if ($para1 == 'do_add') {
+            $data['question'] = $this->input->post('question');
+            $data['answer'] = $this->input->post('answer');
+            $data['added_date'] = date("Y-m-d");
+            $this->db->insert('faq', $data);
+            
+        } else if ($para1 == 'edit') {
+            $page_data['faq_data'] = $this->db->get_where('faq', array(
+                        'id' => $para2
+                    ))->result_array();
+            $this->load->view('back/admin/faq_edit', $page_data);
+        } elseif ($para1 == "update") {
+            $data['question'] = $this->input->post('question');
+            $data['answer'] = $this->input->post('answer');
+            $this->db->where('id', $para2);
+            $this->db->update('faq', $data);
+        } elseif ($para1 == 'delete') {
+            $this->db->set('status', 'inactive');
+            $this->db->where('id', $para2);
+            $this->db->update('faq');            
+        } elseif ($para1 == 'list') {
+            $this->db->order_by('id', 'asc');            
+            $this->db->where('status', 'active');
+            $page_data['all_faq'] = $this->db->get('faq')->result_array();
+            $this->load->view('back/admin/faq_list', $page_data);
+        } elseif ($para1 == 'add') {
+            $this->load->view('back/admin/faq_add');
+        } else {
+            $page_data['page_name'] = "faq";
+            $this->db->where('status', 'active');
+            $page_data['all_faq'] = $this->db->get('faq')->result_array();
+            $this->load->view('back/index', $page_data);
+        }
+    }
 
     function sub_category($para1 = '', $para2 = '') {
         if (!$this->crud_model->admin_permission('sub_category')) {

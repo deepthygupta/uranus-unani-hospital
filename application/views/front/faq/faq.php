@@ -31,13 +31,13 @@
         <!--End of Tawk.to Script-->
     </head>
     <body>
-       <!-- <div id="loader">
-            <div class="loader">
-                <div class="position-center-center"> <img src="../../images/preloader.gif">
-
-                </div>
-            </div>
-        </div>-->
+        <!-- <div id="loader">
+             <div class="loader">
+                 <div class="position-center-center"> <img src="../../images/preloader.gif">
+ 
+                 </div>
+             </div>
+         </div>-->
 
         <div id="wrap">
             <header class="header-style-2">
@@ -160,59 +160,24 @@
                             <div class="col-md-12">
                                 <div class="faqs">
                                     <div class="panel-group" id="accordion">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> WHY SHOULD I JUICE?</a> </h4>
-                                            </div>
-                                            <div id="collapseOne" class="panel-collapse collapse in">
-                                                <div class="panel-body">By allowing your body to maintain an alkaline balance at cellular level is the best way to live a long healthy life.
-                                                    Raw, organic vegetables and fruits are the best bets to create alkaline-forming effect inside our body. Most grains, animal foods, alcohol,
-                                                    coffee and highly processed foods have an acid-forming effect on your body.
-                                                    By cold pressing fruits and vegetables you get the best way to assimilate all the nutrients while allowing your body to get back to its alkaline balance.</div>
-                                            </div>
-                                        </div>
 
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed"> Why should I choose cold-pressed juices?</a> </h4>
-                                            </div>
-                                            <div id="collapseTwo" class="panel-collapse collapse">
-                                                <div class="panel-body">Of the three methods of juicing cold pressing is the better method of extracting the most nutrient dense and enzyme intact juice as the process handles the produce gently and with no heat generation.
-                                                    It allows the â€œlivingâ€? elements of nature to stay in tact even after juicing. </div>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        $this->db->order_by("id", "asc");
+                                        $this->db->where("status", "active");
+                                        $faq = $this->db->get('faq')->result_array();
+                                        foreach ($faq as $row) {
+                                            ?>
 
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed"> Why are cold pressed juices more expensive?</a> </h4>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> <?php echo $row['question'] ?> </a> </h4>
+                                                </div>
+                                                <div id="collapseOne" class="panel-collapse collapse in">
+                                                    <div class="panel-body"><?php echo $row['answer'] ?></div>
+                                                </div>
                                             </div>
-                                            <div id="collapseThree" class="panel-collapse collapse">
-                                                <div class="panel-body">Cold pressed juices are expensive due to many reasons. The major reason being the technology with which the juice is made has not yet been made available in a cheaper option. Also in cold pressing,comparatively a larger quantity of fruits and vegetables goes into producing a bottle of cold pressed juice.
-                                                    You are on the winning side. You get the adequate amount and the best kind of of nutrition without much trouble! </div>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
 
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour" class="collapsed"> WHY JUICE AS THERAPY?</a> </h4>
-                                            </div>
-                                            <div id="collapsefour" class="panel-collapse collapse">
-                                                <div class="panel-body"> Juice therapy is a proven method from tradition which allows body to detoxify, rest and rebuild itself.
-                                                    It allows for concentrated cellular nourishment and allows essentials nutrients to reach the body easily and quickly.</div>
-                                            </div>
-                                        </div>
-
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive" class="collapsed"> What are life giving enzymes?</a> </h4>
-                                            </div>
-                                            <div id="collapsefive" class="panel-collapse collapse">
-                                                <div class="panel-body"> Enzymes are proteins which are present in all living organisms. When we cook food, the life giving enzymes are destroyed and thus the potential of cooked food to heal and support life is limited. Whereas, in fresh, raw produce of fruits and vegetables,
-                                                    the enzymes are intact and is thereby a much healthier choice for your diet. Cold pressed juices are food that is still alive!</div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +231,7 @@
                 </div>
             </footer>   
         </div>
-      
+
         <script src="../../js/jquery-1.11.3.js"></script>
         <script src="../../js/wow.min.js"></script>
         <script src="../../js/bootstrap.min.js"></script>
