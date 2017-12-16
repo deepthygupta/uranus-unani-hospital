@@ -36,7 +36,7 @@
 			<div class="cls-content-sm panel panel-colorful panel-login" style="margin-top: 50px !important;">
 				<div class="panel-body">
                 	<a class="box-inline" href="<?php echo base_url(); ?>index.php/<?php echo $this->session->userdata('title'); ?>">
-						<img src="<?php echo $this->crud_model->logo('admin_login_logo'); ?>" class="log_icon">
+						<img src="<?php echo base_url(); ?>uploads/logo_image/logo_78.jpg" class="log_icon">
 					</a>
                     <hr class="hr-log">
 					<p class="pad-btm"><?php echo translate('sign_in_to_your_account');?></p>
