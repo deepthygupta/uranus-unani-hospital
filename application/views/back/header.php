@@ -3,7 +3,7 @@
         <!--Brand logo & name-->
         <div class="navbar-header">
             <a href="<?php echo base_url(); ?>index.php/<?php echo $this->session->userdata('title'); ?>" class="navbar-brand">
-                <img src="<?php echo $this->crud_model->logo('admin_login_logo'); ?>" alt="<?php echo $system_name; ?>" class="brand-icon" style="padding:8px;">
+                <img src="<?php echo base_url(); ?>uploads/logo_image/logo_78.jpg" alt="<?php echo $system_name; ?>" class="brand-icon" style="padding:8px;">
                 <div class="brand-title">
                     <span class="brand-text"><?php echo $system_name; ?></span>
                 </div>
@@ -75,14 +75,11 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
-                        <!-- User dropdown menu -->
-                        <ul class="head-list">
-                            <li>
-                                <a href="<?php echo base_url(); ?>index.php/admin/manage_admin/">
-                                    <i class="fa fa-user fa-fw fa-lg"></i> <?php echo translate('profile'); ?>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="pad-all text-right">
+                            <a href="<?php echo base_url(); ?>index.php/admin/manage_admin/" class="btn btn-primary">
+                                <i class="fa fa-user"></i> <?php echo translate('profile'); ?>
+                            </a>
+                        </div>
 
                         <!-- Dropdown footer -->
                         <div class="pad-all text-right">
@@ -90,11 +87,7 @@
                                 <i class="fa fa-sign-out fa-fw"></i> <?php echo translate('logout'); ?>
                             </a>
                         </div>
-                        <div class="pad-all text-right">
-                            <a href="<?php echo base_url(); ?>index.php/<?php echo $this->session->userdata('title'); ?>/logout/" class="btn btn-primary">
-                                <i class="fa fa-sign-out fa-fw"></i> <?php echo translate('logout'); ?>
-                            </a>
-                        </div>
+                        
                     </div>
                 </li>
                 <!--End user dropdown-->
