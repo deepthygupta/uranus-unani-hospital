@@ -22,5 +22,4 @@
     </div>
 
 	<div class="hide-fixed pull-right pad-rgt"></div>
-	<p class="pad-lft">&#0169; 2017 <?php echo $system_title;?>, Powered By <a href="https://www.FB.com/designershubs" style="text-decoration: none;">D.HUB</a></p>
 </footer>
