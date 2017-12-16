@@ -142,16 +142,7 @@
                         </nav>
                     </div>
                 </div>
-            </header>
-
-            <!--<div class="ertyuiop"
-                 messenger_app_id="<?php echo $this->crud_model->fb_get_appid(); ?>"
-                 page_id="<?php echo $this->crud_model->fb_get_pageid(); ?>"
-                 color="blue"
-                 style="position: fixed; bottom: -10px; z-index: 10000; right: -4px;"
-                 size="large">
-                <a target="_blank" href="https://m.me/<?php echo $this->crud_model->fb_get_pageid(); ?>" >  <img src="<?php echo base_url() ?>images/fb.png"> </a>
-            </div>-->
+            </header>           
 
             <div class="content">
                 <section class="sub-banner">
@@ -162,34 +153,36 @@
                             <li class="active">OUR TEAM</li>
                         </ol>
                     </div>
-                </section>    
-
+                </section>   
 
                 <section class="section-p-30px events-page">
                     <div class="container">
-                        <div class="row">      
+                        <div class="row">     
                             <div class="col-sm-12 animate fadeInRight" data-wow-delay="0.4s"> 
                                 <?php
                                 $this->db->order_by("id", "desc");
                                 $members = $this->db->get('team_members')->result_array();
                                 foreach ($members as $row) {
                                     ?>
-                                    <ul> 
-                                        <li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s">
-                                            <div class="items-in">
-                                                <a href="">
-                                                    <img class="img-responsive" src="<?php echo $this->crud_model->file_view('team_members', $row['id'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
-                                                </a>    
-                                            </div>
-                                        </li>
-                                        <li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s"><?php echo $row['name']; ?></li>   
-                                        <li class="col-sm-4 animate fadeIn" data-wow-delay="0.4s"><?php echo $row['specialization']; ?></li> 
-                                    </ul>
+                                    <div class="blog-posts medium-images">
+                                        <ul>                                            
+                                            <li class="animate fadeInUp" data-wow-delay="0.4s">
+                                                <div class="row">                                                   
+                                                    <div class="col-sm-5"> <img class="img-responsive" src="<?php echo $this->crud_model->file_view('team_members', $row['id'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
+                                                    </div>
+                                                    <div class="col-sm-7">  
+                                                        <a href="#" class="tittle-post"><?php echo $row['name']; ?>   </a>
+                                                        <p><?php echo $row['specialization']; ?></p>
+                                                    </div>
+                                                </div>
+                                            </li>       
+                                        </ul>
+                                    </div>
                                 <?php } ?>           
                             </div>
                         </div>
                     </div>
-                </section>
+                </section>        
             </div>
 
             <footer>
@@ -221,7 +214,7 @@
                                 </li>
                                 <li class="col-sm-4">
                                     <h5>CONTACT US</h5>
-                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala ï¿½ 676122</p>
                                     <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
                                     <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
                                 </li>
@@ -232,7 +225,7 @@
                     </div>
 
                     <div class="rights">
-                        <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        <p>ï¿½ 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
                     </div>
                 </div>
             </footer>   
