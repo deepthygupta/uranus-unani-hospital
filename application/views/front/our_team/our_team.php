@@ -168,7 +168,7 @@
                                         <ul>                                            
                                             <li class="animate fadeInUp" data-wow-delay="0.4s">
                                                 <div class="row">                                                   
-                                                    <div class="col-sm-5"> <img class="img-responsive" src="<?php echo $this->crud_model->file_view('team_members', $row['id'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
+                                                   <div class="col-sm-5"> <img class="img-responsive" src="<?php echo $this->crud_model->file_view('team_members', $row['id'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
                                                     </div>
                                                     <div class="col-sm-7">  
                                                         <a href="#" class="tittle-post"><?php echo $row['name']; ?>   </a>
