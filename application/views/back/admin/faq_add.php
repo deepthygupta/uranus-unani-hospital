@@ -18,7 +18,7 @@
                         <div class="form-group btm_border">
                             <label class="col-sm-4 control-label"><?php echo translate('question'); ?></label>
                             <div class="col-sm-6">
-                                <input type="text" name="question" id="demo-hor-1" placeholder="<?php echo translate('question'); ?>" class="form-control required" tabindex="1">
+                                <input type="text" name="question" id="demo-hor-1" placeholder="<?php echo translate('question'); ?>" class="form-control required" tabindex="1" autocomplete="off">
                             </div>
                         </div>                       
 
