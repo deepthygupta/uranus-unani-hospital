@@ -362,19 +362,19 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
                         }
                         ?>
                         <?php
-                        if ($this->crud_model->admin_permission('coupon')) {
+                        //if ($this->crud_model->admin_permission('coupon')) {
                             ?>
-                            <li <?php if ($page_name == "coupon") { ?> class="active-link" <?php } ?> >
+                          <!--  <li <?php if ($page_name == "coupon") { ?> class="active-link" <?php } ?> >
                                 <a href="<?php echo base_url(); ?>index.php/admin/coupon/">
                                     <i class="fa fa-tag"></i>
                                     <span class="menu-title">
                                         <?php echo translate('discount'); ?>
                                     </span>
                                 </a>
-                            </li>
+                            </li>-->
 
                             <?php
-                        }
+                       // }
                         ?>
 
                         <?php
@@ -463,59 +463,33 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
                         if ($this->crud_model->admin_permission('newsletter') ||
                                 $this->crud_model->admin_permission('contact_message')) {
                             ?>
-                            <li <?php
-                            if ($page_name == "newsletter" ||
-                                    $page_name == "contact_message") {
-                                ?>
-                                    class="active-sub" 
-                                <?php } ?> >
-                                <a href="#">
+
+                            <li <?php if ($page_name == "newsletter") { ?> class="active-link" <?php } ?> >
+                                <a href="<?php echo base_url(); ?>index.php/admin/newsletter">
                                     <i class="fa fa-envelope"></i>
                                     <span class="menu-title">
-                                        <?php echo translate('messaging'); ?>
+                                        <?php echo translate('newsletters'); ?>
                                     </span>
-                                    <i class="fa arrow"></i>
                                 </a>
-
-                                <ul class="collapse <?php
-                                if ($page_name == "newsletter" ||
-                                        $page_name == "contact_message") {
-                                    ?>
-                                        in
-                                    <?php } ?>" >
-
-                                    <?php
-                                    if ($this->crud_model->admin_permission('newsletter')) {
-                                        ?>
-                                        <li <?php if ($page_name == "newsletter") { ?> class="active-link" <?php } ?> >
-                                            <a href="<?php echo base_url(); ?>index.php/admin/newsletter">
-                                                <i class="fa fa-circle fs_i"></i>
-                                                <?php echo translate('newsletters'); ?>
-                                            </a>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>                                   
-                                </ul>
                             </li>
                             <?php
                         }
                         ?>
 
                         <?php
-                        if ($this->crud_model->admin_permission('testimonial')) {
-                            ?>
-                            <li <?php if ($page_name == "testimonial") { ?> class="active-link" <?php } ?> >
+                        // if ($this->crud_model->admin_permission('testimonial')) {
+                        ?>
+                           <!-- <li <?php if ($page_name == "testimonial") { ?> class="active-link" <?php } ?> >
                                 <a href="<?php echo base_url(); ?>index.php/admin/testimonial/">
                                     <i class="fa fa-comments-o"></i>
                                     <span class="menu-title">
-                                        <?php echo translate('testimonial'); ?>
+                        <?php echo translate('testimonial'); ?>
                                     </span>
                                 </a>
-                            </li>
+                            </li>-->
 
-                            <?php
-                        }
+                        <?php
+                        //}
                         ?>
                         <?php
                         if ($this->crud_model->admin_permission('coupon')) {
