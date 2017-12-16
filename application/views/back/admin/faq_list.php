@@ -15,7 +15,7 @@
                 ?>
                 <tr>
                     <td><?php echo $row['question']; ?></td>			
-                    <td><?php echo $row['answer']; ?></td>			
+                    <td style="word-wrap: break-word; width: 500px;"><?php echo $row['answer']; ?></td>			
                     <td><?php echo $row['added_date']; ?></td>	
                     <td class="text-right">
                         <a class="btn btn-success btn-xs btn-labeled fa fa-wrench" data-toggle="tooltip" 
