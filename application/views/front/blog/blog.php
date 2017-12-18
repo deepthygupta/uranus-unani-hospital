@@ -32,13 +32,13 @@
         <!--End of Tawk.to Script-->
     </head>
     <body>
-       <!-- <div id="loader">
+        <div id="loader">
             <div class="loader">
                 <div class="position-center-center"> <img src="../../images/preloader.gif">
 
                 </div>
             </div>
-        </div>-->
+        </div>
 
         <div id="wrap">
             <header class="header-style-2">
