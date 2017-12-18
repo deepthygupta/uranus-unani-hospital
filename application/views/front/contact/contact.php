@@ -34,13 +34,13 @@
         <!--End of Tawk.to Script-->
     </head>
     <body>
-       <!-- <div id="loader">
+       <div id="loader">
             <div class="loader">
                 <div class="position-center-center"> <img src="../../images/preloader.gif">
 
                 </div>
             </div>
-        </div>-->
+        </div>
         <div id="wrap">
             <header class="header-style-2">
                 <div class="top-bar">
@@ -178,17 +178,17 @@
                                                 <ul class="row">
                                                     <li class="col-sm-12">
                                                         <label>
-                                                            <input type="text" class="form-control" name="name" id="name" placeholder="*NAME">
+                                                            <input type="text" class="form-control" name="name" id="name" placeholder="*NAME" autocomplete="off" tabindex="1">
                                                         </label>
                                                     </li>
                                                     <li class="col-sm-12">
                                                         <label>
-                                                            <input type="text" class="form-control" name="email" id="email" placeholder="*EMAIL">
+                                                            <input type="text" class="form-control" name="email" id="email" placeholder="*EMAIL" tabindex="2" autocomplete="off">
                                                         </label>
                                                     </li>
                                                     <li class="col-sm-12">
                                                         <label>
-                                                            <input type="phone" class="form-control" name="phone" id="phone" placeholder="PHONE">
+                                                            <input type="phone" class="form-control" name="phone" id="phone" placeholder="PHONE" tabindex="3" autocomplete="off">
                                                         </label>
                                                     </li>
 
@@ -198,7 +198,7 @@
                                                 <ul class="row">
                                                     <li class="col-sm-12">
                                                         <label>
-                                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="SUBJECT">
+                                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="SUBJECT" tabindex="4" autocomplete="off">
                                                         </label>
                                                     </li>
                                                     <li class="col-sm-12">
@@ -238,7 +238,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-12 animate fadeInLeft" data-wow-delay="0.4s">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15718.514472476189!2d76.3094850867025!3d9.9648245860039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08732810ea5f47%3A0xb4e52b0d9d8e815b!2sKochi%2C+Kerala+682019!5e0!3m2!1sen!2sin!4v1497417669224" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.8887769982007!2d76.12288576435402!3d11.121660742087835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba63664816bc141%3A0xe915fe8931e06a4e!2sKerala+Unani+Hospital+Manjeri!5e0!3m2!1sen!2sin!4v1513572937165" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                                 <ul class="social_icons">
                                     <li class="facebook"><a href="#."> <i class="fa fa-facebook"></i></a></li>
                                     <li class="twitter"><a href="#."> <i class="fa fa-twitter"></i></a></li>
