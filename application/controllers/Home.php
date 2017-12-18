@@ -2787,28 +2787,21 @@ class Home extends CI_Controller {
     function appointment() {
 
 
-        if ($_GET) {
-            $name = $_GET['name'];
-            $phone = $_GET['phone'];
-            $email = $_GET['email'];
-            $date = $_GET['date'];
-            $msg = $_GET['msg'];
+        if ($_POST) {
+            $name = $_POST['name'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $date = $_POST['date'];
+            $msg = $_POST['msg'];
             $to = 'deepthygupta@gmail.com';
-            $mail = new PHPMailer();
+            $subject = 'ONLINE APPOINTMENT';
+            $headers = "MIME-Version: 1.0\n";
+            $headers .= "Content-type: text/plain; charset=iso-8859-1\n";
+            $headers .= "To: <$to>\r\n";
+            $headers .= "From: Uranus Unani Hospital\r\n";
 
-            $mail->isSMTP();
-            $mail->Host = 'md-in-26.webhostbox.net';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'mailing@qproinnovations.com';
-            $mail->Password = 'VTC9ZE)GvLcM';
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port = 465;
-            $mail->setFrom('mailing@qproinnovations.com', $name);
-            $mail->addAddress($to, $name);
-            $mail->Subject = 'ONLINE APPOINTMENT';
-            $mail->Body = <<<EOD
-        
-        <table cellspacing="0" cellpadding="1" border="1">
+
+            $message = '<table cellspacing="0" cellpadding="1" border="1">
             <tbody>
 			<tr><th colspan="2">ONLINE APPOINTMENT FORM</th></tr>
                 <tr>
@@ -2833,28 +2826,21 @@ class Home extends CI_Controller {
                     <td style="padding: 5px 10px;">$msg</td>
                 </tr>
             </tbody>
-        </table>
-        
-EOD;
-            
-            echo $mail->ErrorInfo;die();
+        </table>';
 
-            if (!$mail->send()) {
+            if (!mail($to, $subject, $message, $headers, '-fmailing@qproinnovations.com')) {
                 echo '<script language="javascript">';
                 echo 'alert("Message could not be sent.");';
-
-                echo "window.location = './'";
+                echo "window.location = '" . base_url() . "'";
                 echo '</script>';
-
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
                 echo '<script language="javascript">';
                 echo 'alert("Message has been sent");';
-                echo "window.location = './'";
+                echo "window.location = '" . base_url() . "'";
                 echo '</script>';
             }
-        }else{
-             redirect(base_url() . 'index.php', 'refresh');
+        } else {
+            redirect(base_url() . 'index.php', 'refresh');
         }
     }
 
@@ -4504,6 +4490,81 @@ EOD;
         $this->crud_model->send_order_placed_email($sale_code, $name, $phone, $sale, $email_id, $address, $total, $shipping_charge, $city, $state, $zip, $payment, $order_status);
 
         //echo $shipping_address['firstname']."gaaa";
+    }
+
+    function appointment_old_mail() {
+
+
+        if ($_POST) {
+            $name = $_POST['name'];
+            $phone = $_POST['phone'];
+            $email = $_POST['email'];
+            $date = $_POST['date'];
+            $msg = $_POST['msg'];
+            $to = 'deepthygupta@gmail.com';
+            $mail = new PHPMailer();
+
+            $mail->isSMTP();
+            $mail->Host = 'md-in-26.webhostbox.net';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'mailing@qproinnovations.com';
+            $mail->Password = 'VTC9ZE)GvLcM';
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
+            $mail->setFrom('mailing@qproinnovations.com', $name);
+            $mail->addAddress($to, $name);
+            $mail->Subject = 'ONLINE APPOINTMENT';
+            $mail->Body = <<<EOD
+        
+        <table cellspacing="0" cellpadding="1" border="1">
+            <tbody>
+			<tr><th colspan="2">ONLINE APPOINTMENT FORM</th></tr>
+                <tr>
+                    <td style="padding: 5px 10px;" width="150">Name </td>
+                    <td style="padding: 5px 10px;">$name</td>
+                </tr>
+				<tr>
+                    <td style="padding: 5px 10px;" width="150">Phone </td>
+                    <td style="padding: 5px 10px;">$phone</td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px 10px;" width="150">Email </td>
+                    <td style="padding: 5px 10px;">$email</td>
+                </tr>
+				
+				<tr>
+                    <td style="padding: 5px 10px;" width="150">DATE </td>
+                    <td style="padding: 5px 10px;">$date</td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px 10px;" width="150">Message </td>
+                    <td style="padding: 5px 10px;">$msg</td>
+                </tr>
+            </tbody>
+        </table>
+        
+EOD;
+
+            echo $mail->ErrorInfo;
+            die();
+
+            if (!$mail->send()) {
+                echo '<script language="javascript">';
+                echo 'alert("Message could not be sent.");';
+
+                echo "window.location = './'";
+                echo '</script>';
+
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            } else {
+                echo '<script language="javascript">';
+                echo 'alert("Message has been sent");';
+                echo "window.location = './'";
+                echo '</script>';
+            }
+        } else {
+            redirect(base_url() . 'index.php', 'refresh');
+        }
     }
 
 }
