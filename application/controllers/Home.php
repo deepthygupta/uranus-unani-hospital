@@ -763,7 +763,7 @@ class Home extends CI_Controller {
     }
 
     function image_details($param1 = '', $param2 = '') {
-        
+
         $product_data = $this->db->get_where('product', array('product_id' => $param1, 'status' => 'ok'));
         $pin = $this->input->post('pin');
         $query = $this->db->get_where('pincode', array('pincode' => $pin));
@@ -2741,47 +2741,120 @@ class Home extends CI_Controller {
         echo $exists;
     }
 
-    /* FUNCTION: Newsletter Subscription */
-
     function subscribe() {
         $safe = 'yes';
-        $char = '';
-        foreach ($_POST as $row) {
-            if (preg_match('/[\'^":()}{#~><>|=+Â¬]/', $row, $match)) {
-                $safe = 'no';
-                $char = $match[0];
-            }
+        $exists = 'no';
+
+        if (preg_match('/[\'^":()}{#~><>|=+Â¬]/', $_POST['subscribe'])) {
+            $safe = 'no';
+            $this->session->set_userdata(array(
+                'sub_message' => "Disallowed Characters appear in submitted Email ID",
+                'message_type' => "error"
+            ));
         }
 
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        if ($this->form_validation->run() == FALSE) {
-            echo validation_errors();
-        } else {
-            if ($safe == 'yes') {
-                $subscribe_num = $this->session->userdata('subscriber');
-                $email = $this->input->post('email');
-                $subscriber = $this->db->get('subscribe')->result_array();
-                $exists = 'no';
-                foreach ($subscriber as $row) {
-                    if ($row['email'] == $email) {
-                        $exists = 'yes';
-                    }
+        if ($safe == 'yes') {
+            $subscriber = $this->db->get('subscribe')->result_array();
+            foreach ($subscriber as $row) {
+                if ($row['email'] == $_POST['subscribe']) {
+                    $exists = 'yes';
                 }
-                if ($exists == 'yes') {
-                    echo 'already';
-                } else if ($subscribe_num >= 3) {
-                    echo 'already_session';
-                } else if ($exists == 'no') {
-                    $subscribe_num = $subscribe_num + 1;
-                    $this->session->set_userdata('subscriber', $subscribe_num);
-                    $data['email'] = $email;
-                    $this->db->insert('subscribe', $data);
-                    echo 'done';
-                }
-            } else {
-                echo 'Disallowed charecter : " ' . $char . ' " in the POST';
             }
+            if ($exists == 'yes') {
+                $this->session->set_userdata(array(
+                    'sub_message' => "Email ID Already Registered",
+                    'message_type' => "error"
+                ));
+            } else {
+                $this->db->set('email', $_POST['subscribe']);
+                $result = $this->db->insert('subscribe');
+                if ($result) {
+                    $this->session->set_userdata(array(
+                        'sub_message' => "Email ID added successfully",
+                        'message_type' => "success"
+                    ));
+                } else {
+                    $this->session->set_userdata(array(
+                        'sub_message' => "Error on adding Email ID",
+                        'message_type' => "error"
+                    ));
+                }
+            }
+        }
+        redirect(base_url() . 'index.php', 'refresh');
+    }
+
+    function appointment() {
+
+
+        if ($_GET) {
+            $name = $_GET['name'];
+            $phone = $_GET['phone'];
+            $email = $_GET['email'];
+            $date = $_GET['date'];
+            $msg = $_GET['msg'];
+            $to = 'deepthygupta@gmail.com';
+            $mail = new PHPMailer();
+
+            $mail->isSMTP();
+            $mail->Host = 'md-in-26.webhostbox.net';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'mailing@qproinnovations.com';
+            $mail->Password = 'VTC9ZE)GvLcM';
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
+            $mail->setFrom('mailing@qproinnovations.com', $name);
+            $mail->addAddress($to, $name);
+            $mail->Subject = 'ONLINE APPOINTMENT';
+            $mail->Body = <<<EOD
+        
+        <table cellspacing="0" cellpadding="1" border="1">
+            <tbody>
+			<tr><th colspan="2">ONLINE APPOINTMENT FORM</th></tr>
+                <tr>
+                    <td style="padding: 5px 10px;" width="150">Name </td>
+                    <td style="padding: 5px 10px;">$name</td>
+                </tr>
+				<tr>
+                    <td style="padding: 5px 10px;" width="150">Phone </td>
+                    <td style="padding: 5px 10px;">$phone</td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px 10px;" width="150">Email </td>
+                    <td style="padding: 5px 10px;">$email</td>
+                </tr>
+				
+				<tr>
+                    <td style="padding: 5px 10px;" width="150">DATE </td>
+                    <td style="padding: 5px 10px;">$date</td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px 10px;" width="150">Message </td>
+                    <td style="padding: 5px 10px;">$msg</td>
+                </tr>
+            </tbody>
+        </table>
+        
+EOD;
+            
+            echo $mail->ErrorInfo;die();
+
+            if (!$mail->send()) {
+                echo '<script language="javascript">';
+                echo 'alert("Message could not be sent.");';
+
+                echo "window.location = './'";
+                echo '</script>';
+
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            } else {
+                echo '<script language="javascript">';
+                echo 'alert("Message has been sent");';
+                echo "window.location = './'";
+                echo '</script>';
+            }
+        }else{
+             redirect(base_url() . 'index.php', 'refresh');
         }
     }
 

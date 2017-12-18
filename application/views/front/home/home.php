@@ -31,13 +31,14 @@
         <!--End of Tawk.to Script-->
     </head>
     <body>
-        <!-- <div id="loader">
+        
+        <div id="loader">
              <div class="loader">
                  <div class="position-center-center"> <img src="images/preloader.gif">
  
                  </div>
              </div>
-         </div>-->
+         </div>
 
         <div id="wrap">
             <header class="header">   
@@ -150,7 +151,7 @@
                 </div>
 
             </header>
-           
+
             <section class="home-slider">
                 <div class="tp-banner-container">
                     <div class="tp-banner" >
@@ -377,16 +378,16 @@
                     <div class="container">
                         <ul class="row">
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.4s">
-                                <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate "> <img class="img-responsive" src="images/collection-img-1.jpg" alt=""> <span>CLEAN</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-1.jpg" alt=""> <span>HEAD1</span> </a> </div>
                             </li>
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.6s">
-                                <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate"> <img class="img-responsive" src="images/collection-img-2.jpg" alt=""> <span>GLOW</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-2.jpg" alt=""> <span>HEAD2</span> </a> </div>
                             </li>
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.4s">
-                                <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate"> <img class="img-responsive" src="images/collection-img-3.jpg" alt=""> <span>ENERGY</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-3.jpg" alt=""> <span>HEAD3</span> </a> </div>
                             </li>
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.6s">
-                                <div class="inn-sec"> <a href="<?php echo base_url(); ?>index.php/home/cate"> <img class="img-responsive" src="images/collection-img-4.jpg" alt=""> <span>HEAL YOUR GUT</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-4.jpg" alt=""> <span>HEAD4</span> </a> </div>
                             </li>
                         </ul>
                     </div>
@@ -410,31 +411,58 @@
                     <div class="section-p-60px overlay ">
                         <div class="container">
                             <div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
-                                <h5>Testimonial</h5>
-                                <p>What Customer Say?</p>
+                                <h2 class="block-title">APPOINTMENT FORM</h2>
+                                <div class="block-textappoint">To make a doctor’s appointment online, please fill the online form below.
+                                    Our representative will get back to you at the earliest. 
+                                </div>
                             </div>
                             <div class="clients-about-in">
                                 <li>
                                     <div class="clients-about-slider animate fadeInUp" data-wow-delay="0.4s">
                                         <?php
-                                        $cate = $this->db->get('testimonial')->result_array();
-                                        foreach (array_slice($cate, 0, 3) as $row):
-                                            ?>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <div class="avatar">
-                                                        <img class="media-object" src="<?php echo $this->crud_model->file_view('testimonial', $row['testimonial_id'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
-                                                    </div>
+                                        echo form_open(base_url() . 'index.php/home/appointment/', array(
+                                            'method' => 'post',
+                                            'id' => 'main-contact-form',
+                                            'name' => 'contact_form',
+                                            'enctype' => 'multipart/form-data'
+                                        ));
+                                        ?>
+                                        <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="off" required>
                                                 </div>
-                                                <div class="media-body">
-                                                    <p><?php echo $row['description']; ?></p>
-                                                    <hr>
-                                                    <h6><?php echo $row['author']; ?></h6>
-                                                    <span><?php echo $row['des_and_company']; ?></span> </div>
                                             </div>
-                                        <?php endforeach ?>
-                                    </div>
 
+                                            <div class="col-sm-7">
+                                                <div class="form-group">
+                                                    <input type="tel" name="phone" class="form-control" placeholder="Phone No" autocomplete="off" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Email" >
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-7">
+                                                <div class="form-group">
+                                                    <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">	
+                                                <div class="form-group">
+                                                    <textarea name="msg" id="msg" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
+                                                </div>  
+                                            </div>	
+
+                                        </div>	
+                                        <div class="form-group">
+                                            <button name="appoint_submit" type="submit" value="appoint_submit" class="btn-active-success">Send Now</button>
+                                        </div>
+                                        </form> 
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -446,13 +474,12 @@
                             <div class="col-md-7 no-padding pull-right">
                                 <div class="sub-mail">
                                     <?php
-                                    echo form_open(base_url() . 'index.php/home/subs/', array(
-                                        'method' => 'post',
-                                        'enctype' => 'multipart/form-data'
+                                    echo form_open(base_url() . 'index.php/home/subscribe/', array(
+                                        'method' => 'post'
                                     ));
                                     ?>
-                                    <input type="email" name="subscribe" placeholder="YOUR EMAIL ADDRESS.." required>                                   
-                                    <button type="submit">SUBSCRIBE</button>
+                                    <input type="email" name="subscribe" placeholder="YOUR EMAIL ADDRESS.." required autocomplete="off">  
+                                    <button type="submit" name="subscribe_btn">SUBSCRIBE</button>
                                     </form>
                                 </div>
                             </div>
