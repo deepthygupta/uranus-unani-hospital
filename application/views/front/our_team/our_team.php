@@ -41,7 +41,7 @@
         </div>
 
         <div id="wrap">
-            <header class="header-style-2">
+            <header class="header">
                 <div class="top-bar">
                     <div class="container"> 
                         <div class="top-links">
