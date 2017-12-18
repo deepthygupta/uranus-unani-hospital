@@ -490,7 +490,7 @@
 
             <footer>
                 <div class="container">
-                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt=""></a><br>
+                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/footerlogo.png" style="width:200px;" alt=""></a><br>
                         <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
                     </div>
 
