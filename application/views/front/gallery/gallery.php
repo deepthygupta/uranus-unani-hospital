@@ -40,7 +40,7 @@
         </div>
 
         <div id="wrap">
-            <header class="header-style-2">
+            <header class="header header-common">
                 <div class="top-bar">
                     <div class="container">
                         <div class="top-links">
@@ -68,8 +68,8 @@
                         <nav class="webimenu">
                             <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
                             <ul class="ownmenu">
-                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/" alt="logo"></a></li>
-                                <li><a href="<?php echo base_url(); ?>index.php">HOME</a></li>
+                                <li class="logo1"><a href="<?php echo base_url(); ?>/index.php"><img src="../../images/logo.png" alt="logo"></a></li>
+                                <li><a href="<?php echo base_url(); ?>/index.php">HOME</a></li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/home/about_us">
                                         <?php echo translate('ABOUT US'); ?>
@@ -159,7 +159,7 @@
                         <div class="row">
                             <div class="col-sm-12 animate fadeInUp" data-wow-delay="0.2s">
                                 <div id="clean">
-                                    <div class="popurlar_product">
+                                    <div class="popurlar_product our-gallery">                                    
                                         <ul class="row">
                                             <?php
                                             $this->db->order_by("id", "desc");
@@ -183,44 +183,75 @@
             </div>
 
             <footer>
-                <div class="container">
-                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt=""></a><br>
-                        <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
-                    </div>
-
-                    <div class="footer-link row">
-                        <div class="col-md-12">
+            	<div class="footer-locations">
+					<div class="container">
+                    	<div class="text-center">
+                        	<h2>Our Locations</h2>
+                         </div>
                             <ul>
-                                <li class="col-sm-4">
+                            	<li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri,<br> Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>                                
+                            </ul>                                          	
+                    </div>
+				</div>                    
+				<div class="footer-bootom">                    
+                    <div class="container">                    
+                        <div class="footer-link row">                        
+                                <div class="col-sm-4">
                                     <h5>INFORMATION</h5>
                                     <ul class="f-links">
                                         <li><a href=""> HOME</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/about_us"> ABOUT US</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/faq1"> FAQ</a></li>
-                                        <li><a href="#."> PRIVACY & POLICY</a></li>
+                                        <li><a href="#"> PRIVACY & POLICY</a></li>
                                         <li><a href="#"> TERMS & CONDITIONS</a></li>
                                     </ul>
-                                </li>
-                                <li class="col-sm-4">
+                                </div>
+                                <div class="col-sm-4">
                                     <h5>MY ACCOUNT</h5>
                                     <ul class="f-links">
                                         <li><a href="<?php echo base_url(); ?>index.php/home/my_account">MY ACCOUNT</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/login2"> LOGIN</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/cart_checkout"> MY CART</a></li>  
                                     </ul>
-                                </li>
-                                <li class="col-sm-4">
-                                    <h5>CONTACT US</h5>
-                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
-                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
-                                </li>
-                            </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5>ABOUT US</h5>
+                                    <div class="footer-logo"><a href="<?php echo base_url(); ?>index.php"><img src="<?php echo base_url(); ?>/images/footerlogo.png" alt=""></a></div><br>
+                                    <p>We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
+                                </div>
                         </div>
-                    </div>
-
-                    <div class="rights">
-                        <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        <div class="rights">
+                            <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        </div>
                     </div>
                 </div>
             </footer>  

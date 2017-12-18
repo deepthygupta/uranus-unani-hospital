@@ -71,7 +71,7 @@
                         <nav class="webimenu">
                             <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
                             <ul class="ownmenu">
-                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/sitelogo.png" style="width: 180px;" alt="logo"></a></li>
+                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/logo.png"alt="logo"></a></li>
                                 <li><a href="#">HOME</a></li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/home/about_us">
@@ -365,7 +365,7 @@
                                 <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >                                   
                                     <div class="items-in">                                      
                                         <a href="<?php echo base_url(); ?>index.php/home/image_details/<?php echo $row['product_id']; ?>/<?php echo $row['category']; ?>">
-                                            <img  src="<?php echo $this->crud_model->file_view1('product', $row['product_id'], $row['category'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
+                                            <img src="<?php echo $this->crud_model->file_view1('product', $row['product_id'], $row['category'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
                                         </a>
                                     </div>
                                 </div>
@@ -399,71 +399,61 @@
                         <a href="#" class="video-btn popup-vedio"><i class="ion-android-arrow-dropright-circle"></i></a>
                         <a href="#" class="link popup-vedio video-btn"></a>     
                     </div>
-                </section>
-                <section class="section-p-30px ">
-                    <div class="container text-center">
-                        <div class="row">                            
-                        </div>
-                    </div>
-                </section>
+                </section>               
 
-                <section class="about-sebian bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
+                <section class="appointment-form bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
                     <div class="section-p-60px overlay ">
                         <div class="container">
-                            <div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
-                                <h2 class="block-title">APPOINTMENT FORM</h2>
-                                <div class="block-textappoint">To make a doctor’s appointment online, please fill the online form below.
-                                    Our representative will get back to you at the earliest. 
-                                </div>
-                            </div>
-                            <div class="clients-about-in">
-                                <li>
-                                    <div class="clients-about-slider animate fadeInUp" data-wow-delay="0.4s">
-                                        <?php
-                                        echo form_open(base_url() . 'index.php/home/appointment/', array(
-                                            'method' => 'post',
-                                            'id' => 'main-contact-form',
-                                            'name' => 'contact_form',
-                                            'enctype' => 'multipart/form-data'
-                                        ));
-                                        ?>
-                                        <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="off" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-7">
-                                                <div class="form-group">
-                                                    <input type="tel" name="phone" class="form-control" placeholder="Phone No" autocomplete="off" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Email" >
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-7">
-                                                <div class="form-group">
-                                                    <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">	
-                                                <div class="form-group">
-                                                    <textarea name="msg" id="msg" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
-                                                </div>  
-                                            </div>	
-
-                                        </div>	
-                                        <div class="form-group">
-                                            <button name="appoint_submit" type="submit" value="appoint_submit" class="btn-active-success">Send Now</button>
-                                        </div>
-                                        </form> 
+                            	<div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
+                                    <h2 class="white-title">APPOINTMENT FORM</h2>
+                                    <div class="block-textappoint">To make a doctor’s appointment online, please fill the online form below.
+                                        Our representative will get back to you at the earliest. 
                                     </div>
-                            </div>
+                            	</div>
+                            
+								<?php
+                                echo form_open(base_url() . 'index.php/home/appointment/', array(
+                                    'method' => 'post',
+                                    'id' => 'main-contact-form',
+                                    'name' => 'contact_form',
+                                    'enctype' => 'multipart/form-data'
+                                ));
+                                ?>
+                                <div class="row wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="tel" name="phone" class="form-control" placeholder="Phone No" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Email" >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">	
+                                        <div class="form-group">
+                                            <textarea name="msg" id="msg" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
+                                        </div>  
+                                    </div>	
+
+                                </div>	
+                                <div class="form-group">
+                                    <button name="appoint_submit" type="submit" value="appoint_submit" class="btn btn-active-success">Send Now</button>
+                                </div>
+                                </form>
                         </div>
                     </div>
                 </section>
@@ -489,46 +479,75 @@
             </div>
 
             <footer>
-                <div class="container">
-                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt=""></a><br>
-                        <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
-                    </div>
-
-                    <div class="footer-link row">
-                        <div class="col-md-12">
+            	<div class="footer-locations">
+					<div class="container">
+                    	<div class="text-center">
+                        	<h2>Our Locations</h2>
+                         </div>
                             <ul>
-                                <li class="col-sm-4">
+                            	<li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri,<br> Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>                                
+                            </ul>                                          	
+                    </div>
+				</div>                    
+				<div class="footer-bootom">                    
+                    <div class="container">                    
+                        <div class="footer-link row">                        
+                                <div class="col-sm-4">
                                     <h5>INFORMATION</h5>
                                     <ul class="f-links">
                                         <li><a href=""> HOME</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/about_us"> ABOUT US</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/faq1"> FAQ</a></li>
-                                        <li><a href="#."> PRIVACY & POLICY</a></li>
+                                        <li><a href="#"> PRIVACY & POLICY</a></li>
                                         <li><a href="#"> TERMS & CONDITIONS</a></li>
                                     </ul>
-                                </li>
-                                <li class="col-sm-4">
+                                </div>
+                                <div class="col-sm-4">
                                     <h5>MY ACCOUNT</h5>
                                     <ul class="f-links">
                                         <li><a href="<?php echo base_url(); ?>index.php/home/my_account">MY ACCOUNT</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/login2"> LOGIN</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/cart_checkout"> MY CART</a></li>  
                                     </ul>
-                                </li>
-                                <li class="col-sm-4">
-                                    <h5>CONTACT US</h5>
-                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
-                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
-                                </li>
-                            </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5>ABOUT US</h5>
+                                    <div class="footer-logo"><a href="<?php echo base_url(); ?>index.php"><img src="<?php echo base_url(); ?>/images/footerlogo.png" alt=""></a></div><br>
+                                    <p>We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
+                                </div>
                         </div>
-
-
-                    </div>
-
-                    <div class="rights">
-                        <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        <div class="rights">
+                            <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        </div>
                     </div>
                 </div>
             </footer>            
