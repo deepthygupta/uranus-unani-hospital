@@ -71,7 +71,7 @@
                         <nav class="webimenu">
                             <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
                             <ul class="ownmenu">
-                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/" alt="logo"></a></li>
+                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/sitelogo.png" alt="logo"></a></li>
                                 <li><a href="#">HOME</a></li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/home/about_us">
