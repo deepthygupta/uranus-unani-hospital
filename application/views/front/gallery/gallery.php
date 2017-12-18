@@ -40,7 +40,7 @@
         </div>
 
         <div id="wrap">
-            <header class="header-style-2">
+            <header class="header heaer-new header-common">
                 <div class="top-bar">
                     <div class="container">
                         <div class="top-links">
