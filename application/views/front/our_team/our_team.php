@@ -57,8 +57,8 @@
                                 <?php } ?>
                             </ul>
                             <ul class="social_icons">
-                                <li class="facebook"><a href="https://www.facebook.com/#"><i class="fa fa-facebook"></i> </a></li>
-                                <li class="instagram"><a href=" https://www.instagram.com/#/"><i class="fa fa-instagram"></i> </a></li>
+                                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i> </a></li>
+                                <li class="instagram"><a href="#"><i class="fa fa-instagram"></i> </a></li>
                             </ul>
                         </div>
                     </div>

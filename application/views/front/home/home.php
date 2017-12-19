@@ -34,7 +34,7 @@
         
         <div id="loader">
              <div class="loader">
-                 <div class="position-center-center"> <img src="<?php echo base_url(); ?>images/preloader.gif">
+                 <div class="position-center-center"><img src="<?php echo base_url(); ?>images/preloader.gif">
  
                  </div>
              </div>
