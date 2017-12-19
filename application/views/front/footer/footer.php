@@ -6,34 +6,32 @@
             </div>
             <ul>
                 <li>
-                    <h5>CONTACT US</h5>
-                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri,<br> Kerala – 676122</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> MANJERI <br>Opp: KMH Hospital<br> Kerala – 676122</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> name@domain.com</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9388023160</p>
                 </li>
                 <li>
-                    <h5>CONTACT US</h5>
-                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> EDAKKARA <br> Palemad Road, Musliarangadi <br>Kerala</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> name@domain.com</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9045360598</p>
                 </li>
                 <li>
-                    <h5>CONTACT US</h5>
-                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> PERINTHALMANNA <br>Near Al Shifa Hospital, <br>Kerala</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> name@domain.com</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9045360511</p>
                 </li>
                 <li>
-                    <h5>CONTACT US</h5>
-                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> KOTTAYAM <br>Union Cub Rad, Karapuzha <br>Kerala</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> name@domain.com</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9497009111</p>
                 </li>
                 <li>
-                    <h5>CONTACT US</h5>
-                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> IDUKKI <br>Kudayathur, Kanjar <br>Kerala</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> name@domain.com</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 9497840111</p>
+                </li>                                
+                <li>
+                    <p><i class="fa fa-home" aria-hidden="true"></i> Opening Shortly At: PALAKKAD & KOLLAM</p>
                 </li>                                
             </ul>                                          	
         </div>

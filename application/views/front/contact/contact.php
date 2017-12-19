@@ -12,7 +12,7 @@
     <section class="conact-us conact-us-2 conact-us-3 no-padding-b">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9 contact-3 animate fadeInRight " data-wow-delay="0.4s">
+                <div class="col-sm-12 contact-3 animate fadeInRight " data-wow-delay="0.4s">
                     <h5>GET IN TOUCH</h5>
                     <p>Please don’t hesitate to contact us if you have any questions, comments or messages. We will try to respond to everything! </p>
                     <div class="contact ">
@@ -69,22 +69,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-sm-3 contact-3 animate fadeInRight text-center " data-wow-delay="0.5s">
-                    <div class="well">
-                        <h5>Address</h5>
-                        <p> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
-                    </div>
-                    <div class="well">
-                        <h5>E-mail</h5>
-                        <p>sales@uranus.com</p>
-                    </div>
-                    <div class="well">
-                        <h5>Phone No</h5>
-                        <p>+91 9999999999</p>
-                    </div>
-                </div>
+                </div>                
             </div>
         </div>
 
@@ -107,9 +92,7 @@
 
     </section>
 </div>
-<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
 <script type="text/javascript">
-
         var map;
         function initialize_map() {
             if ($('#map').length) {
@@ -135,5 +118,4 @@
                 return false;
             }
         }
-        google.maps.event.addDomListener(window, 'load', initialize_map);
 </script>
