@@ -67,8 +67,8 @@
                                 <div class="quantity product-quantity position-center-center">
                                     <input  type="text" class="form-control qty in_xs quantity-field quantity_field" min="1" readonly data-rowid="<?php echo $items['rowid']; ?>" data-limit='no' value="<?php echo $items['qty']; ?>" id='qty1' " />
                                 </div>
-                                <button type="submit" value="minus" class="btn1 quantity-button"  onClick="proceed();">-</button>
-                                <button type="submit" value="plus" class="btn1 quantity-button" onClick="proceed();">+</button>  
+                                <button type="submit" value="minus" name="minus" class="btn1 quantity-button">-</button>
+                                <button type="submit" value="plus" name="minus" class="btn1 quantity-button">+</button>  
                             <?php } ?>                                       
                         </li>
                         <li class="col-sm-2 col-xs-4">
@@ -148,51 +148,6 @@
         </div>
     </section>
 </div>
-<footer>
-    <div class="container">
-        <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/sitelogo.jpg" alt=""></a><br>
-            <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
-        </div>
-
-        <div class="footer-link row">
-            <div class="col-md-12">
-                <ul>
-                    <li class="col-sm-4">
-                        <h5>INFORMATION</h5>
-                        <ul class="f-links">
-                            <li><a href=""> HOME</a></li>
-                            <li><a href="<?php echo base_url(); ?>index.php/home/about_us"> ABOUT US</a></li>
-                            <li><a href="<?php echo base_url(); ?>index.php/home/faq1"> FAQ</a></li>
-                            <li><a href="#."> PRIVACY & POLICY</a></li>
-                            <li><a href="#"> TERMS & CONDITIONS</a></li>
-                        </ul>
-                    </li>
-                    <li class="col-sm-4">
-                        <h5>MY ACCOUNT</h5>
-                        <ul class="f-links">
-                            <li><a href="<?php echo base_url(); ?>index.php/home/my_account">MY ACCOUNT</a></li>
-                            <li><a href="<?php echo base_url(); ?>index.php/home/login2"> LOGIN</a></li>
-                            <li><a href="<?php echo base_url(); ?>index.php/home/cart_checkout"> MY CART</a></li>  
-                        </ul>
-                    </li>
-                    <li class="col-sm-4">
-                        <h5>CONTACT US</h5>
-                        <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
-                    </li>
-                </ul>
-            </div>
-
-
-        </div>
-
-        <div class="rights">
-            <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
-        </div>
-    </div>
-</footer>            
-</div>
 <?php
 echo form_open('', array(
     'method' => 'post',
@@ -200,20 +155,13 @@ echo form_open('', array(
 ?>
 <input type="hidden" id="coup_frm" name="code">
 </form> 
-<script src="../../js/jquery-1.11.3.js"></script>
-<script src="../../js/wow.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/own-menu.js"></script>
-<script src="../../js/owl.carousel.min.js"></script>
-<script src="../../js/jquery.magnific-popup.min.js"></script>
-<script src="../../js/jquery.isotope.min.js"></script>
-<script src="../../js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="../../rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="../../rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="../../js/main.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url(); ?>rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
 <script type="text/javascript">
-                            var today = new Date().toISOString().split('T')[0];
-                            document.getElementsByName("date")[0].setAttribute('min', today);
+                                    var today = new Date().toISOString().split('T')[0];
+                                    document.getElementsByName("date")[0].setAttribute('min', today);
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -247,11 +195,3 @@ echo form_open('', array(
         update_calc_cart();
     });
 </script>
-
-<script>
-    $(function () {
-        $("#date").datepicker({minDate: 0});
-    });
-</script>
-</body>
-</html>

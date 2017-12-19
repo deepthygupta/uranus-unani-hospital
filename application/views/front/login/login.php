@@ -11,8 +11,8 @@
             <div class="row">
                 <div class="col-sm-6 contact-3 animate fadeInRight" data-wow-delay="0.5s">
 
-                    <?php if (isset($res1)) { ?>
-                        <h5 style="color:#61c002;"><?php echo $res1; ?></h5>
+                    <?php if (isset($login_result)) { ?>
+                        <h5><?php echo $login_result; ?></h5>
                     <?php } else { ?>
                         <h5>Login</h5>
                     <?php } ?>
@@ -48,8 +48,8 @@
                                         <li class="col-sm-6 no-margin">
                                             <p><a href="<?php echo base_url(); ?>index.php/home/forgot_pswd">Forgot Your Password?</a></p>
                                         </li>
-                                        <li class="col-sm-6 no-margin"><span class="btn login_btn">LOGIN
-                                            </span>
+                                        <li class="col-sm-6 no-margin"><button type="submit" name="login_submit" class="btn login_btn">LOGIN
+                                            </button>>
                                         </li>
 
                                     </ul>
@@ -66,15 +66,15 @@
                     <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more. </p>
                     <div class="contact ">
                         <div class="contact-form">
-                            <?php
-                            echo form_open(base_url() . 'index.php/home/signup_separate', array(
-                                'class' => 'contact-form',
-                                'method' => 'post',
-                                'id' => 'contact_form',
-                                'role' => 'form',
-                                'enctype' => 'multipart/form-data'
-                            ));
-                            ?>
+<?php
+echo form_open(base_url() . 'index.php/home/signup_separate', array(
+    'class' => 'contact-form',
+    'method' => 'post',
+    'id' => 'contact_form',
+    'role' => 'form',
+    'enctype' => 'multipart/form-data'
+));
+?>
                             <div class="row">
                                 <div class="col-md-12">
                                     <ul class="row">

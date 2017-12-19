@@ -27,6 +27,7 @@
         <title><?php echo $system_title; ?> || <?php echo $page_title; ?></title>
         <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url(); ?>css/main.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css">
@@ -46,12 +47,9 @@
         <script src="<?php echo base_url(); ?>template/front/plugins/superfish/js/superfish.min.js"></script>
         <script src="<?php echo base_url(); ?>template/front/plugins/jquery.sticky.min.js"></script>
         <script src="<?php echo base_url(); ?>template/front/plugins/jquery.easing.min.js"></script>
-        <script src="<?php echo base_url(); ?>template/front/plugins/jquery.smoothscroll.min.js"></script>
-        <script src="<?php echo base_url(); ?>template/front/plugins/smooth-scrollbar.min.js"></script>
         <script src="<?php echo base_url(); ?>template/front/plugins/jquery.cookie.js"></script>
         <script src="<?php echo base_url(); ?>template/front/plugins/modernizr.custom.js"></script>
         <script src="<?php echo base_url(); ?>template/front/js/theme.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&key="></script>
         <script src="<?php echo base_url(); ?>template/front/js/cart.js"></script>
 
         <!--Start of Tawk.to Script-->

@@ -72,15 +72,9 @@
 			$currency_format = $CI->db->get_where('business_settings', array('type' => 'currency_format'))->row()->value;
 			$symbol_format = $CI->db->get_where('business_settings', array('type' => 'symbol_format'))->row()->value; 
 			$no_of_decimal = $CI->db->get_where('business_settings', array('type' => 'no_of_decimals'))->row()->value;
-			if($currency_format == 'us'){
+			if($currency_format == 'INR'){
 				$dec_point = '.';
 				$thousand_sep = ',';
-			}elseif($currency_format == 'german'){
-				$dec_point = ',';
-				$thousand_sep = '.';
-			}elseif($currency_format == 'french'){
-				$dec_point = ',';
-				$thousand_sep = ' ';
 			}
 			
 			if($currency_id = $CI->session->userdata('currency')){} else {

@@ -957,14 +957,18 @@ class Home extends CI_Controller {
             $this->session->set_userdata('user_name', $query->row()->username);
             $this->session->set_userdata('user_id', $query->row()->user_id);
             $this->session->set_userdata('user_type', $query->row()->user_type);
-//            $this->session->set_flashdata('alert', 'successful_signin');
             $this->db->where('user_id', $query->row()->user_id);
             $this->db->update('user', array(
                 'last_login' => time()
             ));
-            echo 'success';
+            $page_data['page_name'] = "my_account";
+            $page_data['page_title'] = "my_account";
+            $this->load->view('front/index', $page_data);
         } else {
-            echo 'failed';
+            $page_data['login_result'] = "The password you re-entered is wrong";
+            $page_data['page_name'] = "login";
+            $page_data['page_title'] = "login";
+            $this->load->view('front/index', $page_data);
         }
     }
 
@@ -1077,6 +1081,7 @@ class Home extends CI_Controller {
             } else {
                 $page_data['res'] = "Login Failed";
                 $page_data['page_name'] = "proceed_checkout";
+                $page_data['page_title'] = "proceed_checkout";
                 $this->load->view('front/index', $page_data);
             }
         }
@@ -1693,16 +1698,17 @@ class Home extends CI_Controller {
             $data['password'] = sha1($new_pwd);
             $this->db->where('user_id', $this->session->userdata('user_id'));
             $this->db->update('user', $data);
+            
+            $page_data['success_txt'] = "Password Updated Successfully!!";
             $page_data['page_name'] = "change_password";
             $page_data['page_title'] = "change_password";
             $this->load->view('front/index', $page_data);
         } else {
-            $page_data['txt'] = "Error:Your password and confirmation password do not match";
+            $page_data['error_txt'] = "Error:Your password and confirmation password do not match";
             $page_data['page_name'] = "change_password";
             $page_data['page_title'] = "change_password";
             $this->load->view('front/index', $page_data);
         }
-        $this->db->update('user', $page_data);
     }
 
     function order() {
@@ -1719,6 +1725,7 @@ class Home extends CI_Controller {
             redirect(base_url() . 'index.php');
         }
         $page_data['page_name'] = "my_account";
+        $page_data['page_title'] = "my_account";
         $this->load->view('front/index', $page_data);
     }
 

@@ -869,7 +869,7 @@
 
 
     $(document).ready(function () {
-        set_modal();
+       // set_modal();
 
         $('.window_set').on('click','.author_contact_submitter',function(event){
             event.preventDefault();
