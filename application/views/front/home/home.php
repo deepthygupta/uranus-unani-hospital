@@ -6,16 +6,16 @@
         <title>Uranus || Home </title>
         <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/main.css" rel="stylesheet" type="text/css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <link href="css/responsive.css" rel="stylesheet" type="text/css">
-        <link href="css/animate.css" rel="stylesheet" type="text/css">
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">   
-        <link href="css/custom.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
-        <script src="js/modernizr.js"></script>
-        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>css/main.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>css/animate.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">   
+        <link href="<?php echo base_url(); ?>css/custom.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>rs-plugin/css/settings.css" media="screen" />
+        <script src="<?php echo base_url(); ?>js/modernizr.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>images/favicon.ico">
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
             var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -34,7 +34,7 @@
         
         <div id="loader">
              <div class="loader">
-                 <div class="position-center-center"> <img src="images/preloader.gif">
+                 <div class="position-center-center"> <img src="<?php echo base_url(); ?>images/preloader.gif">
  
                  </div>
              </div>
@@ -71,7 +71,7 @@
                         <nav class="webimenu">
                             <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
                             <ul class="ownmenu">
-                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="images/sitelogo.png" style="width: 180px;" alt="logo"></a></li>
+                                <li class="logo1"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/logo.png"alt="logo"></a></li>
                                 <li><a href="#">HOME</a></li>
                                 <li>
                                     <a href="<?php echo base_url(); ?>index.php/home/about_us">
@@ -156,7 +156,7 @@
                 <div class="tp-banner-container">
                     <div class="tp-banner" >
                         <ul>
-                            <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-1.jpg" data-bgposition="center top img-responsive" alt="" />
+                            <li data-transition="fade" data-slotamount="7"> <img src="<?php echo base_url(); ?>images/slides/slide-1.jpg" data-bgposition="center top img-responsive" alt="" />
                                 <div class="overlay"></div>                               
                                 <div class="tp-caption sft font-montserrat tp-resizeme rs-parallaxlevel-4"
                                      data-x="center"
@@ -238,7 +238,7 @@
                             </li>
 
                             <!-- Slider 2 -->
-                            <li data-transition="fade" data-slotamount="7"> <img src="images/slides/slide-2.jpg" data-bgposition="center top img-responsive" alt="" />
+                            <li data-transition="fade" data-slotamount="7"> <img src="<?php echo base_url(); ?>images/slides/slide-2.jpg" data-bgposition="center top img-responsive" alt="" />
                                 <div class="overlay"></div>
                                 <!-- Layer -->
 
@@ -338,7 +338,7 @@
                                 ?>
                                 <li class="col-sm-4 animate fadeInLeft" data-wow-delay="0.4s">
                                     <a href="<?php echo $row['url']; ?>">
-                                        <img src="uploads/discount_image/<?php echo $row['image']; ?>" alt=""/>
+                                        <img src="<?php echo base_url(); ?>uploads/discount_image/<?php echo $row['image']; ?>" alt=""/>
                                     </a> 
                                 </li>            
                             <?php } ?>
@@ -365,7 +365,7 @@
                                 <div class="col-md-3 animate fadeInUp" data-wow-delay="0.5s" >                                   
                                     <div class="items-in">                                      
                                         <a href="<?php echo base_url(); ?>index.php/home/image_details/<?php echo $row['product_id']; ?>/<?php echo $row['category']; ?>">
-                                            <img  src="<?php echo $this->crud_model->file_view1('product', $row['product_id'], $row['category'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
+                                            <img src="<?php echo $this->crud_model->file_view1('product', $row['product_id'], $row['category'], '', '', 'thumb', 'src', '', ''); ?>" alt=""/>
                                         </a>
                                     </div>
                                 </div>
@@ -378,16 +378,16 @@
                     <div class="container">
                         <ul class="row">
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.4s">
-                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-1.jpg" alt=""> <span>HEAD1</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="<?php echo base_url(); ?>images/collection-img-1.jpg" alt=""> <span>HEAD1</span> </a> </div>
                             </li>
                             <li class="col-sm-3 animate fadeInLeft" data-wow-delay="0.6s">
-                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-2.jpg" alt=""> <span>HEAD2</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="<?php echo base_url(); ?>images/collection-img-2.jpg" alt=""> <span>HEAD2</span> </a> </div>
                             </li>
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.4s">
-                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-3.jpg" alt=""> <span>HEAD3</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="<?php echo base_url(); ?>images/collection-img-3.jpg" alt=""> <span>HEAD3</span> </a> </div>
                             </li>
                             <li class="col-sm-3 animate fadeInRight" data-wow-delay="0.6s">
-                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="images/collection-img-4.jpg" alt=""> <span>HEAD4</span> </a> </div>
+                                <div class="inn-sec"> <a href="#"> <img class="img-responsive" src="<?php echo base_url(); ?>images/collection-img-4.jpg" alt=""> <span>HEAD4</span> </a> </div>
                             </li>
                         </ul>
                     </div>
@@ -399,71 +399,61 @@
                         <a href="#" class="video-btn popup-vedio"><i class="ion-android-arrow-dropright-circle"></i></a>
                         <a href="#" class="link popup-vedio video-btn"></a>     
                     </div>
-                </section>
-                <section class="section-p-30px ">
-                    <div class="container text-center">
-                        <div class="row">                            
-                        </div>
-                    </div>
-                </section>
+                </section>               
 
-                <section class="about-sebian bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
+                <section class="appointment-form bg-1 animate fadeInUp" data-wow-delay="0.4s" data-stellar-background-ratio="0.4">
                     <div class="section-p-60px overlay ">
                         <div class="container">
-                            <div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
-                                <h2 class="block-title">APPOINTMENT FORM</h2>
-                                <div class="block-textappoint">To make a doctor’s appointment online, please fill the online form below.
-                                    Our representative will get back to you at the earliest. 
-                                </div>
-                            </div>
-                            <div class="clients-about-in">
-                                <li>
-                                    <div class="clients-about-slider animate fadeInUp" data-wow-delay="0.4s">
-                                        <?php
-                                        echo form_open(base_url() . 'index.php/home/appointment/', array(
-                                            'method' => 'post',
-                                            'id' => 'main-contact-form',
-                                            'name' => 'contact_form',
-                                            'enctype' => 'multipart/form-data'
-                                        ));
-                                        ?>
-                                        <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="off" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-7">
-                                                <div class="form-group">
-                                                    <input type="tel" name="phone" class="form-control" placeholder="Phone No" autocomplete="off" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Email" >
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-7">
-                                                <div class="form-group">
-                                                    <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">	
-                                                <div class="form-group">
-                                                    <textarea name="msg" id="msg" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
-                                                </div>  
-                                            </div>	
-
-                                        </div>	
-                                        <div class="form-group">
-                                            <button name="appoint_submit" type="submit" value="appoint_submit" class="btn-active-success">Send Now</button>
-                                        </div>
-                                        </form> 
+                            	<div class="tittle white animate fadeInUp" data-wow-delay="0.4s">
+                                    <h2 class="white-title">APPOINTMENT FORM</h2>
+                                    <div class="block-textappoint">To make a doctor’s appointment online, please fill the online form below.
+                                        Our representative will get back to you at the earliest. 
                                     </div>
-                            </div>
+                            	</div>
+                            
+								<?php
+                                echo form_open(base_url() . 'index.php/home/appointment/', array(
+                                    'method' => 'post',
+                                    'id' => 'main-contact-form',
+                                    'name' => 'contact_form',
+                                    'enctype' => 'multipart/form-data'
+                                ));
+                                ?>
+                                <div class="row wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="tel" name="phone" class="form-control" placeholder="Phone No" autocomplete="off" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Email" >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">	
+                                        <div class="form-group">
+                                            <textarea name="msg" id="msg" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
+                                        </div>  
+                                    </div>	
+
+                                </div>	
+                                <div class="form-group">
+                                    <button name="appoint_submit" type="submit" value="appoint_submit" class="btn btn-active-success">Send Now</button>
+                                </div>
+                                </form>
                         </div>
                     </div>
                 </section>
@@ -489,61 +479,90 @@
             </div>
 
             <footer>
-                <div class="container">
-                    <div class="text-center"> <a href="#."><img src="<?php echo base_url(); ?>images/footerlogo.png" style="width:200px;" alt=""></a><br>
-                        <p class="intro-small margin-t-40">We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
-                    </div>
-
-                    <div class="footer-link row">
-                        <div class="col-md-12">
+            	<div class="footer-locations">
+					<div class="container">
+                    	<div class="text-center">
+                        	<h2>Our Locations</h2>
+                         </div>
                             <ul>
-                                <li class="col-sm-4">
+                            	<li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri,<br> Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>
+                                <li>
+                                    <h5>CONTACT US</h5>
+                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: <br>KMH Hospital,Manjeri, <br>Kerala – 676122</p>
+                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
+                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
+                                </li>                                
+                            </ul>                                          	
+                    </div>
+				</div>                    
+				<div class="footer-bootom">                    
+                    <div class="container">                    
+                        <div class="footer-link row">                        
+                                <div class="col-sm-4">
                                     <h5>INFORMATION</h5>
                                     <ul class="f-links">
                                         <li><a href=""> HOME</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/about_us"> ABOUT US</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/faq1"> FAQ</a></li>
-                                        <li><a href="#."> PRIVACY & POLICY</a></li>
+                                        <li><a href="#"> PRIVACY & POLICY</a></li>
                                         <li><a href="#"> TERMS & CONDITIONS</a></li>
                                     </ul>
-                                </li>
-                                <li class="col-sm-4">
+                                </div>
+                                <div class="col-sm-4">
                                     <h5>MY ACCOUNT</h5>
                                     <ul class="f-links">
                                         <li><a href="<?php echo base_url(); ?>index.php/home/my_account">MY ACCOUNT</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/login2"> LOGIN</a></li>
                                         <li><a href="<?php echo base_url(); ?>index.php/home/cart_checkout"> MY CART</a></li>  
                                     </ul>
-                                </li>
-                                <li class="col-sm-4">
-                                    <h5>CONTACT US</h5>
-                                    <p><i class="fa fa-home" aria-hidden="true"></i> Hard 'N' Soft Annex, Opp: KMH Hospital,Manjeri, Kerala – 676122</p>
-                                    <p><i class="fa fa-envelope" aria-hidden="true"></i> sales@uranus.com</p>
-                                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 999999999</p>
-                                </li>
-                            </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5>ABOUT US</h5>
+                                    <div class="footer-logo"><a href="<?php echo base_url(); ?>index.php"><img src="<?php echo base_url(); ?>/images/footerlogo.png" alt=""></a></div><br>
+                                    <p>We are dedicated to provide Unani Care in all modern facilities and environs. Merging traditional medicine with all possibilities of modern medical science, Kerala Unani Hospital provides best modern Unani Care across Kerala..</p>
+                                </div>
                         </div>
-
-
-                    </div>
-
-                    <div class="rights">
-                        <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        <div class="rights">
+                            <p>© 2018 Uranus. All Rights Reserved. Powered By <a href="http://qproinnovations.com" target="blank">QPro Innovations</a></p>
+                        </div>
                     </div>
                 </div>
             </footer>            
         </div>
 
-        <script src="js/jquery-1.11.3.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/own-menu.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.flexslider-min.js"></script>
-        <script src="js/jquery.isotope.min.js"></script>
-        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-        <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="<?php echo base_url(); ?>js/jquery-1.11.3.js"></script>
+        <script src="<?php echo base_url(); ?>js/wow.min.js"></script>
+        <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>js/own-menu.js"></script>
+        <script src="<?php echo base_url(); ?>js/owl.carousel.min.js"></script>
+        <script src="<?php echo base_url(); ?>js/jquery.magnific-popup.min.js"></script>
+        <script src="<?php echo base_url(); ?>js/jquery.flexslider-min.js"></script>
+        <script src="<?php echo base_url(); ?>js/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="<?php echo base_url(); ?>js/main.js"></script>
     </body>
 </html>
