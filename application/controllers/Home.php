@@ -853,17 +853,16 @@ class Home extends CI_Controller {
     }
 
     function login2($para1 = '', $para2 = '') {
-        //$page_data['blog_id']=$param1;
-        $page_data['page_name'] = "login";
-        $page_data['uid'] = $para1;
-        $page_data['code'] = $para2;
-        $name = $this->db->get_where('user', array('user_id' => $para1,
-                    'referral_token' => $para2))->row();
-        $full_name = $name->username . ' ' . $name->surname;
-        $this->session->set_flashdata('msg', $full_name);
-        //$page_data['asset_page'] = "about_us";
-        $page_data['page_title'] = "Login";
 
+        $page_data['page_name'] = "login";
+        if ($para1 && $para2) {
+            $page_data['uid'] = $para1;
+            $page_data['code'] = $para2;
+            $name = $this->db->get_where('user', array('user_id' => $para1, 'referral_token' => $para2))->row();
+            $full_name = $name->username . ' ' . $name->surname;
+            $this->session->set_flashdata('msg', $full_name);
+        }
+        $page_data['page_title'] = "Login";
         $this->load->view('front/index', $page_data);
     }
 
@@ -873,11 +872,7 @@ class Home extends CI_Controller {
 
     function logout2() {
         $this->crud_model->logout();
-        //$page_data['blog_id']=$param1;
         redirect(base_url() . 'index.php/home/home', 'refresh');
-//        $page_data['page_name'] = "home";
-        //$page_data['asset_page'] = "about_us";
-//        $this->load->view('front/index', $page_data);
     }
 
     function signup_separate() {
