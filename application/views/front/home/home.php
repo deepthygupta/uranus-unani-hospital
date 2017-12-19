@@ -18,7 +18,6 @@
                          data-endspeed="300"
                          data-captionhidden="on"
                          style="color: #fff; font-size: 36px; text-transform: uppercase;"> </div>
-
                     <!-- Layer -->
                     <div class="tp-caption sft font-montserrat  tp-resizeme rs-parallaxlevel-4"
                          data-x="center"
