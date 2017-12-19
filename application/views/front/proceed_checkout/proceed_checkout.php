@@ -1,7 +1,6 @@
 <section class="sub-banner">
     <div class="container">
         <h4>SHOPPING CART</h4>
-        <!-- Breadcrumb -->
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li class="active">SHOPPING CART</li>
@@ -11,37 +10,25 @@
 
 <section class="section-p-30px pages-in chart-page">
     <div class="container">
-
-        <!-- Payments Steps -->
         <div class="payment_steps">
             <ul class="row">
-                <!-- SHOPPING CART -->
                 <li class="col-sm-4"> <i class="fa fa-shopping-cart"></i>
                     <h6>SHOPPING CART</h6>
                 </li>
-
-                <!-- CHECK OUT DETAIL -->
                 <li class="col-sm-4 current"> <i class="fa fa-align-left"></i>
                     <h6>CHECK OUT DETAIL</h6>
                 </li>
-
-                <!-- ORDER COMPLETE -->
                 <li class="col-sm-4"> <i class="fa fa-check"></i>
                     <h6>ORDER COMPLETE</h6>
                 </li>
             </ul>
         </div>
 
-        <!-- Payments Steps -->
         <div class="shopping-cart">
-
-            <!-- SHOPPING INFORMATION -->
             <div class="cart-ship-info">
                 <div class="row">
-
-                    <!-- ESTIMATE SHIPPING & TAX -->
                     <div class="col-sm-6">
-                        <h6>LOGIN</h6><h4 style="color:#61c002;"><?php echo $res; ?></h4>
+                        <h6>LOGIN</h6><h4 style="color:#61c002;"><?php if (isset($res)) echo $res; ?></h4>
                         <p>If you have an account with us, please log in.</p>
                         <?php
                         echo form_open(base_url() . 'index.php/home/user_login', array(
@@ -51,65 +38,37 @@
                         ));
                         ?>
                         <ul class="row">
-
-                            <!-- *COUNTRY -->
-
-                            <!-- Name -->
                             <li class="col-md-12">
                                 <label> *EMAIL ADDRESS
                                     <input type="email" name="email" value="" placeholder="Enter email" required>
                                 </label>
                             </li>
-                            <!-- LAST NAME -->
                             <li class="col-md-12">
                                 <label> *PASSWORD
                                     <input type="password" name="password" value="" placeholder="Enter password" required>
                                 </label>
                             </li>
-
-                            <!-- TOWN/CITY -->
                             <li class="col-sm-12 no-margin">
                                 <p class="red">* Required Fields</p>
                             </li>
-
                             <li class="col-sm-12 no-margin">
                                 <p><a href="<?php echo base_url(); ?>index.php/home/forgot_pswd">Forgot Your Password?</a></p>
                             </li>
-
-                            <!-- COUNTRY -->
-
-                            <!-- POSTCODE -->
-
-
-                            <!-- EMAIL ADDRESS -->
-
-                            <!-- PHONE -->
-                            <button type="submit" value="submit" class="btn btn-dark" ">LOGIN</button>
-
-                            <!--                                        <button type="submit" name="submit" class="btn btn-small btn-dark pull-right">SUBMIT</button>-->
-                            <!--                                        <input type="submit" value="LOGIN" name="submit" class="btn btn-small btn-dark pull-right">-->
-                            <!--                                        <a href="#." class="btn btn-small btn-dark pull-right">LOGIN</a>-->
-                            <!-- CREATE AN ACCOUNT -->
-
-
-                            <!-- SHIP TO BILLING ADDRESS -->
+                            <button type="submit" value="submit" class="btn btn-dark">LOGIN</button>                           
 
                         </ul>
-                        <input type="hidden" name="msg" value= "<?php echo $msg; ?>" >
-                        <input type="hidden" name="date" value= "<?php echo $date; ?>">
+                        <input type="hidden" name="msg" value= "<?php if (isset($msg)) echo $msg; ?>" >
+                        <input type="hidden" name="date" value= "<?php if (isset($date)) echo $date; ?>">
                         </form>
                         <br/>
 
 
                     </div>
                     <div class="col-sm-6">
-                        <!-- TITTLE -->
-
                         <h6>Sign Up</h6>
                         <p>By creating an account with our store. </p>
                         <div class="">
                             <div class="">
-                                <!--======= FORM  =========-->
                                 <?php
                                 echo form_open(base_url() . 'index.php/home/user_signup', array(
                                     'class' => 'form-horizontal',
@@ -118,7 +77,6 @@
                                 ));
                                 ?>
                                 <div class="row">
-
                                     <div class="col-md-12">
                                         <ul class="row">
                                             <li class="col-md-6">
@@ -173,8 +131,6 @@
                                                     <input type="text" name="country" value="" placeholder="" required>
                                                 </label>
                                             </li>
-
-
                                             <li class="col-md-6">
                                                 <label> *PIN
                                                     <input type="text" name="zip" value="" placeholder="" required>
@@ -183,15 +139,9 @@
                                             <li class="col-sm-12 no-margin">
                                                 <p class="red">* Required Fields</p>
                                             </li>
-
-
                                             <li class="col-sm-12 ">
-                                                <button type="submit" value="submit" class="btn btn-dark" ">CREATE AN ACCOUNT</button>
-
-                                                        <!--                                                            <input type="submit" value="CREATE AN ACCOUNT" name="submit" class="btn btn-small btn-dark pull-right">-->
-                                                <!--                                                            <a href="#." class="btn btn-small btn-dark pull-right">CREATE AN ACCOUNT</a>-->
+                                                <button type="submit" value="submit" class="btn btn-dark">CREATE AN ACCOUNT</button> 
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -199,16 +149,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- SUB TOTAL -->
-
                 </div>
             </div>
         </div>
     </div>
-
-    <!--======= RELATED PRODUCTS =========-->
-
 </section>
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="../../rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="../../rs-plugin/js/jquery.themepunch.revolution.min.js"></script>

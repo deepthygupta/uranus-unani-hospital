@@ -1060,6 +1060,7 @@ class Home extends CI_Controller {
             $page_data['msg'] = $this->session->userdata('delivery_note');
             $page_data['date'] = $this->session->userdata('delivery_date');
             $page_data['user_id'] = $this->session->userdata('user_id');
+            $page_data['page_title'] = "login_details";
             $page_data['page_name'] = "login_details";
             $this->load->view('front/index', $page_data);
         } else {
@@ -1076,6 +1077,7 @@ class Home extends CI_Controller {
                 $this->db->update('user', array(
                     'last_login' => time()
                 ));
+                $page_data['page_title'] = "login_details";
                 $page_data['page_name'] = "login_details";
                 $this->load->view('front/index', $page_data);
             } else {
@@ -1085,8 +1087,6 @@ class Home extends CI_Controller {
                 $this->load->view('front/index', $page_data);
             }
         }
-
-        //$page_data['asset_page'] = "about_us";
     }
 
     function place_order($param1 = '') {
@@ -1108,6 +1108,7 @@ class Home extends CI_Controller {
             $state = $this->db->get_where('user', array('user_id' => $param1))->row()->state;
             $zip = $this->db->get_where('user', array('user_id' => $param1))->row()->zip;
             $email = $this->db->get_where('user', array('user_id' => $param1))->row()->email;
+            $country = $this->db->get_where('user', array('user_id' => $param1))->row()->country;
             $shipping_address = array();
             $shipping_address['firstname'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->username;
             $shipping_address['lastname'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->surname;
@@ -1115,10 +1116,10 @@ class Home extends CI_Controller {
             $shipping_address['phone'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->phone;
             $shipping_address['address1'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->address1;
             $shipping_address['address2'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->address2;
-
             $shipping_address['city'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->city;
             $shipping_address['state'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->state;
             $shipping_address['zip'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->zip;
+            $shipping_address['country'] = $this->db->get_where('user', array('user_id' => $data['buyer']))->row()->country;
             $payment = $this->input->post('pay');
             $shipping_address['payment_type'] = $payment;
             $data['shipping_address'] = json_encode($shipping_address);
@@ -1157,9 +1158,9 @@ class Home extends CI_Controller {
             $page_data['sale_id'] = $sale_id;
             $page_data['user_id'] = $param1;
             $page_data['page_name'] = "place_order";
-            $page_data['title'] = "Place Order";
-            $this->email_temp($sale_code);
-            $this->crud_model->sms_place_order_send($sale_code);
+            $page_data['page_title'] = "Place Order";
+            //$this->email_temp($sale_code);
+            //$this->crud_model->sms_place_order_send($sale_code);
             if ($this->cart->get_coupon() != null)
                 $this->crud_model->coupon_limit_count($this->cart->get_coupon(), true);
             $this->session->set_userdata('refresh_hash', $refresh_hash);
@@ -1698,7 +1699,7 @@ class Home extends CI_Controller {
             $data['password'] = sha1($new_pwd);
             $this->db->where('user_id', $this->session->userdata('user_id'));
             $this->db->update('user', $data);
-            
+
             $page_data['success_txt'] = "Password Updated Successfully!!";
             $page_data['page_name'] = "change_password";
             $page_data['page_title'] = "change_password";
