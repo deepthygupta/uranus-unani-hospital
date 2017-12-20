@@ -467,7 +467,6 @@ class Admin extends CI_Controller {
             $data['answer'] = $this->input->post('answer');
             $data['added_date'] = date("Y-m-d");
             $this->db->insert('faq', $data);
-            
         } else if ($para1 == 'edit') {
             $page_data['faq_data'] = $this->db->get_where('faq', array(
                         'id' => $para2
@@ -481,9 +480,9 @@ class Admin extends CI_Controller {
         } elseif ($para1 == 'delete') {
             $this->db->set('status', 'inactive');
             $this->db->where('id', $para2);
-            $this->db->update('faq');            
+            $this->db->update('faq');
         } elseif ($para1 == 'list') {
-            $this->db->order_by('id', 'asc');            
+            $this->db->order_by('id', 'asc');
             $this->db->where('status', 'active');
             $page_data['all_faq'] = $this->db->get('faq')->result_array();
             $this->load->view('back/admin/faq_list', $page_data);
@@ -4337,7 +4336,11 @@ class Admin extends CI_Controller {
         //echo $shipping_address['firstname']."gaaa";
     }
 
-}
+    function content() {
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+        $page_data['page_name'] = "content";
+        $page_data['content'] = $this->db->get('content')->result_array();
+        $this->load->view('back/index', $page_data);
+    }
+
+}

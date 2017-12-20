@@ -95,7 +95,7 @@
     <script src="<?php echo base_url(); ?>template/back/colorpicker/dist/js/bootstrap-colorpicker.js"></script>
 	
 	<?php $ext =  $this->db->get_where('ui_settings',array('type' => 'fav_ext'))->row()->value;?>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>uploads/others/favicon.<?php echo $ext; ?>">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico">
 	<script>
 	<?php
 		$volume = $this->crud_model->get_type_name_by_id('general_settings','46','value');

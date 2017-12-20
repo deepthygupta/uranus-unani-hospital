@@ -3,7 +3,7 @@
         <!--Brand logo & name-->
         <div class="navbar-header">
             <a href="<?php echo base_url(); ?>index.php/<?php echo $this->session->userdata('title'); ?>" class="navbar-brand">
-                <img src="<?php echo base_url(); ?>uploads/logo_image/logo_78.jpg" alt="<?php echo $system_name; ?>" class="brand-icon" style="padding:8px;">
+                <img src="<?php echo base_url(); ?>images/logo.png" alt="<?php echo $system_name; ?>" class="brand-icon" style="padding:8px;">
                 <div class="brand-title">
                     <span class="brand-text"><?php echo $system_name; ?></span>
                 </div>

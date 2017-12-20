@@ -23,7 +23,7 @@
 	<link href="<?php echo base_url(); ?>template/back/plugins/pace/pace.min.css" rel="stylesheet">
 	<script src="<?php echo base_url(); ?>template/back/plugins/pace/pace.min.js"></script>
 	<?php $ext =  $this->db->get_where('ui_settings',array('type' => 'fav_ext'))->row()->value; $this->benchmark->mark_time();?>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>uploads/others/favicon.<?php echo $ext; ?>">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 			<div class="cls-content-sm panel panel-colorful panel-login" style="margin-top: 50px !important;">
 				<div class="panel-body">
                 	<a class="box-inline" href="<?php echo base_url(); ?>index.php/<?php echo $this->session->userdata('title'); ?>">
-						<img src="<?php echo base_url(); ?>uploads/logo_image/logo_78.jpg" class="log_icon">
+						<img src="<?php echo base_url(); ?>images/logo.png" class="log_icon">
 					</a>
                     <hr class="hr-log">
 					<p class="pad-btm"><?php echo translate('sign_in_to_your_account');?></p>
