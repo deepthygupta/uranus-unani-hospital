@@ -4569,6 +4569,17 @@ EOD;
             redirect(base_url() . 'index.php', 'refresh');
         }
     }
+    
+    function privacy() {
+        $page_data['page_name'] = "privacy";
+        $page_data['page_title'] = translate('privacy_policy');
+        $this->load->view('front/index', $page_data);
+    }
+    function terms() {
+        $page_data['page_name'] = "terms";
+        $page_data['page_title'] = translate('terms_and_conditions');
+        $this->load->view('front/index', $page_data);
+    }
 
 }
 

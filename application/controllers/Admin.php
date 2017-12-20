@@ -4338,6 +4338,14 @@ class Admin extends CI_Controller {
 
     function content() {
 
+        if ($this->input->post()) {
+            $data['about_us'] = $this->input->post('about_us');
+            $data['terms_condition'] = $this->input->post('terms_condition');
+            $data['privacy_policy'] = $this->input->post('privacy_policy');
+            $this->db->where('id', 1);
+            $this->db->update('content', $data);
+            
+        }
         $page_data['page_name'] = "content";
         $page_data['content'] = $this->db->get('content')->result_array();
         $this->load->view('back/index', $page_data);

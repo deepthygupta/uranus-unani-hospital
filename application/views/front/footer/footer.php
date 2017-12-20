@@ -45,8 +45,8 @@
                         <li><a href=""> HOME</a></li>
                         <li><a href="<?php echo base_url(); ?>index.php/home/about_us"> ABOUT US</a></li>
                         <li><a href="<?php echo base_url(); ?>index.php/home/faq1"> FAQ</a></li>
-                        <li><a href="#"> PRIVACY & POLICY</a></li>
-                        <li><a href="#"> TERMS & CONDITIONS</a></li>
+                        <li><a href="<?php echo base_url(); ?>index.php/home/privacy"> PRIVACY & POLICY</a></li>
+                        <li><a href="<?php echo base_url(); ?>index.php/home/terms"> TERMS & CONDITIONS</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4">

@@ -363,18 +363,18 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
                         ?>
                         <?php
                         //if ($this->crud_model->admin_permission('coupon')) {
-                            ?>
-                          <!--  <li <?php if ($page_name == "coupon") { ?> class="active-link" <?php } ?> >
-                                <a href="<?php echo base_url(); ?>index.php/admin/coupon/">
-                                    <i class="fa fa-tag"></i>
-                                    <span class="menu-title">
-                                        <?php echo translate('discount'); ?>
-                                    </span>
-                                </a>
-                            </li>-->
+                        ?>
+                      <!--  <li <?php if ($page_name == "coupon") { ?> class="active-link" <?php } ?> >
+                            <a href="<?php echo base_url(); ?>index.php/admin/coupon/">
+                                <i class="fa fa-tag"></i>
+                                <span class="menu-title">
+                        <?php echo translate('discount'); ?>
+                                </span>
+                            </a>
+                        </li>-->
 
-                            <?php
-                       // }
+                        <?php
+                        // }
                         ?>
 
                         <?php
@@ -506,6 +506,15 @@ $digital_check = $this->crud_model->get_type_name_by_id('general_settings', '69'
                             <?php
                         }
                         ?>
+                        <li <?php if ($page_name == "content") { ?> class="active-link" <?php } ?> >
+                            <a href="<?php echo base_url(); ?>index.php/admin/content/">
+                                <i class="fa fa-tag"></i>
+                                <span class="menu-title">
+                                    <?php echo translate('content_management'); ?>
+                                </span>
+                            </a>
+                        </li>
+
                         <?php if ($this->crud_model->admin_permission('event')) { ?>
                             <li>
                                 <a href="<?php echo base_url(); ?>index.php/admin/event">
